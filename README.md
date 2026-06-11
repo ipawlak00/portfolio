@@ -1,28 +1,32 @@
 # Izabela Pawlak — Portfolio
 
-Interaktywne portfolio: animowana oś czasu kariery, siatka umiejętności i sekcja projektów (Google Apps Script, Looker Studio, automatyzacje).
+Interaktywne portfolio Tech & Ops: animowana oś czasu kariery, siatka umiejętności oraz w pełni klikalne makiety narzędzi (planowanie zmian, generator umów, panel HR).
 
-## Struktura repozytorium
+**Stack:** React 19 + TypeScript + Vite + Tailwind CSS 4 + Motion
 
-| Plik / folder | Opis |
+## Uruchomienie lokalne
+
+```bash
+npm install
+npm run dev
+```
+
+Strona wystartuje pod `http://localhost:3000`.
+
+## Struktura
+
+| Ścieżka | Opis |
 |---|---|
-| `index.html` | Samodzielna wersja strony — działa bezpośrednio w przeglądarce i na **GitHub Pages**, bez Google Apps Script |
-| `profile.jpeg` | Zdjęcie profilowe używane przez stronę |
-| `apps-script/Code.gs` | Kod serwerowy projektu Google Apps Script (`doGet`, `handleButtonClick`) |
-| `apps-script/Index.html` | Szablon HTML wdrażany jako Web App w Google Apps Script |
+| `src/App.tsx` | Główny układ strony i nagłówek z kontaktami |
+| `src/components/` | Sekcje strony (oś czasu, umiejętności, „Dlaczego ja?", stopka CTA) oraz okna makiet |
+| `src/data.ts` | Treści: wydarzenia osi czasu, lista umiejętności |
+| `public/schedule.html`, `public/contract.html`, `public/hr.html` | Samodzielne, interaktywne makiety otwierane w oknach modalnych |
+| `public/hr.gs`, `public/backend.js` | Kod źródłowy narzędzi Google Apps Script pokazywanych w makietach |
 
-Obie wersje strony mają identyczny wygląd. Różnica: wersja Apps Script pobiera treść sekcji „Kim jestem?" z serwera przez `google.script.run`, a wersja statyczna ma tę treść wbudowaną w JavaScript (na GitHub Pages nie ma backendu Apps Script).
+## Publikacja (GitHub Pages)
 
-## Jak opublikować na GitHub Pages
+Repozytorium zawiera workflow `.github/workflows/deploy.yml`, który po każdym pushu na `main` buduje projekt i publikuje go na GitHub Pages.
 
-1. Wejdź w **Settings → Pages** tego repozytorium.
-2. W sekcji **Build and deployment** wybierz `Deploy from a branch`, branch `main`, folder `/ (root)`.
-3. Po chwili strona będzie dostępna pod adresem: `https://ipawlak00.github.io/portfolio/`
+Jednorazowa konfiguracja: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
-Ten link możesz wysyłać rekruterom — otwiera się od razu, bez logowania do konta Google.
-
-## Jak zaktualizować wersję Apps Script
-
-Edytuj pliki w folderze `apps-script/`, a następnie wklej ich zawartość do edytora na [script.google.com](https://script.google.com) (plik `Code.gs` i plik HTML o nazwie `Index`). Wdróż jako **Web App** (`Deploy → New deployment`).
-
-> Uwaga: jeśli wdrożenie jest na koncie firmowym (`/a/macros/randstad.pl/`), linki do aplikacji będą działać tylko dla osób zalogowanych w tej domenie. Dla rekruterów spoza firmy lepszy jest link GitHub Pages.
+Strona będzie dostępna pod adresem: `https://ipawlak00.github.io/portfolio/`

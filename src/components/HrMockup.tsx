@@ -1,0 +1,43 @@
+import React, { useEffect } from 'react';
+import { X, Users } from 'lucide-react';
+
+interface HrMockupProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export default function HrMockup({ isOpen, onClose }: HrMockupProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-[990] bg-gradient-to-br from-[#f2f8fc] to-[#e6f2fd] text-slate-800 flex flex-col font-sans overflow-hidden">
+      
+      <button 
+        onClick={onClose}
+        className="absolute top-6 right-6 bg-white/50 hover:bg-white text-slate-800 font-bold p-3 rounded-full transition-all z-50 cursor-pointer shadow-md border border-slate-300"
+        title="Zamknij"
+      >
+        <X className="w-6 h-6" />
+      </button>
+
+      {/* WORKSPACE AREA */}
+      <div className="flex-grow flex flex-col p-4 md:p-8 gap-6 overflow-y-auto w-full max-w-7xl mx-auto pt-16 relative z-10">
+        <div className="flex-grow flex rounded-3xl border border-slate-200 shadow-2xl min-h-[640px] xl:min-h-[720px] overflow-hidden relative">
+          <iframe 
+              src="hr.html" 
+              className="w-full h-full border-0 absolute inset-0"
+              title="Employee Lifecycle App Preview"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
