@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise HR System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+  <style>
+    :root {
+      --rd-blue: #005A9C;
+      --rd-navy: #1F2A44;
+      --rd-light-blue: #0090D4;
+      --rd-grey: #f4f7f9;
+    }
+    body { background-color: var(--rd-grey); font-family: 'Segoe UI', system-ui, sans-serif; color: #334155; overflow-x: hidden;}
+    .text-navy { color: var(--rd-navy) !important; }
+   
+    .header-box { background-color: var(--rd-navy); padding-top: 25px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 30px;}
+    .brand-title { font-weight: 800; letter-spacing: -0.5px; padding: 0 30px;}
+   
+    .nav-tabs { border-bottom: 1px solid rgba(255,255,255,0.1); margin-top: 20px; padding: 0 20px;}
+    .nav-tabs .nav-link { color: rgba(255,255,255,0.6); border: none; font-weight: 600; padding: 12px 25px; transition: 0.3s; cursor: pointer; }
+    .nav-tabs .nav-link:hover { color: rgba(255,255,255,0.9); }
+    .nav-tabs .nav-link.active { color: white; background: transparent; border-bottom: 4px solid var(--rd-light-blue); }
+
+    /* SCOREBOARDY */
+    .score-card { background: linear-gradient(135deg, #2c3e50 0%, #1F2A44 100%); border-radius: 16px; padding: 25px 30px; box-shadow: 0 8px 20px rgba(31, 42, 68, 0.15); position: relative; overflow: hidden; color: white; border: 1px solid rgba(255,255,255,0.05);}
+    .score-title { font-size: 0.85rem; text-transform: uppercase; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: 1px; }
+    .score-val { font-size: 3.5rem; font-weight: 800; color: #ffffff; margin-top: 5px; line-height: 1; }
+    .score-icon { position: absolute; right: -10px; top: 50%; transform: translateY(-50%); font-size: 6rem; color: rgba(255, 255, 255, 0.05); }
+   
+    .sticky-details { position: sticky; top: 20px; z-index: 90; }
+    .profile-card { border-radius: 16px; border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.05); overflow: hidden; background: white; }
+    .avatar-placeholder { width: 90px; height: 90px; background-color: #eef7ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 700; color: var(--rd-navy); margin: 0 auto 15px auto; border: 4px solid var(--rd-light-blue); }
+    .table-container-scroll { max-height: 65vh; overflow-y: auto; border-radius: 12px; background: white; border: 1px solid #e9ecef; }
+    .table-container-scroll thead th { position: sticky; top: 0; background-color: #f8f9fa; z-index: 10; padding: 15px; font-size: 0.85rem; text-transform: uppercase; color: #6c757d; border-bottom: 2px solid var(--rd-light-blue);}
+   
+    .table-row-cursor { cursor: pointer; transition: 0.15s; border-bottom: 1px solid #f1f5f9; }
+    .table-row-cursor:hover { background-color: #f8fafc; }
+    .table-row-cursor.selected { background-color: #eef7ff; border-left: 4px solid var(--rd-light-blue); }
+    .table-row-cursor td { padding: 15px 10px; vertical-align: middle; }
+
+    .sortable { cursor: pointer; user-select: none; transition: 0.2s; }
+    .sortable:hover { color: var(--rd-light-blue); }
+
+    .avatar-small { width: 35px; height: 35px; background-color: #eef7ff; color: var(--rd-navy); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.95rem; border: 2px solid var(--rd-light-blue); }
+    .badge-dept { background-color: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; padding: 6px 12px; font-weight: 600; border-radius: 6px; font-size: 0.8rem;}
+    .badge-brygada { background-color: #ffedd5; color: #ea580c; border: 1px solid #fed7aa; padding: 6px 12px; font-weight: 600; border-radius: 6px; font-size: 0.8rem;}
+    .badge-rot { background-color: #fffbeb; color: #b45309; border: 1px solid #fde68a; padding: 6px 12px; font-weight: 600; border-radius: 6px; font-size: 0.8rem;}
+    .badge-ok { background-color: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; padding: 6px 12px; font-weight: 600; border-radius: 6px; font-size: 0.8rem;}
+    .badge-end { background-color: #fef2f2; color: #b91c1c; border: 1px solid #fecaca; padding: 6px 12px; font-weight: 600; border-radius: 6px; font-size: 0.8rem;}
+
+    .rot-alert { background-color: #fffbeb; border-left: 6px solid #f59e0b; color: #b45309; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+    .rot-alert-danger { background-color: #fef2f2; border-left: 6px solid #ef4444; color: #b91c1c; padding: 15px; margin-bottom: 15px; border-radius: 8px; }
+
+    .notatki-box details { border-left: 4px solid var(--rd-light-blue); border-radius: 6px; overflow: hidden; background: white; margin-top: 10px;}
+    .notatki-box summary { background-color: #f8fafc; padding: 10px; font-weight: bold; cursor: pointer; color: var(--rd-navy); font-size: 0.85rem;}
+    .notatki-lista { padding: 10px; max-height: 150px; overflow-y: auto; font-size: 0.8rem; color: #475569;}
+    .notatki-lista span { display: block; border-bottom: 1px dashed #e2e8f0; padding: 5px 0; }
+    .notatki-lista span:last-child { border-bottom: none; }
+
+    .upload-zone { background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 20px 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+    .filter-bar { background: white; border-radius: 16px; padding: 18px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 15px; border: 1px solid #e2e8f0; }
+    .table-container { background: white; border-radius: 16px; padding: 25px; box-shadow: 0 4px 20px rgba(0,0,0,0.03); margin-bottom: 50px; border: 1px solid #e2e8f0; }
+    .table-container thead th { background-color: white; color: var(--rd-navy); font-size: 0.85rem; text-transform: uppercase; border-bottom: 2px solid var(--rd-light-blue); padding-bottom: 15px; }
+    .main-row td { vertical-align: middle; padding: 18px 15px; font-weight: 500; font-size: 0.95rem; }
+    .details-row td { padding: 0 !important; border-bottom: 2px solid var(--rd-light-blue) !important; }
+    .details-panel { background-color: #f8fafc; padding: 25px; box-shadow: inset 0 3px 6px rgba(0,0,0,0.02); }
+    .detail-box { background: white; padding: 22px; border-radius: 12px; border: 1px solid #e2e8f0; height: 100%; position: relative;}
+    .clean-list-item { display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; margin-bottom: 10px; border-bottom: 1px solid #f1f5f9; }
+    .clean-list-item:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .badge-subtle-success { background-color: #f0fdf4; color: #15803d; border: 1px solid #dcfce7; padding: 6px 14px; font-weight: 600; font-size: 0.85rem; }
+    .badge-subtle-danger { background-color: #fef2f2; color: #b91c1c; border: 1px solid #fee2e2; padding: 6px 14px; font-weight: 600; font-size: 0.85rem; }
+    .badge-subtle-warning { background-color: #fffbeb; color: #c2410c; border: 1px solid #ffedd5; padding: 6px 14px; font-weight: 600; font-size: 0.85rem; }
+    .badge-subtle-purple { background-color: #faf5ff; color: #7e22ce; border: 1px solid #f3e8ff; padding: 6px 14px; font-weight: 600; font-size: 0.85rem; }
+    .badge-solid-green { background-color: #198754; color: white; padding: 6px 16px; font-size: 0.85rem; box-shadow: 0 2px 5px rgba(25, 135, 84, 0.2); }
+    .badge-solid-red { background-color: #DC3545; color: white; padding: 6px 16px; font-size: 0.85rem; box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3); }
+    .badge-solid-blue { background-color: #0D6EFD; color: white; padding: 6px 16px; font-size: 0.85rem; box-shadow: 0 2px 5px rgba(13, 110, 253, 0.4); }
+
+    details { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 8px; overflow: hidden;}
+    summary { padding: 12px 15px; font-size: 0.85rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: var(--rd-navy); background: #f8fafc;}
+    summary::-webkit-details-marker { display: none; }
+    .dates-list { padding: 12px 15px; background: white; border-top: 1px solid #e2e8f0; font-size: 0.8rem; }
+    .dates-list span { display: block; padding: 6px 0; border-bottom: 1px dashed #e2e8f0; color: #475569; }
+   
+    input[type="date"] { cursor: pointer; }
+   
+    /* ALERTY POWIADOMIEŃ W TLE BEZ ZACINANIA */
+    #alert-box {
+        display: none;
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        z-index: 10000;
+        border-radius: 10px;
+        font-weight: 600;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        background-color: #0d254c;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        animation: slideIn 0.3s ease-out;
+    }
+    @keyframes slideIn { from {opacity:0; transform:translateX(50px);} to {opacity:1; transform:translateX(0);} }
+    #loader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.95); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+
+    /* STYL DO WYKRESÓW */
+    .chart-container { position: relative; height: 280px; width: 100%; display: flex; justify-content: center; align-items: center;}
+  </style>
+</head>
+<body>
+
+  <div id="loader">
+    <div class="spinner-border text-primary mb-3" style="width: 3.5rem; height: 3.5rem;" role="status"></div>
+    <h4 class="fw-bold text-navy" id="loader-text">Inicjalizacja środowiska...</h4>
+  </div>
+
+  <div id="alert-box">
+      <span id="alert-msg">Info</span>
+  </div>
+
+  <div class="header-box d-flex flex-column">
+      <div class="d-flex flex-wrap align-items-center justify-content-between w-100">
+         <h3 class="brand-title m-0"><i class="fas fa-layer-group me-3" style="color: var(--rd-light-blue);"></i>Enterprise HR System</h3>
+         
+         <div id="month-selector-wrapper" class="me-4 d-flex flex-column align-items-end" style="display: none !important;">
+             <div class="d-flex align-items-center bg-white rounded shadow-sm px-3 py-1 mb-1">
+                <label class="me-2 fw-bold text-muted small"><i class="far fa-calendar-alt"></i></label>
+                <select id="monthSelector" class="form-select form-select-sm border-0 fw-bold text-navy" style="width: 150px; cursor:pointer;" onchange="zmienMiesiac()"></select>
+             </div>
+             <a href="#" class="text-white-50 small text-decoration-none" onclick="dodajNowyMiesiac()"><i class="fas fa-plus-circle me-1"></i>Dodaj arkusz miesiąca</a>
+         </div>
+      </div>
+     
+      <ul class="nav nav-tabs border-0 mt-3 px-3">
+         <li class="nav-item"><a class="nav-link active" id="tab-lista" onclick="switchTab('lista')"><i class="fas fa-users me-2"></i>Pracownicy</a></li>
+         <li class="nav-item"><a class="nav-link" id="tab-karty" onclick="switchTab('karty')"><i class="fas fa-id-card me-2"></i>Karty</a></li>
+         <li class="nav-item"><a class="nav-link" id="tab-umowy" onclick="switchTab('umowy')"><i class="fas fa-file-signature me-2"></i>Umowy</a></li>
+         <li class="nav-item"><a class="nav-link" id="tab-raporty" onclick="switchTab('raporty')"><i class="fas fa-chart-pie me-2"></i>Raporty</a></li>
+      </ul>
+  </div>
+
+  <div class="container-fluid px-4 pb-5 mt-4">
+
+    <div id="panel-lista">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4"><div class="score-card"><div class="score-title">Aktywni na dziś</div><div class="score-val" id="ml-wszyscy">-</div><i class="fas fa-users score-icon"></i></div></div>
+        <div class="col-md-4"><div class="score-card"><div class="score-title">Nowi w tym miesiącu</div><div class="score-val" id="ml-nowi">-</div><i class="fas fa-user-plus score-icon"></i></div></div>
+        <div class="col-md-4"><div class="score-card"><div class="score-title">Rotujący w miesiącu</div><div class="score-val" id="ml-rot">-</div><i class="fas fa-exchange-alt score-icon"></i></div></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-xl-4 col-lg-5">
+           <div class="card profile-card shadow-sm sticky-details border">
+              <div id="detail-empty" class="card-body text-center p-5 text-muted">
+                 <i class="fas fa-mouse-pointer fa-3x mb-3 opacity-25"></i>
+                 <p class="fw-bold m-0">Wybierz pracownika z listy obok,<br>aby wyświetlić jego kartę.</p>
+              </div>
+             
+              <div id="detail-content" style="display:none;">
+                 <div class="card-header bg-white border-bottom-0 pt-5 text-center position-relative">
+                    <div class="avatar-placeholder shadow-sm" id="detail-avatar"></div>
+                    <h3 class="card-title mb-1 fw-bold text-navy" id="detail-name">-</h3>
+                    <p class="text-muted fw-bold mb-1"><i class="fas fa-id-card me-1"></i> EMP ID: <span id="detail-sap"></span></p>
+                    <p class="text-secondary small fw-bold"><i class="fas fa-play-circle me-1"></i> Start: <span id="detail-start"></span></p>
+                 </div>
+                 
+                 <div class="card-body px-4 pb-0 border-top">
+                    <div id="d-rot-alert-box" class="rot-alert" style="display:none;">
+                       <div class="d-flex align-items-center">
+                          <i class="fas fa-user-clock me-2 fs-5"></i>
+                          <span class="fw-bold fs-6 ms-1" id="d-rot-title">-</span>
+                       </div>
+                    </div>
+
+                    <ul class="list-group list-group-flush rounded-3 mt-3">
+                       <li class="list-group-item d-flex justify-content-between py-3 px-0 border-light"><span class="text-muted fw-bold small text-uppercase">Dział:</span><span class="fw-bold text-navy" id="d-dzial">-</span></li>
+                       <li class="list-group-item d-flex justify-content-between py-3 px-0 border-light"><span class="text-muted fw-bold small text-uppercase">Brygada:</span><span class="fw-bold text-navy" id="d-brygada">-</span></li>
+                       <li class="list-group-item d-flex justify-content-between py-3 px-0 border-light"><span class="text-muted fw-bold small text-uppercase">Telefon:</span><span class="fw-bold text-navy" id="d-tel">-</span></li>
+                    </ul>
+
+                    <div class="mt-4 bg-light p-3 rounded border">
+                       <label class="small fw-bold text-muted mb-2"><i class="far fa-calendar-times me-2"></i>Szybka zmiana daty rotacji</label>
+                       <div class="input-group mb-2">
+                          <input type="date" id="d-input-rotacja" class="form-control bg-white text-navy fw-bold" title="Zostaw puste, by usunąć rotację. Dwuklik: Kalendarz" ondblclick="try{this.showPicker()}catch(e){}">
+                          <button class="btn btn-primary fw-bold" onclick="zapiszRotacjeZPanelu()">Zapisz</button>
+                       </div>
+                    </div>
+
+                    <div id="d-karta-zwrocona-box" class="mt-3 bg-white p-3 rounded border border-danger border-opacity-25" style="display:none;">
+                       <div class="form-check m-0 d-flex align-items-center justify-content-between">
+                           <div>
+                               <input class="form-check-input border-danger" type="checkbox" id="d-karta-zwrocona" onchange="oznaczKarteJakoZwrocona()">
+                               <label class="form-check-label fw-bold text-danger small ms-1" for="d-karta-zwrocona">
+                                   Karta oddana fizycznie
+                               </label>
+                           </div>
+                       </div>
+                    </div>
+                 </div>
+
+                 <div class="card-footer bg-white border-0 pb-4 px-4 pt-4 mt-2">
+                    <button id="btn-edit-prac" class="btn w-100 shadow py-3 text-white fw-bold" style="background-color: var(--rd-navy);" onclick="otworzEdycje()">EDYTUJ DANE PRACOWNIKA</button>
+                 </div>
+              </div>
+           </div>
+        </div>
+
+        <div class="col-xl-8 col-lg-7">
+           <div class="filter-bar mb-2">
+              <div class="row g-2">
+                 <div class="col-md-3">
+                     <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0"><i class="fas fa-search text-muted"></i></span>
+                        <input type="text" id="szukajEwidencja" class="form-control border-start-0 ps-0 bg-light" placeholder="Szukaj (Nazwisko / ID)..." onkeyup="filtrujEwidencjeMiesiaca()">
+                     </div>
+                 </div>
+                 <div class="col-md-3">
+                     <select id="filterDzialEwi" class="form-select bg-light" onchange="filtrujEwidencjeMiesiaca()"><option value="">Wszystkie Działy</option></select>
+                 </div>
+                 <div class="col-md-2">
+                     <select id="filterBrygadaEwi" class="form-select bg-light" onchange="filtrujEwidencjeMiesiaca()"><option value="">Wszystkie Brygady</option></select>
+                 </div>
+                 <div class="col-md-2">
+                     <select id="filterStatusEwi" class="form-select bg-light" onchange="filtrujEwidencjeMiesiaca()">
+                        <option value="">Wszystkie Statusy</option>
+                        <option value="Aktywny">Aktywny</option>
+                        <option value="Rotuje">Rotuje</option>
+                        <option value="Zakończono">Zakończono</option>
+                     </select>
+                 </div>
+                 <div class="col-md-2">
+                     <button class="btn w-100 text-white fw-bold shadow-sm" style="background-color: var(--rd-navy);" onclick="otworzDodawanie()">
+                        <i class="fas fa-user-plus me-1"></i>Dodaj
+                     </button>
+                 </div>
+              </div>
+           </div>
+           
+           <div class="d-flex justify-content-end mb-2 px-2">
+                <span class="fw-bold text-navy small">Wyświetlono rekordów: <span id="count-lista" class="text-primary fs-6">0</span></span>
+           </div>
+
+           <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+              <div class="card-body p-0 table-container-scroll">
+                 <table class="table align-middle mb-0">
+                    <thead class="bg-light sticky-top">
+                       <tr>
+                          <th class="ps-4 sortable" onclick="sortEwi('imie')">Pracownik i EMP ID <i class="fas fa-sort text-muted ms-1"></i></th>
+                          <th class="sortable" onclick="sortEwi('dzial')">Dział <i class="fas fa-sort text-muted ms-1"></i></th>
+                          <th class="sortable" onclick="sortEwi('brygada')">Brygada <i class="fas fa-sort text-muted ms-1"></i></th>
+                          <th class="text-end pe-4 sortable" onclick="sortEwi('status')">Status <i class="fas fa-sort text-muted ms-1"></i></th>
+                       </tr>
+                    </thead>
+                    <tbody id="tabela-miesiac-cialo"></tbody>
+                 </table>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="panel-karty" style="display: none;">
+      <div class="row g-4 mb-4 justify-content-center">
+        <div class="col-md-4"><div class="score-card"><div class="score-title">Aktywne (Bez rotacji)</div><div class="score-val" id="k-wydane">-</div><i class="fas fa-user-check score-icon"></i></div></div>
+        <div class="col-md-4"><div class="score-card"><div class="score-title">Do rozliczenia (Rotują)</div><div class="score-val" id="k-rozliczenie">-</div><i class="fas fa-exclamation-triangle score-icon"></i></div></div>
+        <div class="col-md-4"><div class="score-card"><div class="score-title">Karty Wolne (W biurze)</div><div class="score-val" id="k-oddane">-</div><i class="fas fa-id-card score-icon"></i></div></div>
+      </div>
+
+      <div class="row">
+         <div class="col-xl-9">
+             <div class="filter-bar mb-2">
+                <div class="row g-3">
+                   <div class="col-md-6">
+                      <div class="input-group">
+                         <span class="input-group-text bg-light border-end-0"><i class="fas fa-search text-muted"></i></span>
+                         <input type="text" id="szukajKarty" class="form-control border-start-0 ps-0 bg-light" placeholder="Szukaj pracownika, nr wewnętrznego lub karty..." onkeyup="filtrujKarty()">
+                      </div>
+                   </div>
+                   <div class="col-md-3">
+                      <select id="filterStatusKarty" class="form-select bg-light" onchange="filtrujKarty()">
+                         <option value="wydana" selected>Aktywne (Tylko obecni)</option>
+                         <option value="oddana">Nieaktywne (Zwrócone)</option>
+                         <option value="">Wszystkie w systemie</option>
+                      </select>
+                   </div>
+                   <div class="col-md-3 text-end">
+                      <button class="btn w-100 text-white fw-bold shadow-sm" style="background-color: var(--rd-navy);" onclick="otworzModalaKarty(null)">
+                         <i class="fas fa-plus-circle me-2"></i>Przypisz kartę
+                      </button>
+                   </div>
+                </div>
+             </div>
+
+             <div class="d-flex justify-content-end mb-2 px-2 mt-2">
+                <span class="fw-bold text-navy small">Wyświetlono rekordów: <span id="count-karty" class="text-primary fs-6">0</span></span>
+             </div>
+
+             <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+                <div class="card-body p-0 table-container-scroll">
+                   <table class="table align-middle mb-0 table-hover">
+                      <thead class="bg-light sticky-top">
+                         <tr>
+                            <th class="ps-4 sortable" onclick="sortKar('kadrowy')">Nr Wewnętrzny <i class="fas fa-sort text-muted ms-1"></i></th>
+                            <th class="sortable" onclick="sortKar('imie')">Imię i Nazwisko <i class="fas fa-sort text-muted ms-1"></i></th>
+                            <th class="sortable" onclick="sortKar('nrKarty')">Numer Karty <i class="fas fa-sort text-muted ms-1"></i></th>
+                            <th class="sortable" onclick="sortKar('dzial')">Dział <i class="fas fa-sort text-muted ms-1"></i></th>
+                            <th class="sortable" onclick="sortKar('status')">Status <i class="fas fa-sort text-muted ms-1"></i></th>
+                            <th class="text-end pe-4">Opcje</th>
+                         </tr>
+                      </thead>
+                      <tbody id="tabela-karty-cialo"></tbody>
+                   </table>
+                </div>
+             </div>
+         </div>
+         
+         <div class="col-xl-3">
+             <div class="card border-0 shadow-sm rounded-4 mb-4">
+                 <div class="card-header bg-white border-bottom border-light pt-4 pb-3 d-flex justify-content-between align-items-center">
+                     <h6 class="fw-bold text-navy m-0"><i class="fas fa-box-open me-2 text-primary"></i>Karty w biurze (<span id="liczba-wolnych-kart">0</span>)</h6>
+                     <button class="btn btn-sm btn-outline-secondary" onclick="zarzadzajKartamiWBiurze()" title="Zarządzaj kartami">
+                         <i class="fas fa-cog"></i>
+                     </button>
+                 </div>
+                 <div class="card-body bg-light">
+                     <div id="lista-wolnych-kart" class="d-flex flex-wrap gap-2"></div>
+                 </div>
+             </div>
+
+             <div class="card border-0 shadow-sm rounded-4 border border-danger border-opacity-25">
+                 <div class="card-header bg-white border-bottom border-light pt-4 pb-3">
+                     <h6 class="fw-bold text-danger m-0"><i class="fas fa-exclamation-circle me-2"></i>Osoby do rozliczenia</h6>
+                 </div>
+                 <div class="card-body bg-light">
+                     <small class="text-muted d-block mb-3" style="font-size:0.75rem;">Osoby z przypisaną datą rotacji i wciąż aktywną kartą.</small>
+                     <div id="lista-do-rozliczenia" class="d-flex flex-column gap-2"></div>
+                 </div>
+             </div>
+         </div>
+      </div>
+    </div>
+
+    <div id="panel-umowy" style="display: none;">
+        <div class="row mb-4 g-3">
+           <div class="col-lg-4">
+              <div class="upload-zone h-100 d-flex flex-column justify-content-center p-3" style="border-left-color: var(--rd-light-blue) !important; border-left-width: 4px;">
+                 <div class="d-flex align-items-center mb-3">
+                    <div class="rounded-circle p-2 me-3" style="background-color: #e0f2fe; color: var(--rd-light-blue);"><i class="fas fa-file-csv fs-5"></i></div>
+                    <div>
+                       <h6 class="fw-bold m-0" style="color: var(--rd-navy);">Import Raportu</h6>
+                       <small class="text-muted" style="font-size: 0.75rem;">Specyfikacja z absencją</small>
+                    </div>
+                 </div>
+                 <div class="input-group input-group-sm">
+                    <input type="file" id="raportFile" class="form-control border-secondary" accept=".csv, .xls, .xlsx">
+                    <button class="btn fw-bold text-white shadow-sm" style="background-color: var(--rd-light-blue);" onclick="uruchomAktualizacjeRaportu()">Wgraj</button>
+                 </div>
+              </div>
+           </div>
+
+           <div class="col-lg-4">
+              <div class="upload-zone h-100 d-flex flex-column justify-content-center p-3" style="border-left-color: var(--rd-light-blue) !important; border-left-width: 4px;">
+                 <div class="d-flex align-items-center mb-3">
+                     <div class="rounded-circle p-2 me-3" style="background-color: #e0f2fe; color: var(--rd-light-blue);"><i class="fas fa-sync-alt fs-5"></i></div>
+                    <div>
+                       <h6 class="fw-bold m-0" style="color: var(--rd-navy);">Aktualizuj System</h6>
+                       <small class="text-muted" style="font-size: 0.75rem;">Przelicza umowy, daty, ID</small>
+                    </div>
+                 </div>
+                 <button class="btn btn-outline-primary fw-bold shadow-sm w-100 btn-sm py-2" onclick="uruchomSynchronizacje()"><i class="fas fa-tools me-1"></i>Synchronizuj Daty i ID</button>
+              </div>
+           </div>
+
+           <div class="col-lg-4">
+              <div class="upload-zone h-100 d-flex flex-column justify-content-center p-3" style="border-left-color: var(--rd-blue) !important; border-left-width: 4px;">
+                 <div class="d-flex align-items-center justify-content-between mb-3">
+                    <div class="d-flex align-items-center">
+                       <div class="rounded-circle p-2 me-3" style="background-color: #e0f2fe; color: var(--rd-light-blue);"><i class="fas fa-magic fs-5"></i></div>
+                       <div>
+                          <h6 class="fw-bold m-0" style="color: var(--rd-navy);">Tydzień Umów</h6>
+                          <small class="text-muted" style="font-size: 0.75rem;">Wybrane umowy: <b id="licznik-umow" style="color: var(--rd-blue);">0</b></small>
+                       </div>
+                    </div>
+                 </div>
+                 
+                 <div class="d-flex gap-2 mb-2">
+                     <button class="btn btn-outline-primary fw-bold shadow-sm btn-sm w-50" onclick="pokazKoszyk()"><i class="fas fa-shopping-cart me-1"></i>Koszyk</button>
+                     <button class="btn fw-bold shadow-sm btn-sm w-50 text-white" style="background-color: var(--rd-blue);" onclick="uruchomWystawianie()"><i class="fas fa-file-signature me-1"></i>Nowy Tydzień</button>
+                 </div>
+                 <button class="btn btn-outline-secondary fw-bold shadow-sm btn-sm w-100" style="font-size: 0.75rem;" onclick="uruchomDodawanieDoAktualnego()"><i class="fas fa-calendar-plus me-1"></i>Dodaj do trwającego tygodnia</button>
+              </div>
+           </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+          <div class="col-md-4"><div class="score-card"><div class="score-title">Wszyscy (Baza GŁÓWNA)</div><div class="score-val" id="stat-wszyscy">-</div><i class="fas fa-users score-icon"></i></div></div>
+          <div class="col-md-4"><div class="score-card"><div class="score-title">W Onboardingu</div><div class="score-val" id="stat-onboard">-</div><i class="fas fa-user-graduate score-icon"></i></div></div>
+          <div class="col-md-4"><div class="score-card"><div class="score-title">Wdrożeni</div><div class="score-val" id="stat-done">-</div><i class="fas fa-user-check score-icon"></i></div></div>
+        </div>
+
+        <div class="filter-bar mb-2">
+          <div class="row g-3">
+            <div class="col-md-3">
+              <div class="input-group">
+                 <span class="input-group-text bg-light border-end-0"><i class="fas fa-search text-muted"></i></span>
+                 <input type="text" id="filterImie" class="form-control border-start-0 ps-0 bg-light" placeholder="Wyszukaj pracownika..." onkeyup="filtrujBaze()">
+              </div>
+            </div>
+            <div class="col-md-2">
+              <select id="filterStatus" class="form-select bg-light" onchange="filtrujBaze()"><option value="">Status Umowy (Wszystkie)</option><option value="wystawić">Wystawić</option><option value="aktualna">Aktualna</option></select>
+            </div>
+            <div class="col-md-2">
+              <select id="filterAktualna" class="form-select bg-light" onchange="filtrujBaze()"><option value="">Aktualna Umowa (Wszystkie)</option><option value="tygodniowa">Tygodniowa</option><option value="2 tygodniowa">2 Tygodniowa</option><option value="miesięczna">Miesięczna</option></select>
+            </div>
+            <div class="col-md-3">
+              <select id="filterOnboarding" class="form-select bg-light" onchange="filtrujBaze()"><option value="">Onboarding (Wszystkie)</option><option value="przed spotkaniem">Przed spotkaniem</option><option value="po 1 spotkaniu">Po 1 spotkaniu</option><option value="po 2 spotkaniu">Po 2 spotkaniu</option><option value="nie dotyczy">Nie dotyczy</option></select>
+            </div>
+            <div class="col-md-2">
+              <select id="sortData" class="form-select bg-light" onchange="filtrujBaze()"><option value="asc">Data Końca ⬆️</option><option value="desc">Data Końca ⬇️</option></select>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end mb-2 px-2 mt-2">
+            <span class="fw-bold text-navy small">Wyświetlono rekordów: <span id="count-umowy" class="text-primary fs-6">0</span></span>
+        </div>
+
+        <div class="table-container p-0">
+          <div class="table-responsive">
+            <table class="table mb-0" style="border-collapse: collapse;">
+              <thead class="bg-light">
+                <tr>
+                  <th class="ps-4 sortable border-top-0 py-3" onclick="sortUmo('imie')">Pracownik <i class="fas fa-sort text-muted ms-1"></i></th>
+                  <th class="sortable border-top-0 py-3" onclick="sortUmo('aktualnaUmowa')">Aktualna Umowa <i class="fas fa-sort text-muted ms-1"></i></th>
+                  <th class="sortable border-top-0 py-3" onclick="sortUmo('onboarding')">Onboarding <i class="fas fa-sort text-muted ms-1"></i></th>
+                  <th class="sortable border-top-0 py-3" onclick="sortUmo('okresUmowy')">Okres Trwania <i class="fas fa-sort text-muted ms-1"></i></th>
+                  <th class="text-center sortable border-top-0 py-3" onclick="sortUmo('statusAkcji')">Status Umowy <i class="fas fa-sort text-muted ms-1"></i></th>
+                  <th class="text-end pe-4 border-top-0 py-3">Detale</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-cialo"></tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+   
+    <div id="panel-raporty" style="display: none;">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100 bg-white">
+                   <div class="card-header bg-white border-bottom-0 pt-4 pb-0 d-flex justify-content-between align-items-center">
+                       <h6 class="fw-bold text-navy m-0" title="Kliknij w wykres aby zobaczyć osoby"><i class="fas fa-file-contract me-2 text-primary"></i>Umowy</h6>
+                       <select id="filtUmowy" class="form-select form-select-sm w-auto shadow-sm border-0 bg-light fw-bold text-muted" onchange="generujRaporty()"><option value="">Wszystkie działy</option></select>
+                   </div>
+                   <div class="card-body p-4 pt-2">
+                       <div class="chart-container">
+                           <canvas id="wykresUmowy"></canvas>
+                       </div>
+                   </div>
+                </div>
+            </div>
+           
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100 bg-white">
+                   <div class="card-header bg-white border-bottom-0 pt-4 pb-0 d-flex justify-content-between align-items-center">
+                       <h6 class="fw-bold text-navy m-0" title="Kliknij w wykres aby zobaczyć osoby"><i class="fas fa-user-graduate me-2 text-primary"></i>Onboarding</h6>
+                       <select id="filtOnboarding" class="form-select form-select-sm w-auto shadow-sm border-0 bg-light fw-bold text-muted" onchange="generujRaporty()"><option value="">Wszystkie działy</option></select>
+                   </div>
+                   <div class="card-body p-4 pt-2">
+                       <div class="chart-container">
+                           <canvas id="wykresOnboarding"></canvas>
+                       </div>
+                   </div>
+                </div>
+            </div>
+           
+            <div class="col-md-12 col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100 bg-white">
+                   <div class="card-header bg-white border-bottom-0 pt-4 pb-0 d-flex flex-wrap justify-content-between align-items-center gap-2">
+                       <h6 class="fw-bold text-navy m-0" title="Kliknij w wykres aby zobaczyć osoby"><i class="fas fa-sitemap me-2 text-primary"></i>Działy</h6>
+                       <select id="filtDzialy" class="form-select form-select-sm w-auto shadow-sm border-0 bg-light fw-bold text-muted" onchange="generujRaporty()">
+                           <option value="Obecni" selected>Tylko obecni na zakładzie</option>
+                           <option value="Aktywny">Tylko stali (bez rotacji)</option>
+                           <option value="Rotuje">Tylko rotujący (zaplanowane)</option>
+                           <option value="Zakończono">Tylko zakończone umowy</option>
+                           <option value="Wszyscy">Wszyscy z ewidencji</option>
+                       </select>
+                   </div>
+                   <div class="card-body p-4 pt-2">
+                       <div class="chart-container">
+                           <canvas id="wykresDzialy"></canvas>
+                       </div>
+                   </div>
+                </div>
+            </div>
+           
+            <div class="col-md-12">
+                <div class="card border-0 shadow-sm rounded-4 bg-white mb-5">
+                   <div class="card-header bg-white border-bottom-0 pt-4 pb-0 d-flex flex-wrap justify-content-between align-items-center gap-3">
+                       <h6 class="fw-bold text-navy m-0"><i class="fas fa-thermometer-half me-2 text-danger"></i>Raport Absencji (L4 i NN) z bazy Umów</h6>
+                       <div class="d-flex flex-wrap gap-2">
+                           <select id="filtAbsDzial" class="form-select form-select-sm w-auto shadow-sm border-0 bg-light fw-bold text-navy" onchange="document.getElementById('filtAbsPracownik').value='ALL'; generujRaporty();">
+                               <option value="ALL">Wszystkie Działy</option>
+                           </select>
+                           <select id="filtAbsPracownik" class="form-select form-select-sm w-auto shadow-sm border-0 bg-light fw-bold text-navy" onchange="document.getElementById('filtAbsDzial').value='ALL'; generujRaporty();">
+                               <option value="ALL">Wszyscy Pracownicy</option>
+                           </select>
+                       </div>
+                   </div>
+                   <div class="card-body p-4 pt-2">
+                       <div style="position: relative; height: 350px; width: 100%;">
+                           <canvas id="wykresAbsencje"></canvas>
+                       </div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- MODAL KARTY -->
+  <div class="modal fade" id="modalKarta" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header text-white" style="background-color: var(--rd-navy);">
+          <h5 class="modal-title fw-bold" id="modalKartaTytul"><i class="fas fa-id-card me-2"></i>Karta Pracownicza</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <input type="hidden" id="k-stare-imie">
+          <div class="mb-3">
+             <label class="form-label fw-bold text-muted small text-uppercase">Nr Wewnętrzny (Kadrowy)</label>
+             <input type="number" class="form-control fw-bold text-navy" id="k-kadrowy" required placeholder="np. 5810">
+          </div>
+          <div class="mb-3">
+             <label class="form-label fw-bold text-muted small text-uppercase">Imię i Nazwisko</label>
+             <input type="text" class="form-control fw-bold text-navy" id="k-imie" required placeholder="Wpisz imię i nazwisko...">
+          </div>
+          <div class="mb-3">
+             <label class="form-label fw-bold text-muted small text-uppercase">Numer Karty (Odbicie)</label>
+             <input type="number" class="form-control fw-bold text-navy" id="k-nrKarty" required placeholder="np. 1234789">
+          </div>
+          <div class="mb-3">
+             <label class="form-label fw-bold text-muted small text-uppercase">Dział</label>
+             <input type="text" class="form-control fw-bold text-navy" id="k-dzial" required placeholder="np. Produkcja, Magazyn, Biuro">
+          </div>
+          <div class="mb-4">
+             <label class="form-label fw-bold text-muted small text-uppercase">Status Karty</label>
+             <select id="k-status" class="form-select fw-bold text-navy">
+                 <option value="Wydana">Aktywowana - Użytkowana</option>
+                 <option value="Oddana">Dezaktywowana - Zwrócona</option>
+             </select>
+          </div>
+          <button class="btn w-100 py-3 fw-bold text-white shadow-sm" style="background-color: var(--rd-light-blue);" onclick="zapiszKarte()">Zapisz Kartę</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="contract-mock.js"></script>
+  <script src="test_script_0.js"></script>
+  <script>
+    if (typeof initUmowy === 'function') {
+      window.onload = initUmowy;
+    }
+  </script>
+</body>
+</html>

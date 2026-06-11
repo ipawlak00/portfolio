@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <base target="_top">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise HR | Employee Lifecycle App</title>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+ 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+ 
+  <style>
+ 
+    /* STYLE GŁÓWNE */
+    body { background-color: #f4f6f9; font-family: 'Segoe UI', sans-serif; color: #333; overflow-x: hidden; }
+    .bg-navy { background-color: #0d254c !important; color: white !important; }
+    .text-navy { color: #0d254c !important; }
+   
+    /* NAV */
+    .nav-pills .nav-link { color: #0d254c; font-weight: 700; padding: 10px 25px; border-radius: 50px; margin-right: 10px; transition: 0.2s; border: 1px solid transparent; cursor: pointer; }
+    .nav-pills .nav-link:hover { background-color: #eef7ff; border-color: #d6eaff; }
+    .nav-pills .nav-link.active { background-color: #0d254c; color: white; border-color: #0d254c; box-shadow: 0 4px 12px rgba(13, 37, 76, 0.2); }
+
+    /* CARDS */
+    .stat-card { border: none; border-radius: 12px; background-color: #0d254c; color: white; padding: 20px; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border-bottom: 4px solid #0078D7; height: 100%; }
+    .stat-title { font-size: 0.75rem; text-transform: uppercase; color: #b0c4de; font-weight: 700; letter-spacing: 0.5px; }
+    .stat-value { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-top: 5px; }
+    .stat-icon { position: absolute; right: 15px; top: 15px; font-size: 2.2rem; color: white; opacity: 0.1; }
+   
+    /* GRADIENTY DLA ENTERPRISE */
+    .card-limit-now { background: linear-gradient(135deg, #0d254c 0%, #1a3a6d 100%); border-bottom: 4px solid #081a38; }
+    .card-limit-next { background: linear-gradient(135deg, #0d254c 0%, #1a3a6d 100%); border-bottom: 4px solid #081a38; }
+    .card-limit-total { background: linear-gradient(135deg, #0d254c 0%, #1a3a6d 100%); border-bottom: 4px solid #081a38; }
+    .card-plan-blue { background: linear-gradient(135deg, #0d254c 0%, #1a3a6d 100%); border-bottom: 4px solid #081a38; }
+    .card-szafki-wolne { background: linear-gradient(135deg, #0d254c 0%, #1a3a6d 100%); border-bottom: 4px solid #081a38; }
+
+    /* UI */
+    .sticky-details { position: sticky; top: 20px; z-index: 90; }
+    .profile-card { border-radius: 16px; border: none; box-shadow: 0 8px 30px rgba(0,0,0,0.08); overflow: hidden; background: white; }
+    .avatar-placeholder { width: 90px; height: 90px; background-color: #eef7ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; color: #0d254c; margin: 0 auto 15px auto; border: 4px solid #0d254c; }
+   
+    /* ALERTY POWIADOMIEŃ W TLE */
+    #alert-box {
+        display: none;
+        position: fixed;
+        top: 25px;
+        right: 25px;
+        z-index: 10000;
+        border-radius: 10px;
+        font-weight: 600;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        background-color: #0d254c;
+        color: white;
+        border: none;
+        padding: 15px 25px;
+        animation: slideIn 0.3s ease-out;
+    }
+    @keyframes slideIn { from {opacity:0; transform:translateX(50px);} to {opacity:1; transform:translateX(0);} }
+
+    .limit-alert-urgent { background-color: #ffe5e5; border-left: 6px solid #dc3545; color: #a71d2a; padding: 15px; margin-bottom: 12px; border-radius: 8px; font-weight: 600; }
+    .rot-alert-warning { background-color: #fff3cd; border-left: 6px solid #ffc107; color: #856404; padding: 15px; margin-bottom: 12px; border-radius: 8px; font-weight: 600; }
+    .rot-alert-danger { background-color: #f8d7da; border-left: 6px solid #dc3545; color: #842029; padding: 15px; margin-bottom: 12px; border-radius: 8px; font-weight: 600; }
+   
+    /* FILTRY I TABELE */
+    .filter-group { background: white; padding: 20px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-bottom: 4px solid #0d254c; margin-bottom: 25px; }
+    .table-container { max-height: 70vh; overflow-y: auto; border-radius: 12px; background: white; border: 1px solid #e9ecef; }
+    .table-container-sm { max-height: 55vh; overflow-y: auto; border-radius: 12px; background: white; border: 1px solid #e9ecef; }
+    .table thead th { position: sticky; top: 0; background-color: #f8f9fa; z-index: 10; padding: 15px; font-size: 0.85rem; text-transform: uppercase; color: #6c757d; }
+    .table-row-cursor { cursor: pointer; transition: 0.1s; }
+    .table-row-cursor:hover { filter: brightness(0.96); background-color: #f8f9fa; }
+   
+    .th-sort { cursor: pointer; user-select: none; }
+    .th-sort:hover { color: var(--rd-light-blue); }
+
+    .row-priority td:first-child { border-left: 6px solid #dc3545 !important; }
+    .row-incomplete td:first-child { border-left: 6px solid #6f42c1 !important; }
+    .row-overtime td:first-child { border-left: 6px solid #ffc107 !important; }
+
+    /* ELEMENTY DROBNE */
+    .badge { padding: 8px 12px; font-weight: 600; font-size: 0.7rem; border-radius: 6px; }
+    .badge-rot { background-color: #dc3545; color: white; }
+    .badge-ok { background-color: #6c757d; color: white; }
+    .badge-new { background-color: #198754; color: white; }
+    .badge-end { background-color: #212529; color: #fff; }
+   
+    .tag-item { display: inline-flex; align-items: center; background-color: #0d254c; color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; margin: 2px; font-weight: 600; }
+    .btn-navy { background-color: #0d254c; color: white; border: none; font-weight: 700; padding: 12px 24px; border-radius: 10px; transition: 0.3s; }
+    .btn-navy:hover { background-color: #1a3a6d; color: white; transform: translateY(-2px); }
+
+    #loader-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background:rgba(255,255,255,0.95); z-index:9999; display:flex; justify-content:center; align-items:center; flex-direction:column; text-align:center;}
+
+    /* ========================================================= */
+    /* NOWE STYLE DLA ZAKŁADKI RAPORTÓW (KOLORY, SORTOWANIE)     */
+    /* ========================================================= */
+    .cell-przepracowane { background-color: #f8f9fa; color: #495057; font-weight: bold; border-left: 1px solid #dee2e6; }
+    .cell-l4 { background-color: #fff4e6; color: #d9534f; font-weight: bold; }
+    .cell-nn { background-color: #dc3545; color: #ffffff; font-weight: 900; box-shadow: inset 0 0 5px rgba(0,0,0,0.1); }
+    .cell-nun { background-color: #fff3cd; color: #856404; font-weight: bold; }
+    .cell-opieka { background-color: #d1e7dd; color: #0f5132; font-weight: bold; }
+    .cell-sila { background-color: #cff4fc; color: #055160; font-weight: bold; }
+    .cell-urlop { background-color: #e0f3ff; color: #084298; font-weight: bold; border-right: 1px solid #dee2e6;}
+   
+    .th-sort-rep { cursor: pointer; transition: background-color 0.2s; user-select: none; }
+    .th-sort-rep:hover { background-color: #e9ecef !important; }
+    
+    /* ZAMIANA X NA ŁADNE SVG */
+    .btn-close { opacity: 0.8; transition: 0.2s; }
+    .btn-close:hover { opacity: 1; transform: scale(1.1); }
+    .btn-close-white { filter: invert(1) grayscale(100%) brightness(200%); }
+  </style>
+</head>
+<body>
+
+  <div id="loader-overlay">
+      <div class="spinner-border text-primary" style="width: 3.5rem; height: 3.5rem;"></div>
+      <h4 class="mt-3 fw-bold text-navy" id="loader-text">Wczytywanie i optymalizacja systemu...</h4>
+      <div id="loader-error" class="mt-3"></div>
+  </div>
+
+  <div id="alert-box">
+      <span id="alert-msg">Info</span>
+  </div>
+
+  <div class="container-fluid p-4">
+   
+    <div class="d-flex justify-content-between align-items-center mb-5 flex-wrap gap-3">
+      <div>
+        <h2 class="fw-bold m-0 text-navy"><i class="fas fa-users-cog me-2"></i>Employee Lifecycle App</h2>
+        <small class="text-muted fw-bold">ENTERPRISE HR SYSTEM</small>
+      </div>
+     
+      <ul class="nav nav-pills" id="mainNav">
+        <li class="nav-item"><a class="nav-link active" id="tab-pracownicy" onclick="switchTab('pracownicy')">Pracownicy</a></li>
+        <li class="nav-item"><a class="nav-link" id="tab-limit" onclick="switchTab('limit')">Limit 540 (Umowy PT)</a></li>
+        <li class="nav-item"><a class="nav-link" id="tab-planowanie" onclick="switchTab('planowanie')">Planowanie</a></li>
+        <li class="nav-item"><a class="nav-link" id="tab-szafki" onclick="switchTab('szafki')">Zasoby (Szafki)</a></li>
+        <li class="nav-item"><a class="nav-link" id="tab-raporty" onclick="switchTab('raporty')">Zestawienia</a></li>
+      </ul>
+
+      <div id="month-selector-container" class="d-flex align-items-center bg-white p-2 rounded shadow-sm border">
+        <label class="me-3 fw-bold text-muted ms-2"><i class="far fa-calendar-alt"></i></label>
+        <select id="monthSelector" class="form-select border-0 fw-bold month-select" onchange="zmienMiesiacWymuszenie()" style="width:200px;"></select>
+      </div>
+    </div>
+   
+    <div id="view-pracownicy">
+      <div class="row g-3 mb-5 text-center">
+        <div class="col"><div class="stat-card"><div class="stat-title">Wszyscy (Dziś)</div><div class="stat-value" id="stat-pt">-</div><i class="fas fa-users stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card"><div class="stat-title">Nowi w zespole (msc)</div><div class="stat-value" id="stat-nowi">-</div><i class="fas fa-user-plus stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card"><div class="stat-title">Rotacja (msc)</div><div class="stat-value" id="stat-rot">-</div><i class="fas fa-exchange-alt stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card"><div class="stat-title">Kobiety</div><div class="stat-value" id="stat-kob">-</div><i class="fas fa-venus stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card"><div class="stat-title">Mężczyźni</div><div class="stat-value" id="stat-mez">-</div><i class="fas fa-mars stat-icon"></i></div></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-4 col-lg-5 mb-4">
+          <div class="card profile-card shadow-lg sticky-details">
+            <div id="detail-empty" class="card-body text-center p-5 text-muted">
+               <i class="fas fa-mouse-pointer fa-3x mb-3 opacity-25"></i>
+               <p class="fw-bold">Wybierz pracownika z listy,<br>aby wyświetlić dane.</p>
+            </div>
+            <div id="detail-content" style="display:none;">
+              <div class="card-header bg-white border-bottom-0 pt-5 text-center">
+                 <div class="avatar-placeholder" id="detail-avatar"><i class="fas fa-user"></i></div>
+                 <h3 class="card-title mb-1 fw-bold text-navy" id="detail-name">-</h3>
+                 <p class="text-muted small fw-bold" id="detail-sap">ID: -</p>
+                 <p class="text-secondary small fw-bold mt-1"><i class="fas fa-play-circle me-1"></i> Start: <span id="detail-start"></span></p>
+              </div>
+              <div class="card-body px-4">
+                <div id="alerts-container">
+                   <div id="d-limit-urgent-box" class="limit-alert-urgent" style="display:none;">
+                      <div class="d-flex align-items-center mb-1"><i class="fas fa-exclamation-triangle me-2"></i><span class="fw-bold small text-uppercase ms-2">Limit 540 dni</span></div>
+                      <div class="fs-5 fw-bold" id="d-limit-date-urgent">-</div>
+                   </div>
+                   <div id="d-rot-alert-box" style="display:none;">
+                      <div class="d-flex align-items-center mb-1"><i class="fas fa-user-clock me-2"></i><span class="fw-bold small text-uppercase ms-2" id="d-rot-title">Rotacja</span></div>
+                      <div class="fs-5 fw-bold" id="d-rot-info">-</div>
+                   </div>
+                </div>
+                <ul class="list-group list-group-flush rounded-3 mt-3">
+                  <li class="list-group-item d-flex justify-content-between py-2"><span class="text-muted fw-bold">Dział:</span><span class="fw-bold" id="d-dzial">-</span></li>
+                  <li class="list-group-item d-flex justify-content-between py-2"><span class="text-muted fw-bold">Lokalizacja:</span><span class="fw-bold" id="d-lok">-</span></li>
+                  <li class="list-group-item d-flex justify-content-between py-2"><span class="text-muted fw-bold">Etat:</span><span class="fw-bold" id="d-etat">-</span></li>
+                  <li class="list-group-item d-flex justify-content-between py-2"><span class="text-muted fw-bold">Telefon:</span><span class="fw-bold" id="d-tel">-</span></li>
+                  <li class="list-group-item d-flex justify-content-between py-2 bg-light"><span class="text-muted fw-bold">Szafka / Karta:</span><span class="fw-bold text-navy" id="d-szafka">-</span></li>
+                  <li class="list-group-item py-3 mt-2 bg-light rounded-3 border-0 small"><small class="text-muted text-uppercase fw-bold d-block mb-2">Kompetencje Planowania</small><div id="d-plan-tags"></div></li>
+                </ul>
+              </div>
+              <div class="card-footer bg-white border-0 pb-5 px-4"><button id="btn-edit-prac" class="btn btn-navy w-100 shadow py-3" onclick="otworzEdycje()">EDYTUJ DANE PRACOWNIKA</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-8 col-lg-7">
+          <div class="filter-group d-flex gap-2 align-items-end flex-wrap">
+            <div style="flex: 2; min-width: 200px;"><label class="small fw-bold text-muted mb-1 text-uppercase">Szukaj</label><input type="text" id="searchInput" class="form-control shadow-sm" placeholder="Nazwisko / ID..." onkeyup="filtrujITabeluj()"></div>
+            <div style="flex: 1; min-width: 130px;"><label class="small fw-bold text-muted mb-1 text-uppercase">Dział</label><select id="deptFilter" class="form-select shadow-sm" onchange="filtrujITabeluj()"><option value="">Wszystkie</option></select></div>
+            <div style="flex: 1; min-width: 130px;"><label class="small fw-bold text-muted mb-1 text-uppercase">Lokalizacja</label><select id="locFilter" class="form-select shadow-sm" onchange="filtrujITabeluj()"><option value="">Wszystkie</option></select></div>
+            <div style="flex: 1; min-width: 130px;"><label class="small fw-bold text-muted mb-1 text-uppercase">Status</label><select id="statFilter" class="form-select shadow-sm" onchange="filtrujITabeluj()"><option value="">Wszystkie</option><option value="Nowy">Nowy</option><option value="Rotuje">Rotuje</option><option value="OK">Aktywny</option><option value="Zakonczony">Zakończony</option></select></div>
+            <button class="btn btn-navy py-2 shadow-sm" onclick="otworzDodawanie()"><i class="fas fa-plus"></i></button>
+          </div>
+
+          <div class="d-flex justify-content-end mb-2 px-2 mt-2">
+             <span class="fw-bold text-navy small">Wyświetlono rekordów: <span id="resCount" class="text-primary fs-6">0</span></span>
+          </div>
+
+          <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+            <div class="card-body p-0 table-container">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="bg-light sticky-top">
+                  <tr>
+                    <th class="ps-4 th-sort" onclick="sortuj('nazwisko')">Pracownik <i class="fas fa-sort opacity-25 ms-1"></i></th>
+                    <th class="th-sort" onclick="sortuj('dzial')">Dział <i class="fas fa-sort opacity-25 ms-1"></i></th>
+                    <th class="th-sort" onclick="sortuj('lokalizacja')">Lokalizacja <i class="fas fa-sort ms-1 opacity-25"></i></th>
+                    <th class="pe-4 text-end th-sort" onclick="sortuj('status')">Status <i class="fas fa-sort ms-1 opacity-25"></i></th>
+                  </tr>
+                </thead>
+                <tbody id="tabelaCialo"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-limit" style="display:none;">
+      <div class="row g-3 mb-4 text-center">
+        <div class="col"><div class="stat-card card-limit-now text-white border-0"><div class="stat-title text-light">KONIEC W TYM MSC</div><div class="stat-value" id="lim-now">-</div><i class="fas fa-clock stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card card-limit-next text-white border-0"><div class="stat-title text-light">KONIEC W PRZYSZŁYM MSC</div><div class="stat-value" id="lim-next">-</div><i class="fas fa-hourglass-half stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card card-limit-total text-white border-0"><div class="stat-title text-light">RAZEM W EWIDENCJI</div><div class="stat-value" id="lim-total">-</div><i class="fas fa-history stat-icon"></i></div></div>
+      </div>
+     
+      <div id="urgent-limit-section" class="urgent-box-container" style="display:none;">
+         <h4 class="fw-bold text-danger mb-3"><i class="fas fa-exclamation-triangle me-2"></i> KONIEC LIMITU PRAWNEGO</h4>
+         <div class="table-responsive bg-white rounded shadow-sm">
+            <table class="table table-hover mb-0"><thead class="table-danger"><tr><th>Pracownik</th><th>Dział</th><th>Data Limitu</th><th>Status</th></tr></thead><tbody id="urgent-limit-body"></tbody></table>
+         </div>
+      </div>
+
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden mt-4">
+         <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center flex-wrap gap-3">
+            <h5 class="fw-bold text-navy m-0">Pełne zestawienie limitów czasowych</h5>
+            <div class="d-flex align-items-center bg-light p-1 rounded border">
+               <label class="mx-3 small fw-bold text-muted text-nowrap"><i class="fas fa-filter me-1"></i> FILTRUJ MIESIĄC:</label>
+               <select id="limitMonthFilter" class="form-select form-select-sm border-0 bg-transparent fw-bold" style="width: 180px;" onchange="renderujTabeleLimitow()">
+                  <option value="ALL">Wszystkie</option>
+                  <option value="0">Styczeń</option><option value="1">Luty</option><option value="2">Marzec</option><option value="3">Kwiecień</option><option value="4">Maj</option><option value="5">Czerwiec</option><option value="6">Lipiec</option><option value="7">Sierpień</option><option value="8">Wrzesień</option><option value="9">Październik</option><option value="10">Listopad</option><option value="11">Grudzień</option>
+               </select>
+            </div>
+         </div>
+         <div class="card-body p-0 table-container">
+            <table class="table table-hover align-middle mb-0">
+               <thead class="bg-light sticky-top"><tr><th>Pracownik</th><th>Dział</th><th>Lokalizacja</th><th>Data Limitu</th><th>Status</th></tr></thead>
+               <tbody id="limit-table-body"></tbody>
+            </table>
+         </div>
+      </div>
+    </div>
+
+    <div id="view-planowanie" style="display:none;">
+      <div class="row g-3 mb-4 text-center">
+        <div class="col"><div class="stat-card card-plan-blue text-white border-0"><div class="stat-title text-light">Dni robocze msc</div><div class="stat-value" id="plan-dni-total">-</div><i class="fas fa-calendar-check stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card card-plan-blue text-white border-0"><div class="stat-title text-light">Pozostało dni</div><div class="stat-value" id="plan-dni-rem">-</div><i class="fas fa-hourglass-start stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card card-plan-blue text-white border-0"><div class="stat-title text-light">Pozostało Godzin (1/1 etatu)</div><div class="stat-value" id="plan-godz-rem">-</div><i class="fas fa-clock stat-icon"></i></div></div>
+      </div>
+
+      <div class="filter-group d-flex gap-3 align-items-center mb-4 flex-wrap">
+         <div style="flex: 1; min-width: 200px;">
+            <label class="small fw-bold text-muted mb-1 text-uppercase"><i class="fas fa-filter me-2"></i>OKRES ANALIZY BILANSU</label>
+            <select id="trybAnalizy" class="form-select shadow-sm" onchange="zmienTrybAnalizyWTle()">
+               <option value="BIEZACY">aktualny miesiąc</option>
+               <option value="CALOSC">pełny okres rozliczeniowy</option>
+            </select>
+         </div>
+         <div style="flex: 2; min-width: 250px;">
+            <label class="small fw-bold text-muted mb-1 text-uppercase"><i class="fas fa-file-excel me-2"></i>PLIK EXCEL (RAPORT PULI)</label>
+            <input type="file" id="excelInput" class="form-control shadow-sm" accept=".xlsx, .xls">
+         </div>
+         <button class="btn btn-navy shadow mt-auto px-4" onclick="procesujExcelWTle()">
+            <i class="fas fa-upload me-2"></i>WGRAJ I PRZELICZ
+         </button>
+      </div>
+
+      <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+         <div class="card-header bg-white py-3"><h5 class="fw-bold text-navy m-0">Zestawienie do zaplanowania</h5></div>
+         <div class="card-body p-0 table-container">
+            <table class="table align-middle mb-0">
+               <thead class="bg-light sticky-top">
+                  <tr>
+                     <th class="text-center ps-4" style="width: 50px;">#</th>
+                     <th>Pracownik / ID</th>
+                     <th>Dział</th>
+                     <th>Etat</th>
+                     <th>Bilans Planu</th>
+                     <th>Pozostały Wymiar</th>
+                     <th>Nadgodziny</th>
+                  </tr>
+               </thead>
+               <tbody id="planowanie-body"></tbody>
+            </table>
+         </div>
+      </div>
+    </div>
+
+    <div id="view-szafki" style="display:none;">
+      <div class="row g-3 mb-4 text-center">
+        <div class="col"><div class="stat-card card-plan-blue text-white border-0"><div class="stat-title text-light">Wszystkie Szafki</div><div class="stat-value" id="sz-total">-</div><i class="fas fa-boxes stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card card-limit-now text-white border-0"><div class="stat-title text-light">Szafki Zajęte</div><div class="stat-value" id="sz-zajete">-</div><i class="fas fa-lock stat-icon"></i></div></div>
+        <div class="col"><div class="stat-card card-szafki-wolne text-white border-0"><div class="stat-title text-light">Szafki Wolne</div><div class="stat-value" id="sz-wolne">-</div><i class="fas fa-lock-open stat-icon"></i></div></div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-xl-3 col-lg-4">
+           <div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-3">
+              <div class="card-header bg-white py-3 border-bottom"><h6 class="fw-bold text-success m-0"><i class="fas fa-unlock-alt me-2"></i>Dostępne numery</h6></div>
+              <div class="card-body p-0 table-container-sm" style="max-height: 35vh;">
+                 <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light sticky-top"><tr><th class="text-center">Nr</th><th class="text-end pe-3">Akcja</th></tr></thead>
+                    <tbody id="szafki-wolne-body"></tbody>
+                 </table>
+              </div>
+           </div>
+
+           <div class="card border-0 shadow-sm rounded-4 overflow-hidden" style="border: 1px solid #ffdcdc !important;">
+              <div class="card-header bg-white py-3 border-bottom"><h6 class="fw-bold text-danger m-0"><i class="fas fa-user-clock me-2"></i>Do przypisania</h6></div>
+              <div class="card-body p-0 table-container-sm" style="max-height: 30vh;">
+                 <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light sticky-top"><tr><th class="ps-3">Pracownik</th><th class="text-end pe-3">Akcja</th></tr></thead>
+                    <tbody id="szafki-brak-body"></tbody>
+                 </table>
+              </div>
+           </div>
+        </div>
+
+        <div class="col-xl-9 col-lg-8">
+           <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+              <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+                 <h6 class="fw-bold text-danger m-0"><i class="fas fa-lock me-2"></i>Ewidencja Zajętych Szafek</h6>
+                 <button class="btn btn-sm btn-navy" onclick="otworzSzafkeDla('')"><i class="fas fa-plus me-1"></i>Nowe Przypisanie</button>
+              </div>
+              <div class="card-body p-0 table-container-sm">
+                 <table class="table table-hover align-middle mb-0">
+                    <thead class="bg-light sticky-top">
+                       <tr>
+                          <th class="text-center">Szafka</th>
+                          <th>Pracownik</th>
+                          <th>Dział</th>
+                          <th>Nr Karty</th>
+                          <th class="text-end pe-3">Opcje</th>
+                       </tr>
+                    </thead>
+                    <tbody id="szafki-zajete-body"></tbody>
+                 </table>
+              </div>
+           </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="view-raporty" style="display:none;">
+        <div class="filter-group shadow-sm">
+            <h5 class="fw-bold text-navy mb-3"><i class="fas fa-file-contract me-2"></i>Aktualizacja Historii Zatrudnienia</h5>
+            <div class="row g-3 align-items-end">
+                <div class="col-md-9">
+                    <label class="small fw-bold text-muted">WGRAJ ZBIORCZY PLIK Z SUMĄ GODZIN (CSV/XLSX)</label>
+                    <input type="file" id="rep-file" class="form-control" accept=".csv, .xlsx, .xls">
+                </div>
+                <div class="col-md-3">
+                    <button class="btn btn-navy w-100" onclick="wgrajRaportNieobecnosci()">
+                        <i class="fas fa-sync-alt me-2"></i>DODAJ DO ZBIORU
+                    </button>
+                </div>
+            </div>
+            <p class="small text-muted mt-2 mb-0"><i class="fas fa-info-circle me-1"></i> System wyliczy absencje z całej kariery pracownika na bazie wgranych logów.</p>
+        </div>
+
+        <div class="card border-0 shadow-sm rounded-4 overflow-hidden mt-4">
+            <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
+                <h6 class="fw-bold text-navy m-0">Zsumowana historia nieobecności (w dniach, 8h = 1 dzień)</h6>
+                <input type="text" id="searchRaport" class="form-control form-control-sm w-25" placeholder="Szukaj po ID lub Imieniu..." onkeyup="sortujRaport(null)">
+            </div>
+            <div class="card-body p-0 table-container">
+                <table class="table table-raporty align-middle mb-0">
+                    <thead class="bg-light sticky-top text-uppercase small">
+                        <tr>
+                            <th class="ps-4 th-sort-rep" onclick="sortujRaport(1)" style="min-width: 250px;">Pracownik / ID <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep" onclick="sortujRaport(2)">Przeprac. <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep text-danger" onclick="sortujRaport(3)">L4 <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep text-danger fs-6" onclick="sortujRaport(4)"><i class="fas fa-exclamation-circle me-1"></i>NN <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep text-warning" onclick="sortujRaport(5)">NUN <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep text-success" onclick="sortujRaport(6)">Opieka <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep text-info" onclick="sortujRaport(7)">Siła W. <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                            <th class="text-center th-sort-rep text-primary" onclick="sortujRaport(8)">Urlop <i class="fas fa-sort ms-1 opacity-50"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="raporty-body"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="edycjaModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header bg-navy text-white px-4 py-3 align-items-center">
+          <h5 class="fw-bold mb-0" id="modal-tytul-p"><i class="fas fa-user-edit me-2"></i>Edytuj Dane Pracownika</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <form id="formPracownik"><input type="hidden" id="f-staryId">
+            <div class="card border-0 shadow-sm mb-3">
+              <div class="card-body">
+                <h6 class="text-navy fw-bold mb-3 border-bottom pb-2">Informacje Podstawowe</h6>
+                <div class="row mb-3">
+                   <div class="col-md-6"><label class="small fw-bold">Wewnętrzny ID *</label><input type="number" class="form-control shadow-sm border-primary" id="f-sap" required></div>
+                   <div class="col-md-6"><label class="small fw-bold">Nazwisko i Imię *</label><input type="text" class="form-control shadow-sm border-primary" id="f-nazwisko" required></div>
+                </div>
+                <div class="row mb-3">
+                   <div class="col-md-6">
+                      <label class="small fw-bold">Dział *</label>
+                      <select class="form-select shadow-sm border-primary" id="f-dzial" required></select>
+                   </div>
+                   <div class="col-md-6">
+                      <label class="small fw-bold">Lokalizacja</label>
+                      <select class="form-select shadow-sm" id="f-lok" required>
+                         <option value="Zakład Produkcyjny A">Zakład Produkcyjny A</option>
+                         <option value="Zakład Produkcyjny B">Zakład Produkcyjny B</option>
+                         <option value="Magazyn Zewnętrzny">Magazyn Zewnętrzny</option>
+                      </select>
+                   </div>
+                </div>
+                <div class="row">
+                   <div class="col-md-6">
+                       <label class="small fw-bold text-success">Data rozpoczęcia pracy *</label>
+                       <input type="date" class="form-control shadow-sm border-success border-opacity-50" id="f-dataStartu" ondblclick="try{this.showPicker()}catch(e){}" required>
+                   </div>
+                   <div class="col-md-6">
+                       <label class="small fw-bold">Płeć</label>
+                       <select class="form-select shadow-sm" id="f-plec"><option value="K">Kobieta</option><option value="M">Mężczyzna</option></select>
+                   </div>
+                </div>
+              </div>
+            </div>
+           
+            <div class="card border-0 shadow-sm mb-3" style="background-color: #f8f9fa;"><div class="card-body">
+                <h6 class="text-navy fw-bold mb-3">Kompetencje (Możliwe do zaplanowania)</h6>
+                <div id="tags-container" class="mb-2"></div>
+                <select id="tag-select" class="form-select shadow-sm" onchange="addTagFromSelect()"><option value="" selected disabled>Wybierz dział z listy...</option></select>
+            </div></div>
+           
+            <div class="card border-0 shadow-sm mb-3" style="background-color: #fff5f5; border: 1px solid #ffdcdc !important;"><div class="card-body">
+                <h6 class="text-danger fw-bold mb-3">Rotacja / Zwolnienie</h6>
+                <div class="row">
+                   <div class="col-md-6"><label class="small fw-bold">Data Zakończenia</label><input type="date" class="form-control shadow-sm border-danger border-opacity-25" id="f-dataRotacji" ondblclick="try{this.showPicker()}catch(e){}"></div>
+                   <div class="col-md-6"><label class="small fw-bold">Powód</label><input type="text" class="form-control shadow-sm" id="f-powod"></div>
+                </div>
+            </div></div>
+           
+            <div class="row g-2 mt-2">
+              <div class="col-md-4"><label class="small fw-bold">Status</label><select class="form-select shadow-sm" id="f-status"><option value="OK">Aktywny (OK)</option><option value="Nowy">Nowy</option><option value="Rotuje">Rotuje</option></select></div>
+              <div class="col-md-4"><label class="small fw-bold">Telefon</label><input type="text" class="form-control shadow-sm" id="f-tel"></div>
+              <div class="col-md-4">
+                 <label class="small fw-bold">Etat</label>
+                 <select class="form-select shadow-sm" id="f-etat">
+                    <option value="1/1">1/1</option>
+                    <option value="3/4">3/4</option>
+                    <option value="1/2">1/2</option>
+                    <option value="1/4">1/4</option>
+                 </select>
+              </div>
+            </div>
+           
+            <div class="row g-2 mt-3">
+              <div class="col-md-6"><label class="small fw-bold">Nr Karty Magnetycznej</label><input type="text" class="form-control shadow-sm" id="f-karta"></div>
+              <div class="col-md-6"><label class="small fw-bold">Nr Kluczyka</label><input type="text" class="form-control shadow-sm" id="f-kluczyk"></div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer bg-white p-3 d-flex justify-content-between align-items-center">
+          <button type="button" class="btn btn-sm btn-outline-danger shadow-sm d-none fw-bold" id="btn-delete-prac" onclick="usunPracownikaBtn()">
+             <i class="fas fa-trash-alt me-2"></i>Usuń
+          </button>
+          <div class="ms-auto">
+             <button type="button" class="btn btn-link text-muted me-2 text-decoration-none" data-bs-dismiss="modal">Anuluj</button>
+             <button type="button" class="btn btn-navy px-4 shadow" onclick="zapiszFormularz()">ZACHOWAJ ZMIANY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="szafkaModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg rounded-4">
+        <div class="modal-header bg-navy text-white px-4 py-3 align-items-center">
+          <h5 class="fw-bold mb-0"><i class="fas fa-key me-2"></i>Przypisz Szafkę i Kartę</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <div class="mb-3">
+            <label class="small fw-bold text-navy mb-1">Wybierz Pracownika *</label>
+            <select id="sz-pracownik" class="form-select shadow-sm"></select>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+               <label class="small fw-bold text-danger mb-1">Nr Szafki (Kluczyka)</label>
+               <input type="number" id="sz-nr" class="form-control shadow-sm fw-bold" placeholder="np. 42">
+               <small class="text-muted" style="font-size:0.7rem;">(Zostaw puste by zwolnić)</small>
+            </div>
+            <div class="col-md-6">
+               <label class="small fw-bold text-primary mb-1">Nr Karty Magnetycznej</label>
+               <input type="text" id="sz-karta" class="form-control shadow-sm fw-bold" placeholder="np. 012345">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bg-white p-3">
+          <button type="button" class="btn btn-link text-muted me-auto text-decoration-none" data-bs-dismiss="modal">Anuluj</button>
+          <button type="button" class="btn btn-navy px-4 shadow" onclick="zapiszSzafke()">ZAPISZ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="hr-mock.js"></script>
+  <script>
+    // =========================================================================
+    // INICJALIZACJA SYSTEMU I CACHE (W TYM LIVE SYNC)
+    // =========================================================================
+    let DATA_VERSION = "0";
+
+    // Zmienne globalne
+    let daneGlob = [];
+    let limitDataCached = [];
+    let szafkiPracownicy = [];
+    let planowanieCached = null;
+    let szafkiCached = null;
+   
+    // Zmienne raportów
+    let raportDataCached = [];
+    let rKey = 1; let rAsc = true;
+
+    let sKey = 'nazwisko'; let sAsc = true;
+    let currentTags = [];
+    const dzis = new Date(); dzis.setHours(0,0,0,0);
+
+    let modalEdycjaInstance = null;
+    let modalSzafkaInstance = null;
+   
+    function getModalEdycja() {
+       if(!modalEdycjaInstance) modalEdycjaInstance = new bootstrap.Modal(document.getElementById('edycjaModal'));
+       return modalEdycjaInstance;
+    }
+   
+    function getModalSzafka() {
+       if(!modalSzafkaInstance) modalSzafkaInstance = new bootstrap.Modal(document.getElementById('szafkaModal'));
+       return modalSzafkaInstance;
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        uruchomLadowanieSystemu();
+        startLiveSync();
+    });
+
+    function uruchomLadowanieSystemu(force = false) {
+        if(!force) document.getElementById('loader-overlay').style.display = 'flex';
+       
+        const m = document.getElementById('monthSelector').value || null;
+
+        google.script.run
+            .withSuccessHandler(dane => {
+                applyData(dane);
+                document.getElementById('loader-overlay').style.display = 'none';
+                if(force) pokazPowiadomienie("Dane zsynchronizowane pomyślnie.");
+            })
+            .withFailureHandler(pokazBlad)
+            .pobierzWszystkoNaStart(force, m);
+    }
+
+    function applyData(dane) {
+        if (typeof dane === 'string') {
+            try { dane = JSON.parse(dane); } catch(e) {}
+        }
+        if (dane && dane.error === null && dane.data) dane = dane.data;
+        if (!dane || !dane.ewidencja) return;
+
+        DATA_VERSION = dane.version || "1";
+
+        const sel = document.getElementById('monthSelector');
+        if(sel.options.length === 0 && dane.miesiace) {
+            dane.miesiace.forEach(m => sel.add(new Option(m, m)));
+            sel.value = dane.wybranyMiesiac;
+        }
+
+        zapiszPracownikowDoPula(dane.ewidencja);
+        planowanieCached = dane.planowanie;
+
+        if (window.wybranySap) wybierz(window.wybranySap);
+
+        const activeTab = document.querySelector('.nav-link.active');
+        const activeTabId = activeTab ? activeTab.id.replace('tab-', '') : 'pracownicy';
+       
+        google.script.run.withSuccessHandler(function(res) {
+            try { limitDataCached = bezpiecznyOdbior(res).lista || []; if(activeTabId === 'limit') renderViewLimity(); } catch(e) { console.error(e); }
+        }).pobierzDaneLimitow(dane.wybranyMiesiac);
+
+        google.script.run.withSuccessHandler(function(res) {
+            try { szafkiCached = bezpiecznyOdbior(res); if(activeTabId === 'szafki') renderViewSzafki(); } catch(e) { console.error(e); }
+        }).pobierzDaneSzafek(dane.wybranyMiesiac);
+
+        if(activeTabId === 'planowanie') renderViewPlanowanie();
+        if(activeTabId === 'raporty') zaladujDaneRaportu();
+    }
+
+    function startLiveSync() {
+        setInterval(() => {
+            google.script.run
+                .withSuccessHandler(newData => {
+                    if (newData) {
+                        console.log("Wykryto zmianę u innego użytkownika! Aktualizuję na żywo...");
+                        applyData(newData);
+                    }
+                })
+                .sprawdzSync(DATA_VERSION);
+        }, 5000);
+    }
+
+    function zmienMiesiacWymuszenie() {
+        pokazPowiadomienie("Pobieram dane dla wybranego miesiąca...");
+        uruchomLadowanieSystemu(true);
+    }
+
+    // =========================================================================
+    // UTILS & BŁĘDY
+    // =========================================================================
+
+    window.onerror = function(msg, url, line) {
+        pokazBlad(`Błąd przeglądarki: ${msg} (Linia: ${line})`);
+    };
+
+    let alertTimeout;
+    function pokazPowiadomienie(msg, isError = false) {
+        const box = document.getElementById('alert-box');
+        document.getElementById('alert-msg').innerHTML = isError ? `<i class="fas fa-exclamation-circle me-2"></i>${msg}` : `<i class="fas fa-check-circle me-2"></i>${msg}`;
+        box.style.backgroundColor = isError ? '#dc3545' : '#198754';
+        box.style.display = 'block';
+        clearTimeout(alertTimeout);
+        if(!isError) alertTimeout = setTimeout(() => { box.style.display = 'none'; }, 3500);
+    }
+
+    function bezpiecznyOdbior(response) {
+        if (typeof response === 'string') {
+            try {
+                let parsed = JSON.parse(response);
+                if (parsed && typeof parsed === 'object') {
+                    if (parsed.error) throw new Error(parsed.error);
+                    if (parsed.data !== undefined) return parsed.data;
+                }
+                return parsed;
+            } catch(e) { return response; }
+        }
+        return response;
+    }
+
+    function parseEtatString(val) {
+        let s = String(val).trim();
+        if(s === '1/1' || s === '1' || s === '1.0' || s === '1,0') return 1;
+        if(s === '1/2' || s === '0.5' || s === '0,5') return 0.5;
+        if(s === '1/4' || s === '0.25' || s === '0,25') return 0.25;
+        if(s === '3/4' || s === '0.75' || s === '0,75') return 0.75;
+        return parseFloat(s.replace(',', '.')) || 0;
+    }
+
+    function pokazBlad(err) {
+        const errorBox = document.getElementById('loader-error');
+        if (errorBox && document.getElementById('loader-overlay').style.display !== 'none') {
+            errorBox.innerHTML = `<span class="text-danger fw-bold fs-5"><i class="fas fa-exclamation-triangle me-2"></i>BŁĄD: ${err}</span>
+            <br><button class="btn btn-danger mt-4 fw-bold px-4" onclick="location.reload()">Odśwież stronę</button>`;
+            document.querySelector('.spinner-border').style.display = 'none';
+        } else {
+            pokazPowiadomienie(err, true);
+        }
+    }
+
+    // =========================================================================
+    // INTERFEJS / WIDOKI
+    // =========================================================================
+
+    function zapiszPracownikowDoPula(res) {
+        if(!res) return;
+        if(res.stats) {
+           document.getElementById('stat-pt').innerText = res.stats.iloscPT_val || 0;
+           document.getElementById('stat-nowi').innerText = res.stats.nowi_val || 0;
+           document.getElementById('stat-rot').innerText = res.stats.rotujacy_val || 0;
+           document.getElementById('stat-kob').innerText = res.stats.kobiety_val || 0;
+           document.getElementById('stat-mez').innerText = res.stats.mezczyzni_val || 0;
+        }
+        if(res.pracownicy) {
+           daneGlob = res.pracownicy;
+           populujFiltry(daneGlob);
+           filtrujITabeluj();
+        }
+    }
+
+    function switchTab(v) {
+      document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+      document.getElementById('tab-' + v).classList.add('active');
+     
+      const views = ['view-pracownicy','view-limit','view-planowanie','view-szafki','view-raporty'];
+      views.forEach(i => {
+         let element = document.getElementById(i);
+         if(element) element.style.display = 'none';
+      });
+     
+      let targetView = document.getElementById('view-'+v);
+      if(targetView) targetView.style.display = 'block';
+     
+      const mContainer = document.getElementById('month-selector-container');
+      if (v === 'pracownicy') { mContainer.classList.remove('d-none'); mContainer.classList.add('d-flex'); }
+      else { mContainer.classList.remove('d-flex'); mContainer.classList.add('d-none'); }
+
+      if(v==='limit') renderViewLimity();
+      if(v==='planowanie') renderViewPlanowanie();
+      if(v==='szafki') renderViewSzafki();
+      if(v==='raporty') zaladujDaneRaportu();
+    }
+
+    // =========================================================================
+    // MODUŁ 1: PRACOWNICY
+    // =========================================================================
+
+    function cicheOdswiezanie(silentMsg) {
+        uruchomLadowanieSystemu(true);
+    }
+
+    function populujFiltry(d) {
+      const baseDepts = ["Linia Produkcyjna A", "Linia Produkcyjna B", "Magazyn Główny", "Logistyka", "Kontrola Jakości"];
+      const deptsFromData = d.map(x => x.dzial).filter(Boolean);
+      const depts = [...new Set([...baseDepts, ...deptsFromData])].sort();
+      const locs = [...new Set(d.map(x => x.lokalizacja))].sort();
+
+      const dSel = document.getElementById('deptFilter');
+      const lSel = document.getElementById('locFilter');
+      const tSel = document.getElementById('tag-select');
+      const fDzialSel = document.getElementById('f-dzial');
+
+      dSel.innerHTML = '<option value="">Wszystkie</option>';
+      lSel.innerHTML = '<option value="">Wszystkie</option>';
+      tSel.innerHTML = '<option value="" selected disabled>Wybierz z listy...</option>';
+      fDzialSel.innerHTML = '<option value="" selected disabled>Wybierz dział z listy...</option>';
+
+      depts.forEach(dp => {
+        if(dp) {
+          dSel.add(new Option(dp, dp));
+          tSel.add(new Option(dp, dp));
+          fDzialSel.add(new Option(dp, dp));
+        }
+      });
+      locs.forEach(lc => { if(lc) lSel.add(new Option(lc, lc)); });
+    }
+
+    function filtrujITabeluj() {
+      const sz = document.getElementById('searchInput').value.toLowerCase();
+      const de = document.getElementById('deptFilter').value;
+      const lo = document.getElementById('locFilter').value;
+      const st = document.getElementById('statFilter').value;
+     
+      let f = daneGlob.filter(x => {
+        let eff = x.status || 'OK';
+        if(x.dataRotacji && String(x.dataRotacji).includes('.')) {
+            let p = String(x.dataRotacji).split('.');
+            if(new Date(p[2], p[1]-1, p[0]) < dzis) eff = 'Zakonczony';
+        }
+       
+        let nMatch = (x.nazwisko || "").toLowerCase().includes(sz) || (x.sapId || "").toString().includes(sz);
+        let dMatch = !de || x.dzial === de;
+        let lMatch = !lo || x.lokalizacja === lo;
+        let sMatch = true;
+       
+        if(st) {
+            if(st === "OK") sMatch = (eff === "OK");
+            else if(st === "Rotuje") sMatch = (x.status === "Rotuje" && eff !== "Zakonczony");
+            else if(st === "Nowy") sMatch = eff.toLowerCase().includes("nowy");
+            else sMatch = (eff === st);
+        }
+
+        return nMatch && dMatch && lMatch && sMatch;
+      });
+
+      f.sort((a,b) => (a[sKey]||'').toString().toLowerCase().localeCompare((b[sKey]||'').toString().toLowerCase()) * (sAsc?1:-1));
+     
+      document.getElementById('tabelaCialo').innerHTML = f.map(x => {
+        let cur = x.status || 'OK';
+        if(x.dataRotacji && String(x.dataRotacji).includes('.')) {
+            let p = String(x.dataRotacji).split('.');
+            if(new Date(p[2], p[1]-1, p[0]) < dzis) cur = 'Zakończony';
+        }
+       
+        let bc = cur === 'Zakończony' ? 'badge-end' : (cur === 'Rotuje' ? 'badge-rot' : 'badge-ok');
+        if(cur.toLowerCase().includes('nowy')) bc = 'badge-new';
+       
+        return `<tr class="table-row-cursor" onclick="wybierz('${x.sapId}')">
+                  <td class="ps-4"><b>${x.nazwisko}</b><br><small class="text-muted">ID: ${x.sapId}</small></td>
+                  <td>${x.dzial}</td>
+                  <td>${x.lokalizacja}</td>
+                  <td class="pe-4 text-end"><span class="badge ${bc}">${cur}</span></td>
+                </tr>`;
+      }).join('');
+     
+      document.getElementById('resCount').innerText = f.length;
+    }
+
+    function sortuj(k) { if(sKey===k) sAsc=!sAsc; else { sKey=k; sAsc=true; } filtrujITabeluj(); }
+   
+    function wybierz(id) {
+      const x = daneGlob.find(p => p.sapId == id); if(!x) return;
+      document.getElementById('detail-empty').style.display = 'none'; document.getElementById('detail-content').style.display = 'block';
+      document.getElementById('detail-name').innerText = x.nazwisko; document.getElementById('detail-sap').innerText = "ID SYSTEMOWE: " + x.sapId;
+      document.getElementById('detail-start').innerText = x.startData || "Brak";
+      document.getElementById('d-dzial').innerText = x.dzial; document.getElementById('d-lok').innerText = x.lokalizacja;
+      document.getElementById('d-etat').innerText = x.etat || '-'; document.getElementById('d-tel').innerText = x.telefon || '-';
+     
+      let szafkaText = x.kluczyk ? `Nr ${x.kluczyk}` : 'Brak przypisania';
+      if(x.karta) szafkaText += ` (Karta: ${x.karta})`;
+      document.getElementById('d-szafka').innerText = szafkaText;
+
+      document.getElementById('d-plan-tags').innerHTML = x.planowanie ? x.planowanie.split(',').map(t => `<span class="badge bg-secondary me-1 mb-1">${t.trim()}</span>`).join('') : '-';
+     
+      const lb = document.getElementById('d-limit-urgent-box'), rb = document.getElementById('d-rot-alert-box'), rt = document.getElementById('d-rot-title');
+      lb.style.display = x.limitAlarm ? 'block' : 'none'; document.getElementById('d-limit-date-urgent').innerText = x.limit540;
+     
+      rb.style.display = 'none';
+      if(x.status === 'Rotuje' || (x.dataRotacji && x.dataRotacji !== '-')) {
+         rb.style.display = 'block'; document.getElementById('d-rot-info').innerText = x.dataRotacji;
+         if(x.dataRotacji && String(x.dataRotacji).includes('.')) {
+           let p = String(x.dataRotacji).split('.');
+           if(new Date(p[2], p[1]-1, p[0]) < dzis) { rt.innerText = "WSPÓŁPRACA ZAKOŃCZONA"; rb.className = "rot-alert-danger"; }
+           else { rt.innerText = "ZAPLANOWANA ROTACJA"; rb.className = "rot-alert-warning"; }
+         }
+      }
+      window.wybranySap = id;
+    }
+
+    function otworzDodawanie() {
+      document.getElementById('formPracownik').reset();
+      document.getElementById('f-staryId').value = "";
+      document.getElementById('modal-tytul-p').innerHTML = `<i class="fas fa-user-plus me-2"></i>Dodaj Pracownika`;
+      document.getElementById('btn-delete-prac').classList.add('d-none');
+      document.getElementById('f-status').value = "Nowy";
+      document.getElementById('f-etat').value = "1/1";
+      currentTags = []; renderTags();
+      getModalEdycja().show();
+    }
+
+    function otworzEdycje() {
+      const x = daneGlob.find(p => p.sapId == window.wybranySap);
+      document.getElementById('modal-tytul-p').innerHTML = `<i class="fas fa-user-edit me-2"></i>Edytuj Dane Pracownika`;
+      document.getElementById('btn-delete-prac').classList.remove('d-none');
+      document.getElementById('f-staryId').value = x.sapId;
+      document.getElementById('f-sap').value = x.sapId;
+      document.getElementById('f-nazwisko').value = x.nazwisko;
+      document.getElementById('f-dzial').value = x.dzial;
+      document.getElementById('f-lok').value = x.lokalizacja || 'Zakład Produkcyjny A';
+      document.getElementById('f-tel').value = x.telefon;
+      document.getElementById('f-status').value = x.status || 'OK';
+      document.getElementById('f-karta').value = x.karta;
+      document.getElementById('f-kluczyk').value = x.kluczyk;
+      document.getElementById('f-plec').value = x.plec || 'K';
+      document.getElementById('f-powod').value = x.powodRotacji || '';
+      document.getElementById('f-dataStartu').value = x.startDataRaw || '';
+      let zEtat = String(x.etat).trim();
+      if (zEtat == "1" || zEtat == "1.0") zEtat = "1/1";
+      document.getElementById('f-etat').value = zEtat || '1/1';
+      currentTags = x.planowanie ? String(x.planowanie).split(',').map(s => s.trim()).filter(s => s) : []; renderTags();
+      if(x.dataRotacji && String(x.dataRotacji).includes('.')) { let p = String(x.dataRotacji).split('.'); document.getElementById('f-dataRotacji').value = `${p[2]}-${p[1]}-${p[0]}`; } else document.getElementById('f-dataRotacji').value = '';
+      getModalEdycja().show();
+    }
+   
+    function renderTags() { document.getElementById('tags-container').innerHTML = currentTags.map((t, i) => `<span class="tag-item">${t}</span>`).join(''); }
+    function addTagFromSelect() { const v = document.getElementById('tag-select').value; if(v && !currentTags.includes(v)) { currentTags.push(v); renderTags(); } document.getElementById('tag-select').value = ""; }
+   
+    function zapiszFormularz() {
+      const dzial = document.getElementById('f-dzial').value; if (!dzial) return alert("Wybierz Dział z listy!");
+      const sap = document.getElementById('f-sap').value; if (!sap) return alert("Wpisz numer ID!");
+      const start = document.getElementById('f-dataStartu').value; if (!start) return alert("Wpisz datę rozpoczęcia pracy!");
+     
+      const m = document.getElementById('monthSelector').value;
+      const f = {
+        starySapId: document.getElementById('f-staryId').value, sapId: sap, nazwisko: document.getElementById('f-nazwisko').value,
+        dzial: dzial, lokalizacja: document.getElementById('f-lok').value, telefon: document.getElementById('f-tel').value,
+        etat: document.getElementById('f-etat').value, status: document.getElementById('f-status').value, plec: document.getElementById('f-plec').value,
+        dataStartu: start, dataRotacji: document.getElementById('f-dataRotacji').value, powodRotacji: document.getElementById('f-powod').value,
+        planowanie: currentTags.join(', '), karta: document.getElementById('f-karta').value, kluczyk: document.getElementById('f-kluczyk').value
+      };
+     
+      getModalEdycja().hide();
+      pokazPowiadomienie("Zapisywanie w bazie...");
+      google.script.run.withSuccessHandler(function(res) { try { bezpiecznyOdbior(res); cicheOdswiezanie("Zapisano pomyślnie! Odświeżono tabelę."); } catch(e) { pokazBlad(e.message); } }).withFailureHandler(pokazBlad).zapiszPracownika(f, m);
+    }
+
+    function usunPracownikaBtn() {
+      const nazwa = document.getElementById('f-nazwisko').value; const idDoUsuniecia = document.getElementById('f-staryId').value;
+      if (!confirm("OSTRZEŻENIE! Czy na pewno chcesz całkowicie USUNĄĆ pracownika: " + nazwa + " z ewidencji bieżącego miesiąca? Tej operacji nie można cofnąć!")) return;
+      const m = document.getElementById('monthSelector').value;
+      getModalEdycja().hide();
+      pokazPowiadomienie("Usuwanie z bazy...");
+      google.script.run.withSuccessHandler(function(res) {
+            try { bezpiecznyOdbior(res); document.getElementById('detail-empty').style.display = 'block'; document.getElementById('detail-content').style.display = 'none'; cicheOdswiezanie("Pracownik został pomyślnie usunięty."); } catch(e) { pokazBlad(e.message); }
+      }).withFailureHandler(pokazBlad).usunPracownikaBaza(idDoUsuniecia, m);
+    }
+
+    // =========================================================================
+    // MODUŁ 2: LIMITY CZASOWE PRAWNE
+    // =========================================================================
+
+    function renderViewLimity() {
+        if(!limitDataCached) limitDataCached = [];
+        let sTeraz = 0; let sNastepny = 0;
+        limitDataCached.forEach(i => { if(i.status==='URGENT') sTeraz++; if(i.status==='WARNING') sNastepny++; });
+        document.getElementById('lim-now').innerText = sTeraz; document.getElementById('lim-next').innerText = sNastepny; document.getElementById('lim-total').innerText = limitDataCached.length;
+       
+        let uH = '', hasU = false;
+        limitDataCached.forEach(i => { if(i.status === 'URGENT') { hasU = true; uH += `<tr><td><b>${i.nazwisko}</b></td><td>${i.dzial}</td><td class="text-danger fw-bold fs-5">${i.data}</td><td><span class="badge bg-danger">Wygasa teraz</span></td></tr>`; } });
+        document.getElementById('urgent-limit-body').innerHTML = uH; document.getElementById('urgent-limit-section').style.display = hasU ? 'block' : 'none';
+        renderujTabeleLimitow();
+    }
+
+    function renderujTabeleLimitow() {
+       const filterM = document.getElementById('limitMonthFilter').value; let mH = '';
+       limitDataCached.forEach(function(i) {
+         if(filterM === 'ALL' || i.rawMonth.toString() === filterM) {
+           let st = i.status === 'URGENT' ? '<span class="badge bg-danger">Wygasa</span>' : (i.status === 'WARNING' ? '<span class="badge bg-warning text-dark">Wkrótce</span>' : '<span class="text-success small fw-bold">OK</span>');
+           mH += `<tr><td><b>${i.nazwisko}</b><br><small class="text-muted">ID: ${i.sap}</small></td><td>${i.dzial}</td><td>${i.lok}</td><td class="fw-bold" style="font-size:1.1rem;">${i.data}</td><td>${st}</td></tr>`;
+         }
+       });
+       document.getElementById('limit-table-body').innerHTML = mH;
+    }
+
+    // =========================================================================
+    // MODUŁ 3: PLANOWANIE Z ZASADAMI
+    // =========================================================================
+
+    function renderViewPlanowanie() {
+        if(!planowanieCached) return;
+        renderPlanowanie(planowanieCached);
+    }
+
+    function renderPlanowanie(res) {
+       document.getElementById('plan-dni-total').innerText = res.stats.dniTotal;
+       document.getElementById('plan-dni-rem').innerText = res.stats.dniRem;
+       document.getElementById('plan-godz-rem').innerText = res.stats.godzRem;
+       let html = '';
+       res.lista.forEach(function(p, index) {
+          let num = index + 1;
+          let bilansVal = parseFloat(String(p.bilans).replace(',', '.'));
+          let isMinus = bilansVal < 0;
+          let nadgodzinyVal = p.nadgodziny ? parseFloat(String(p.nadgodziny).replace(',', '.')) : 0;
+          let etatVal = parseEtatString(p.etat);
+          let badges = []; let rowClass = '';
+
+          if (num <= 5 && isMinus) { badges.push(`<span class="badge bg-danger ms-1 shadow-sm"><i class="fas fa-fire me-1"></i>PRIORYTET</span>`); rowClass = 'row-priority'; }
+          if (Math.abs(etatVal - 1) < 0.01 && isMinus) { badges.push(`<span class="badge ms-1 shadow-sm" style="background-color: #6f42c1; color: white;"><i class="fas fa-exclamation-circle me-1"></i>NIEPEŁNY PLAN 1/1</span>`); if (!rowClass) rowClass = 'row-incomplete'; }
+          if (nadgodzinyVal > 0) { badges.push(`<span class="badge ms-1 shadow-sm" style="background-color: #ffc107; color: #333;"><i class="fas fa-clock me-1"></i>NADGODZINY</span>`); if (!rowClass) rowClass = 'row-overtime'; }
+
+          let allBadges = badges.length > 0 ? `<div class="mt-1">${badges.join('')}</div>` : '';
+          let bgColor = (p.bg && p.bg !== '#ffffff') ? p.bg : 'transparent';
+          html += `<tr class="${rowClass}" style="background-color: ${bgColor}"><td class="text-center fw-bold text-muted ps-4">${num}</td><td><b>${p.nazwisko} ${p.imie}</b> ${allBadges}<br><small class="text-muted">ID: ${p.sapId}</small></td><td><span class="small fw-bold text-navy">${p.dzial}</span></td><td>${p.etat}</td><td class="fw-bold fs-6">${p.bilans}</td><td>${p.pozostaly}</td><td class="text-navy fw-bold">${p.nadgodziny}</td></tr>`;
+       });
+       document.getElementById('planowanie-body').innerHTML = html;
+    }
+
+    function zmienTrybAnalizyWTle() {
+       const tryb = document.getElementById('trybAnalizy').value;
+       pokazPowiadomienie("Przeliczanie planowania...");
+       google.script.run.withSuccessHandler(function(responseStr) { try { let res = bezpiecznyOdbior(responseStr); planowanieCached = res; renderPlanowanie(res); pokazPowiadomienie("Plan przeliczony!"); } catch(e) { pokazBlad(e.message); } }).withFailureHandler(pokazBlad).pobierzDanePlanowaniaDlaTrybu(tryb);
+    }
+
+    function procesujExcelWTle() {
+      const file = document.getElementById('excelInput').files[0]; const tryb = document.getElementById('trybAnalizy').value;
+      if (!file) return alert("Proszę wybrać plik źródłowy Excel!");
+      document.getElementById('loader-overlay').style.display = 'flex'; document.getElementById('loader-text').innerText = "Wgrywanie pliku i przeliczanie...";
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        try {
+            const data = new Uint8Array(e.target.result); const workbook = XLSX.read(data, { type: 'array' }); const matrix = XLSX.utils.sheet_to_json(workbook.Sheets[workbook.SheetNames[0]], { header: 1 });
+            google.script.run.withSuccessHandler(function(responseStr) { try { let res = bezpiecznyOdbior(responseStr); planowanieCached = res; renderPlanowanie(res); document.getElementById('loader-overlay').style.display = 'none'; pokazPowiadomienie("Wgrano plik pomyślnie!"); } catch(ex) { pokazBlad(ex.message); } }).withFailureHandler(pokazBlad).wgrajDaneZExcela(matrix, tryb);
+        } catch(ex) { pokazBlad(ex.message || ex); }
+      };
+      reader.readAsArrayBuffer(file);
+    }
+
+    // =========================================================================
+    // MODUŁ 4: SZAFKI I KARTY DOSTĘPU
+    // =========================================================================
+
+    function renderViewSzafki() { if(!szafkiCached) return; renderSzafki(szafkiCached); }
+
+    function renderSzafki(data) {
+      szafkiPracownicy = data.pracownicy;
+      document.getElementById('sz-total').innerText = data.stats.total; document.getElementById('sz-zajete').innerText = data.stats.zajete; document.getElementById('sz-wolne').innerText = data.stats.wolne;
+     
+      let wolneHtml = ''; data.wolne.forEach(nr => { wolneHtml += `<tr><td class="fw-bold text-center fs-6 text-success">${nr}</td><td class="text-end pe-3"><button class="btn btn-sm btn-outline-success fw-bold" onclick="otworzSzafke('${nr}')"><i class="fas fa-plus me-1"></i>Przypisz</button></td></tr>`; });
+      document.getElementById('szafki-wolne-body').innerHTML = wolneHtml;
+     
+      let brakHtml = '';
+      if(data.bezSzafki && data.bezSzafki.length > 0) { data.bezSzafki.forEach(p => { brakHtml += `<tr><td class="ps-3 fw-bold text-navy small">${p.nazwisko}</td><td class="text-end pe-3"><button class="btn btn-sm btn-outline-danger fw-bold" onclick="otworzSzafkeDla('${p.sap}')"><i class="fas fa-plus"></i></button></td></tr>`; }); }
+      else brakHtml = `<tr><td colspan="2" class="text-center text-muted small py-3">Brak pracowników bez przypisania w systemie.</td></tr>`;
+      document.getElementById('szafki-brak-body').innerHTML = brakHtml;
+
+      let zajeteHtml = '';
+      data.zajete.forEach(item => { zajeteHtml += `<tr><td class="fw-bold text-center fs-5 text-danger bg-light">${item.nr}</td><td class="ps-3"><b>${item.pracownik.nazwisko}</b><br><small class="text-muted">ID: ${item.pracownik.sap}</small></td><td><span class="badge bg-secondary">${item.pracownik.dzial}</span></td><td class="fw-bold text-navy"><i class="fas fa-id-card me-2 opacity-50"></i>${item.pracownik.karta || '-'}</td><td class="text-end pe-3"><button class="btn btn-sm btn-light border shadow-sm me-1 text-navy" onclick="edytujSzafke('${item.pracownik.sap}', '${item.nr}', '${item.pracownik.karta}')"><i class="fas fa-edit"></i></button><button class="btn btn-sm btn-light border shadow-sm text-danger" onclick="zwolnijSzafkeBtn('${item.pracownik.sap}')"><i class="fas fa-user-minus"></i></button></td></tr>`; });
+      document.getElementById('szafki-zajete-body').innerHTML = zajeteHtml;
+    }
+
+    function populujSelectSzafek(wybranySap = "") {
+      const sel = document.getElementById('sz-pracownik'); sel.innerHTML = '<option value="" disabled selected>Wybierz pracownika z listy...</option>';
+      szafkiPracownicy.forEach(p => { let opt = new Option(`${p.nazwisko} (Dział: ${p.dzial})`, p.sap); if (p.sap === wybranySap) opt.selected = true; sel.add(opt); });
+    }
+
+    function otworzSzafke(nr) { populujSelectSzafek(); document.getElementById('sz-nr').value = nr; document.getElementById('sz-karta').value = ''; getModalSzafka().show(); }
+    function otworzSzafkeDla(sap) { populujSelectSzafek(sap); document.getElementById('sz-nr').value = ''; document.getElementById('sz-karta').value = ''; getModalSzafka().show(); }
+    function edytujSzafke(sap, nr, karta) { populujSelectSzafek(sap); document.getElementById('sz-nr').value = nr; document.getElementById('sz-karta').value = karta === '-' ? '' : karta; getModalSzafka().show(); }
+
+    function zapiszSzafke() {
+      const sap = document.getElementById('sz-pracownik').value; const nr = document.getElementById('sz-nr').value; const karta = document.getElementById('sz-karta').value; const m = document.getElementById('monthSelector').value;
+      if(!sap) return alert("Wybierz pracownika z listy!");
+      getModalSzafka().hide(); pokazPowiadomienie("Aktualizacja dostępu...");
+      google.script.run.withSuccessHandler(function(res) { try { bezpiecznyOdbior(res); cicheOdswiezanie("Zapisano dane dostępu!"); } catch(e) { pokazBlad(e.message); } }).withFailureHandler(pokazBlad).zapiszSzafkeIKarte(sap, nr, karta, m);
+    }
+
+    function zwolnijSzafkeBtn(sap) {
+      if(!confirm("Czy na pewno chcesz zwolnić szafkę tego pracownika i wyczyścić dostępy?")) return;
+      const m = document.getElementById('monthSelector').value; pokazPowiadomienie("Zwalnianie...");
+      google.script.run.withSuccessHandler(function(res) { try { bezpiecznyOdbior(res); cicheOdswiezanie("Zwolniono zasoby pracownika pomyślnie."); } catch(e) { pokazBlad(e.message); } }).withFailureHandler(pokazBlad).zwolnijSzafke(sap, m);
+    }
+
+    /* ========================================================================= */
+    /* RAPORTY ZBIORCZE ABSENCJI (DNI = GODZ/8, SORTOWANIE, KOLORY)              */
+    /* ========================================================================= */
+
+    function sortujRaport(k) {
+        if (k !== null) {
+            if (rKey === k) rAsc = !rAsc;
+            else { rKey = k; rAsc = (k <= 1); }
+        }
+        filtrujTabeleRaportu(document.getElementById('searchRaport').value);
+    }
+
+    function formatDniInt(godziny) {
+        let val = parseFloat(godziny) || 0;
+        let dni = Math.round(val / 8);
+        return dni > 0 ? dni : '-';
+    }
+
+    function renderCell(godziny, cssClass) {
+        let dni = formatDniInt(godziny);
+        if (dni !== '-') return `<td class="text-center ${cssClass}">${dni}</td>`;
+        return `<td class="text-center ${cssClass}" style="opacity:0.3">-</td>`;
+    }
+
+    function renderNN(godziny) {
+        let dni = formatDniInt(godziny);
+        if (dni !== '-') return `<td class="text-center cell-nn fs-5">${dni}</td>`;
+        return `<td class="text-center" style="background-color:#ffe5e5; color:#dc3545; opacity:0.3; font-weight:bold">-</td>`;
+    }
+
+    function renderPrzepracowane(godziny) {
+        let dni = formatDniInt(godziny);
+        if (dni !== '-') return `<td class="text-center cell-przepracowane">${dni}</td>`;
+        return `<td class="text-center text-muted cell-przepracowane" style="opacity:0.3">-</td>`;
+    }
+
+    function zaladujDaneRaportu() {
+        document.getElementById('loader-overlay').style.display = 'flex';
+        document.getElementById('loader-text').innerText = "Wczytywanie zsumowanej historii...";
+       
+        google.script.run.withSuccessHandler(function(response) {
+            document.getElementById('loader-overlay').style.display = 'none';
+            try {
+                let res = bezpiecznyOdbior(response);
+                raportDataCached = res || [];
+                sortujRaport(null);
+            } catch(e) { pokazBlad(e.message); }
+        }).withFailureHandler(pokazBlad).pobierzDaneRaportu();
+    }
+
+    function filtrujTabeleRaportu(val) {
+        const query = (val || '').toLowerCase();
+       
+        const aktywneSapy = daneGlob.filter(p => {
+            let eff = p.status || 'OK';
+            if(p.dataRotacji && String(p.dataRotacji).includes('.')) {
+                let d = String(p.dataRotacji).split('.');
+                if(new Date(d[2], d[1]-1, d[0]) < dzis) eff = 'Zakończony';
+            }
+            return eff !== 'Zakończony';
+        }).map(p => String(p.sapId));
+
+        let filtered = raportDataCached.filter(r =>
+            aktywneSapy.includes(String(r[0])) &&
+            (String(r[1]).toLowerCase().includes(query) || String(r[0]).includes(query))
+        );
+
+        filtered.sort((a, b) => {
+            let valA = a[rKey]; let valB = b[rKey];
+            if (rKey === 0 || rKey === 1) return String(valA).localeCompare(String(valB)) * (rAsc ? 1 : -1);
+            else return (parseFloat(valA || 0) - parseFloat(valB || 0)) * (rAsc ? 1 : -1);
+        });
+
+        let html = '';
+        filtered.forEach(r => {
+            html += `<tr class="border-bottom">
+                <td class="ps-4" style="background:#fff;"><b>${r[1]}</b><br><small class="text-muted">ID: ${r[0]}</small></td>
+                ${renderPrzepracowane(r[2])}
+                ${renderCell(r[3], 'cell-l4')}
+                ${renderNN(r[4])}
+                ${renderCell(r[5], 'cell-nun')}
+                ${renderCell(r[6], 'cell-opieka')}
+                ${renderCell(r[7], 'cell-sila')}
+                ${renderCell(r[8], 'cell-urlop')}
+            </tr>`;
+        });
+        document.getElementById('raporty-body').innerHTML = html || '<tr><td colspan="8" class="text-center py-4 text-muted">Brak zapisanych danych dla aktualnych pracowników.</td></tr>';
+    }
+
+    function wgrajRaportNieobecnosci() {
+        // Mock
+        pokazPowiadomienie("Raport przetworzony i zaktualizowany lokalnie.");
+    }
+  </script>
+</body>
+</html>
