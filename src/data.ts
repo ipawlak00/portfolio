@@ -31,9 +31,9 @@ export const projectsData: ProjectItem[] = [
   },
   {
     id: 4,
-    shortLabel: "Silnik Decyzyjny (Umowy)",
-    title: "Contract Decision Engine",
-    text: "Czysta praca analityczna na danych kadrowych. Przełożyłam bardzo zawiłe reguły korporacyjne na mechaniczny Silnik Decyzyjny, który zautomatyzował przedłużanie tysięcy umów zdejmując z barków zespołu żmudną decyzyjność.<br><br><b>Moje umiejętności świetnie sprawdzą się w IT:</b><ul class='timeline-list'><li><b>Przekładanie Logiki Biznesowej:</b> Błyskotliwe mapowanie warunków (ile ktoś pracował i jak długo chorował) do maszynowo generowanej propozycji nowej umowy.</li><li><b>Quality Assurance (Testowanie i Zapewnienie Jakości):</b> Gwarancja dla menedżerów, że nie ma mowy o błędzie ze strony systemu – całkowicie wyeliminowałam wysoce ryzykowne 'pomyłki z Excela'.</li><li><b>Ogromna Oszczędność Czasu:</b> Wykupienie dla współpracowników dziesiątek godzin czasu, pozwalając im prowadzić rekrutacje, a nie przeklikiwać się przez dokumentację.</li></ul>",
+    shortLabel: "Zarządzanie Umowami",
+    title: "System Zarządzania Umowami",
+    text: "Czysta praca analityczna na danych kadrowych. Przełożyłam bardzo zawiłe reguły korporacyjne na przejrzysty, zautomatyzowany system, który usprawnił przedłużanie tysięcy umów, zdejmując z barków zespołu żmudną decyzyjność.<br><br><b>Moje umiejętności świetnie sprawdzą się w IT:</b><ul class='timeline-list'><li><b>Przekładanie Logiki Biznesowej:</b> Błyskotliwe mapowanie warunków (ile ktoś pracował i jak długo chorował) do automatycznie generowanej propozycji nowej umowy.</li><li><b>Quality Assurance (Testowanie i Zapewnienie Jakości):</b> Gwarancja dla menedżerów, że nie ma mowy o błędzie ze strony systemu – całkowicie wyeliminowałam wysoce ryzykowne 'pomyłki z Excela'.</li><li><b>Ogromna Oszczędność Czasu:</b> Wykupienie dla współpracowników dziesiątek godzin czasu, pozwalając im prowadzić rekrutacje, a nie przeklikiwać się przez dokumentację.</li></ul>",
     link: "https://docs.google.com/"
   },
   {

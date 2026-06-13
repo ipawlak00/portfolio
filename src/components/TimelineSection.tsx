@@ -8,9 +8,10 @@ interface TimelineSectionProps {
   onOpenScheduleMockup: () => void;
   onOpenHrMockup: () => void;
   onOpenContractMockup: () => void;
+  onOpenPlanningMockup: () => void;
 }
 
-export default function TimelineSection({ isVisible, onOpenCrmMockup, onOpenOnboardingMockup, onOpenScheduleMockup, onOpenHrMockup, onOpenContractMockup }: TimelineSectionProps) {
+export default function TimelineSection({ isVisible, onOpenCrmMockup, onOpenOnboardingMockup, onOpenScheduleMockup, onOpenHrMockup, onOpenContractMockup, onOpenPlanningMockup }: TimelineSectionProps) {
   const [currentNodeIndex, setCurrentNodeIndex] = useState<number>(-1);
 
   const handleSelectNode = (index: number) => {
@@ -192,11 +193,18 @@ export default function TimelineSection({ isVisible, onOpenCrmMockup, onOpenOnbo
                 >
                   SPRAWDŹ JAK TO DZIAŁA
                 </button>
+              ) : currentNodeIndex === 5 ? (
+                <button
+                  onClick={onOpenPlanningMockup}
+                  className="action-btn inline-flex items-center gap-2 bg-gradient-to-r from-sky-600 to-cyan-500 hover:from-sky-500 hover:to-cyan-400 text-white font-sans font-black text-[16px] uppercase tracking-wide px-8 py-4 rounded-[30px] transition-all hover:scale-[1.05] shadow-lg hover:shadow-xl duration-300 cursor-pointer border-none"
+                >
+                  SPRAWDŹ JAK TO DZIAŁA
+                </button>
               ) : (
-                <a 
-                  id="details-link-btn" 
-                  href={projectsData[currentNodeIndex].link} 
-                  target="_blank" 
+                <a
+                  id="details-link-btn"
+                  href={projectsData[currentNodeIndex].link}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="action-btn inline-flex items-center gap-2 bg-[#1e293b] hover:bg-[#0f172a] text-white font-sans font-black text-[16px] uppercase tracking-wide px-8 py-4 rounded-[30px] transition-all hover:scale-[1.05] shadow-lg hover:shadow-xl duration-300"
                 >

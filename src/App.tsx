@@ -11,6 +11,7 @@ import OnboardingMockup from "./components/OnboardingMockup";
 import ScheduleMockup from "./components/ScheduleMockup";
 import HrMockup from "./components/HrMockup";
 import { ContractMockup } from "./components/ContractMockup";
+import PlanningMockup from "./components/PlanningMockup";
 
 export default function App() {
   const [isAboutVisible, setIsAboutVisible] = useState(false);
@@ -20,6 +21,7 @@ export default function App() {
   const [isScheduleMockupOpen, setIsScheduleMockupOpen] = useState(false);
   const [isHrMockupOpen, setIsHrMockupOpen] = useState(false);
   const [isContractMockupOpen, setIsContractMockupOpen] = useState(false);
+  const [isPlanningMockupOpen, setIsPlanningMockupOpen] = useState(false);
   const [copiedHeaderPhone, setCopiedHeaderPhone] = useState(false);
   const [copiedHeaderEmail, setCopiedHeaderEmail] = useState(false);
 
@@ -64,7 +66,7 @@ export default function App() {
       <div className="main-wrapper w-full max-w-[1600px] px-6 lg:px-[80px] py-[60px] box-border z-10 flex flex-col items-center min-h-screen">
         
         {/* HEADER NAVIGATION ROW */}
-        <div className="header-row flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-20 mb-16 lg:mb-[80px] w-full">
+        <div className="header-row relative z-30 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-20 mb-16 lg:mb-[80px] w-full">
           <h1 className="main-title text-left text-4xl sm:text-6xl md:text-[80px] font-sans font-black tracking-tighter m-0 bg-clip-text shrink-0">
             IZABELA PAWLAK
           </h1>
@@ -126,7 +128,7 @@ export default function App() {
         </div>
 
         {/* PROFILE/BIOGRAPHY LAYOUT ROW */}
-        <div className="content-row flex flex-col lg:flex-row items-center lg:items-start gap-10 w-full mb-12">
+        <div className="content-row relative z-10 flex flex-col lg:flex-row items-center lg:items-start gap-10 w-full mb-12">
           {/* Frosted interactive card on left */}
           <ProfileCard 
             onToggleAbout={toggleAbout} 
@@ -158,6 +160,7 @@ export default function App() {
             onOpenScheduleMockup={() => setIsScheduleMockupOpen(true)}
             onOpenHrMockup={() => setIsHrMockupOpen(true)}
             onOpenContractMockup={() => setIsContractMockupOpen(true)}
+            onOpenPlanningMockup={() => setIsPlanningMockupOpen(true)}
           />
         )}
 
@@ -179,6 +182,7 @@ export default function App() {
         {isScheduleMockupOpen && <ScheduleMockup isOpen={isScheduleMockupOpen} onClose={() => setIsScheduleMockupOpen(false)} />}
         {isHrMockupOpen && <HrMockup isOpen={isHrMockupOpen} onClose={() => setIsHrMockupOpen(false)} />}
         {isContractMockupOpen && <ContractMockup isOpen={isContractMockupOpen} onClose={() => setIsContractMockupOpen(false)} />}
+        {isPlanningMockupOpen && <PlanningMockup isOpen={isPlanningMockupOpen} onClose={() => setIsPlanningMockupOpen(false)} />}
 
       </div>
     </div>
