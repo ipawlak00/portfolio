@@ -1634,7 +1634,7 @@ let MOCK_DATA = {
     ],
     [
       "Piotr Nowak",
-      "2026-05-02",
+      "2026-06-02",
       "Po 1 spotkaniu",
       "159",
       "19",
@@ -1651,7 +1651,7 @@ let MOCK_DATA = {
     ],
     [
       "Jan Wiśniewski",
-      "2026-05-03",
+      "2026-06-03",
       "Po 2 spotkaniu",
       "158",
       "18",
@@ -1668,7 +1668,7 @@ let MOCK_DATA = {
     ],
     [
       "Katarzyna Wójcik",
-      "2026-05-04",
+      "2026-06-04",
       "Nie dotyczy",
       "157",
       "20",
@@ -1685,7 +1685,7 @@ let MOCK_DATA = {
     ],
     [
       "Michał Kowalczyk",
-      "2026-05-05",
+      "2026-06-05",
       "Przed spotkaniem",
       "156",
       "19",
@@ -1702,7 +1702,7 @@ let MOCK_DATA = {
     ],
     [
       "Agnieszka Kaczmarek",
-      "2026-05-06",
+      "2026-06-06",
       "Po 1 spotkaniu",
       "155",
       "18",
@@ -1719,7 +1719,7 @@ let MOCK_DATA = {
     ],
     [
       "Tomasz Zieliński",
-      "2026-05-07",
+      "2026-06-07",
       "Po 2 spotkaniu",
       "154",
       "20",
@@ -1736,7 +1736,7 @@ let MOCK_DATA = {
     ],
     [
       "Magdalena Szymańska",
-      "2026-05-08",
+      "2026-06-08",
       "Nie dotyczy",
       "153",
       "19",
@@ -1753,7 +1753,7 @@ let MOCK_DATA = {
     ],
     [
       "Krzysztof Dąbrowski",
-      "2026-05-09",
+      "2026-06-09",
       "Przed spotkaniem",
       "152",
       "18",
@@ -1770,7 +1770,7 @@ let MOCK_DATA = {
     ],
     [
       "Barbara Kozłowski",
-      "2026-05-10",
+      "2026-06-10",
       "Po 1 spotkaniu",
       "151",
       "20",
@@ -1787,7 +1787,7 @@ let MOCK_DATA = {
     ],
     [
       "Marek Jankowski",
-      "2026-05-11",
+      "2026-06-11",
       "Po 2 spotkaniu",
       "150",
       "19",
@@ -1804,7 +1804,7 @@ let MOCK_DATA = {
     ],
     [
       "Ewa Mazur",
-      "2026-05-12",
+      "2026-06-12",
       "Nie dotyczy",
       "149",
       "18",
@@ -1821,7 +1821,7 @@ let MOCK_DATA = {
     ],
     [
       "Grzegorz Kwiatkowski",
-      "2026-05-13",
+      "2026-06-13",
       "Przed spotkaniem",
       "148",
       "20",
@@ -1838,7 +1838,7 @@ let MOCK_DATA = {
     ],
     [
       "Krystyna Krawczyk",
-      "2026-05-14",
+      "2026-06-14",
       "Po 1 spotkaniu",
       "147",
       "19",
@@ -1855,7 +1855,7 @@ let MOCK_DATA = {
     ],
     [
       "Wojciech Kaczmarczyk",
-      "2026-05-15",
+      "2026-06-15",
       "Po 2 spotkaniu",
       "146",
       "18",
@@ -1872,7 +1872,7 @@ let MOCK_DATA = {
     ],
     [
       "Elżbieta Kowalska",
-      "2026-05-16",
+      "2026-06-16",
       "Nie dotyczy",
       "145",
       "20",
@@ -1889,7 +1889,7 @@ let MOCK_DATA = {
     ],
     [
       "Anna Nowak",
-      "2026-05-17",
+      "2026-06-17",
       "Przed spotkaniem",
       "144",
       "19",
@@ -1906,7 +1906,7 @@ let MOCK_DATA = {
     ],
     [
       "Piotr Wiśniewski",
-      "2026-05-18",
+      "2026-06-18",
       "Po 1 spotkaniu",
       "143",
       "18",
@@ -1923,7 +1923,7 @@ let MOCK_DATA = {
     ],
     [
       "Jan Wójcik",
-      "2026-05-19",
+      "2026-06-19",
       "Po 2 spotkaniu",
       "142",
       "20",
@@ -1940,7 +1940,7 @@ let MOCK_DATA = {
     ],
     [
       "Katarzyna Kowalczyk",
-      "2026-05-20",
+      "2026-06-20",
       "Nie dotyczy",
       "141",
       "19",
@@ -1957,7 +1957,7 @@ let MOCK_DATA = {
     ],
     [
       "Michał Kaczmarek",
-      "2026-05-21",
+      "2026-06-21",
       "Przed spotkaniem",
       "160",
       "18",
@@ -1974,7 +1974,7 @@ let MOCK_DATA = {
     ],
     [
       "Agnieszka Zieliński",
-      "2026-05-22",
+      "2026-06-22",
       "Po 1 spotkaniu",
       "159",
       "20",
@@ -1991,7 +1991,7 @@ let MOCK_DATA = {
     ],
     [
       "Tomasz Szymańska",
-      "2026-05-23",
+      "2026-06-23",
       "Po 2 spotkaniu",
       "158",
       "19",
@@ -2008,7 +2008,7 @@ let MOCK_DATA = {
     ],
     [
       "Magdalena Dąbrowski",
-      "2026-05-24",
+      "2026-06-24",
       "Nie dotyczy",
       "157",
       "18",
@@ -2025,7 +2025,7 @@ let MOCK_DATA = {
     ],
     [
       "Krzysztof Kozłowski",
-      "2026-05-25",
+      "2026-06-25",
       "Przed spotkaniem",
       "156",
       "20",
@@ -2042,7 +2042,7 @@ let MOCK_DATA = {
     ],
     [
       "Barbara Jankowski",
-      "2026-05-26",
+      "2026-06-26",
       "Po 1 spotkaniu",
       "155",
       "19",
@@ -2059,7 +2059,7 @@ let MOCK_DATA = {
     ],
     [
       "Marek Mazur",
-      "2026-05-27",
+      "2026-06-27",
       "Po 2 spotkaniu",
       "154",
       "18",
@@ -2076,7 +2076,7 @@ let MOCK_DATA = {
     ],
     [
       "Ewa Kwiatkowski",
-      "2026-05-28",
+      "2026-06-28",
       "Nie dotyczy",
       "153",
       "20",
@@ -2093,7 +2093,7 @@ let MOCK_DATA = {
     ],
     [
       "Grzegorz Krawczyk",
-      "2026-05-01",
+      "2026-06-01",
       "Przed spotkaniem",
       "152",
       "19",
@@ -2110,7 +2110,7 @@ let MOCK_DATA = {
     ],
     [
       "Krystyna Kaczmarczyk",
-      "2026-05-02",
+      "2026-06-02",
       "Po 1 spotkaniu",
       "151",
       "18",
@@ -2127,7 +2127,7 @@ let MOCK_DATA = {
     ],
     [
       "Wojciech Kowalska",
-      "2026-05-03",
+      "2026-06-03",
       "Po 2 spotkaniu",
       "150",
       "20",
@@ -2144,7 +2144,7 @@ let MOCK_DATA = {
     ],
     [
       "Elżbieta Nowak",
-      "2026-05-04",
+      "2026-06-04",
       "Nie dotyczy",
       "149",
       "19",
@@ -2161,7 +2161,7 @@ let MOCK_DATA = {
     ],
     [
       "Anna Wiśniewski",
-      "2026-05-05",
+      "2026-06-05",
       "Przed spotkaniem",
       "148",
       "18",
@@ -2178,7 +2178,7 @@ let MOCK_DATA = {
     ],
     [
       "Piotr Wójcik",
-      "2026-05-06",
+      "2026-06-06",
       "Po 1 spotkaniu",
       "147",
       "20",
@@ -2195,7 +2195,7 @@ let MOCK_DATA = {
     ],
     [
       "Jan Kowalczyk",
-      "2026-05-07",
+      "2026-06-07",
       "Po 2 spotkaniu",
       "146",
       "19",
@@ -2212,7 +2212,7 @@ let MOCK_DATA = {
     ],
     [
       "Katarzyna Kaczmarek",
-      "2026-05-08",
+      "2026-06-08",
       "Nie dotyczy",
       "145",
       "18",
@@ -2229,7 +2229,7 @@ let MOCK_DATA = {
     ],
     [
       "Michał Zieliński",
-      "2026-05-09",
+      "2026-06-09",
       "Przed spotkaniem",
       "144",
       "20",
@@ -2246,7 +2246,7 @@ let MOCK_DATA = {
     ],
     [
       "Agnieszka Szymańska",
-      "2026-05-10",
+      "2026-06-10",
       "Po 1 spotkaniu",
       "143",
       "19",
@@ -2263,7 +2263,7 @@ let MOCK_DATA = {
     ],
     [
       "Tomasz Dąbrowski",
-      "2026-05-11",
+      "2026-06-11",
       "Po 2 spotkaniu",
       "142",
       "18",
@@ -2280,7 +2280,7 @@ let MOCK_DATA = {
     ],
     [
       "Magdalena Kozłowski",
-      "2026-05-12",
+      "2026-06-12",
       "Nie dotyczy",
       "141",
       "20",
@@ -2297,7 +2297,7 @@ let MOCK_DATA = {
     ],
     [
       "Krzysztof Jankowski",
-      "2026-05-13",
+      "2026-06-13",
       "Przed spotkaniem",
       "160",
       "19",
@@ -2314,7 +2314,7 @@ let MOCK_DATA = {
     ],
     [
       "Barbara Mazur",
-      "2026-05-14",
+      "2026-06-14",
       "Po 1 spotkaniu",
       "159",
       "18",
@@ -2331,7 +2331,7 @@ let MOCK_DATA = {
     ],
     [
       "Marek Kwiatkowski",
-      "2026-05-15",
+      "2026-06-15",
       "Po 2 spotkaniu",
       "158",
       "20",
@@ -2348,7 +2348,7 @@ let MOCK_DATA = {
     ],
     [
       "Ewa Krawczyk",
-      "2026-05-16",
+      "2026-06-16",
       "Nie dotyczy",
       "157",
       "19",
@@ -2365,7 +2365,7 @@ let MOCK_DATA = {
     ],
     [
       "Grzegorz Kaczmarczyk",
-      "2026-05-17",
+      "2026-06-17",
       "Przed spotkaniem",
       "156",
       "18",
@@ -2382,7 +2382,7 @@ let MOCK_DATA = {
     ],
     [
       "Krystyna Kowalska",
-      "2026-05-18",
+      "2026-06-18",
       "Po 1 spotkaniu",
       "155",
       "20",
@@ -2399,7 +2399,7 @@ let MOCK_DATA = {
     ],
     [
       "Wojciech Nowak",
-      "2026-05-19",
+      "2026-06-19",
       "Po 2 spotkaniu",
       "154",
       "19",
@@ -2416,7 +2416,7 @@ let MOCK_DATA = {
     ],
     [
       "Elżbieta Wiśniewski",
-      "2026-05-20",
+      "2026-06-20",
       "Nie dotyczy",
       "153",
       "18",
@@ -2433,7 +2433,7 @@ let MOCK_DATA = {
     ],
     [
       "Anna Wójcik",
-      "2026-05-21",
+      "2026-06-21",
       "Przed spotkaniem",
       "152",
       "20",
@@ -2450,7 +2450,7 @@ let MOCK_DATA = {
     ],
     [
       "Piotr Kowalczyk",
-      "2026-05-22",
+      "2026-06-22",
       "Po 1 spotkaniu",
       "151",
       "19",
@@ -2467,7 +2467,7 @@ let MOCK_DATA = {
     ],
     [
       "Jan Kaczmarek",
-      "2026-05-23",
+      "2026-06-23",
       "Po 2 spotkaniu",
       "150",
       "18",
@@ -2484,7 +2484,7 @@ let MOCK_DATA = {
     ],
     [
       "Katarzyna Zieliński",
-      "2026-05-24",
+      "2026-06-24",
       "Nie dotyczy",
       "149",
       "20",
@@ -2501,7 +2501,7 @@ let MOCK_DATA = {
     ],
     [
       "Michał Szymańska",
-      "2026-05-25",
+      "2026-06-25",
       "Przed spotkaniem",
       "148",
       "19",
@@ -2518,7 +2518,7 @@ let MOCK_DATA = {
     ],
     [
       "Agnieszka Dąbrowski",
-      "2026-05-26",
+      "2026-06-26",
       "Po 1 spotkaniu",
       "147",
       "18",
@@ -2535,7 +2535,7 @@ let MOCK_DATA = {
     ],
     [
       "Tomasz Kozłowski",
-      "2026-05-27",
+      "2026-06-27",
       "Po 2 spotkaniu",
       "146",
       "20",
@@ -2552,7 +2552,7 @@ let MOCK_DATA = {
     ],
     [
       "Magdalena Jankowski",
-      "2026-05-28",
+      "2026-06-28",
       "Nie dotyczy",
       "145",
       "19",
@@ -2569,7 +2569,7 @@ let MOCK_DATA = {
     ],
     [
       "Krzysztof Mazur",
-      "2026-05-01",
+      "2026-06-01",
       "Przed spotkaniem",
       "144",
       "18",
@@ -2586,7 +2586,7 @@ let MOCK_DATA = {
     ],
     [
       "Barbara Kwiatkowski",
-      "2026-05-02",
+      "2026-06-02",
       "Po 1 spotkaniu",
       "143",
       "20",
@@ -2603,7 +2603,7 @@ let MOCK_DATA = {
     ],
     [
       "Marek Krawczyk",
-      "2026-05-03",
+      "2026-06-03",
       "Po 2 spotkaniu",
       "142",
       "19",
@@ -2620,7 +2620,7 @@ let MOCK_DATA = {
     ],
     [
       "Ewa Kaczmarczyk",
-      "2026-05-04",
+      "2026-06-04",
       "Nie dotyczy",
       "141",
       "18",
@@ -2637,7 +2637,7 @@ let MOCK_DATA = {
     ],
     [
       "Grzegorz Kowalska",
-      "2026-05-05",
+      "2026-06-05",
       "Przed spotkaniem",
       "160",
       "20",
@@ -3041,7 +3041,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-02",
+      "2026-06-02",
       ""
     ],
     [
@@ -3052,7 +3052,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-03",
+      "2026-06-03",
       ""
     ],
     [
@@ -3063,7 +3063,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-04",
+      "2026-06-04",
       ""
     ],
     [
@@ -3074,7 +3074,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-05",
+      "2026-06-05",
       ""
     ],
     [
@@ -3085,7 +3085,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-06",
+      "2026-06-06",
       ""
     ],
     [
@@ -3096,7 +3096,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-07",
+      "2026-06-07",
       ""
     ],
     [
@@ -3107,7 +3107,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-08",
+      "2026-06-08",
       "Polecam"
     ],
     [
@@ -3118,7 +3118,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-09",
+      "2026-06-09",
       ""
     ],
     [
@@ -3129,7 +3129,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-10",
+      "2026-06-10",
       ""
     ],
     [
@@ -3140,7 +3140,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-11",
+      "2026-06-11",
       ""
     ],
     [
@@ -3151,7 +3151,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-12",
+      "2026-06-12",
       ""
     ],
     [
@@ -3162,7 +3162,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-13",
+      "2026-06-13",
       ""
     ],
     [
@@ -3173,7 +3173,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-14",
+      "2026-06-14",
       ""
     ],
     [
@@ -3184,7 +3184,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-15",
+      "2026-06-15",
       "Polecam"
     ],
     [
@@ -3195,7 +3195,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-16",
+      "2026-06-16",
       ""
     ],
     [
@@ -3206,7 +3206,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-17",
+      "2026-06-17",
       ""
     ],
     [
@@ -3217,7 +3217,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-18",
+      "2026-06-18",
       ""
     ],
     [
@@ -3228,7 +3228,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-19",
+      "2026-06-19",
       ""
     ],
     [
@@ -3239,7 +3239,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-20",
+      "2026-06-20",
       ""
     ],
     [
@@ -3250,7 +3250,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-21",
+      "2026-06-21",
       ""
     ],
     [
@@ -3261,7 +3261,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-22",
+      "2026-06-22",
       "Polecam"
     ],
     [
@@ -3272,7 +3272,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-23",
+      "2026-06-23",
       ""
     ],
     [
@@ -3283,7 +3283,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-24",
+      "2026-06-24",
       ""
     ],
     [
@@ -3294,7 +3294,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-25",
+      "2026-06-25",
       ""
     ],
     [
@@ -3305,7 +3305,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-26",
+      "2026-06-26",
       ""
     ],
     [
@@ -3316,7 +3316,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-27",
+      "2026-06-27",
       ""
     ],
     [
@@ -3327,7 +3327,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-28",
+      "2026-06-28",
       ""
     ],
     [
@@ -3338,7 +3338,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-01",
+      "2026-06-01",
       "Polecam"
     ],
     [
@@ -3349,7 +3349,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-02",
+      "2026-06-02",
       ""
     ],
     [
@@ -3360,7 +3360,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-03",
+      "2026-06-03",
       ""
     ],
     [
@@ -3371,7 +3371,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-04",
+      "2026-06-04",
       ""
     ],
     [
@@ -3382,7 +3382,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-05",
+      "2026-06-05",
       ""
     ],
     [
@@ -3393,7 +3393,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-06",
+      "2026-06-06",
       ""
     ],
     [
@@ -3404,7 +3404,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-07",
+      "2026-06-07",
       ""
     ],
     [
@@ -3415,7 +3415,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-08",
+      "2026-06-08",
       "Polecam"
     ],
     [
@@ -3426,7 +3426,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-09",
+      "2026-06-09",
       ""
     ],
     [
@@ -3437,7 +3437,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-10",
+      "2026-06-10",
       ""
     ],
     [
@@ -3448,7 +3448,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-11",
+      "2026-06-11",
       ""
     ],
     [
@@ -3459,7 +3459,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-12",
+      "2026-06-12",
       ""
     ],
     [
@@ -3470,7 +3470,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-13",
+      "2026-06-13",
       ""
     ],
     [
@@ -3481,7 +3481,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-14",
+      "2026-06-14",
       ""
     ],
     [
@@ -3492,7 +3492,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-15",
+      "2026-06-15",
       "Polecam"
     ],
     [
@@ -3503,7 +3503,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-16",
+      "2026-06-16",
       ""
     ],
     [
@@ -3514,7 +3514,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-17",
+      "2026-06-17",
       ""
     ],
     [
@@ -3525,7 +3525,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-18",
+      "2026-06-18",
       ""
     ],
     [
@@ -3536,7 +3536,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-19",
+      "2026-06-19",
       ""
     ],
     [
@@ -3547,7 +3547,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-20",
+      "2026-06-20",
       ""
     ],
     [
@@ -3558,7 +3558,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-21",
+      "2026-06-21",
       ""
     ],
     [
@@ -3569,7 +3569,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-22",
+      "2026-06-22",
       "Polecam"
     ],
     [
@@ -3580,7 +3580,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-23",
+      "2026-06-23",
       ""
     ],
     [
@@ -3591,7 +3591,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-24",
+      "2026-06-24",
       ""
     ],
     [
@@ -3602,7 +3602,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-25",
+      "2026-06-25",
       ""
     ],
     [
@@ -3613,7 +3613,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-26",
+      "2026-06-26",
       ""
     ],
     [
@@ -3624,7 +3624,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-27",
+      "2026-06-27",
       ""
     ],
     [
@@ -3635,7 +3635,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-28",
+      "2026-06-28",
       ""
     ],
     [
@@ -3646,7 +3646,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-01",
+      "2026-06-01",
       "Polecam"
     ],
     [
@@ -3657,7 +3657,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-02",
+      "2026-06-02",
       ""
     ],
     [
@@ -3668,7 +3668,7 @@ let MOCK_DATA = {
       "Młodszy Operator",
       "",
       "",
-      "2026-05-03",
+      "2026-06-03",
       ""
     ],
     [
@@ -3679,7 +3679,7 @@ let MOCK_DATA = {
       "Starszy Operator",
       "",
       "",
-      "2026-05-04",
+      "2026-06-04",
       ""
     ],
     [
@@ -3690,7 +3690,7 @@ let MOCK_DATA = {
       "Operator",
       "",
       "",
-      "2026-05-05",
+      "2026-06-05",
       ""
     ]
   ]
@@ -3723,12 +3723,12 @@ window.googleHandlers = {
     "dzial": "Magazyn",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Nowy",
     "etat": "1/1",
     "telefon": "50000001",
     "startRaw": 1682812800000,
     "sapId": "10000001",
-    "startData": "01.02.2023",
+    "startData": "02.06.2026",
     "kluczyk": "101",
     "karta": "1007"
   },
@@ -3738,12 +3738,12 @@ window.googleHandlers = {
     "dzial": "Jakość",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Nowy",
     "etat": "1/1",
     "telefon": "50000002",
     "startRaw": 1682726400000,
     "sapId": "10000002",
-    "startData": "01.03.2023",
+    "startData": "05.06.2026",
     "kluczyk": "102",
     "karta": "1014"
   },
@@ -3753,12 +3753,12 @@ window.googleHandlers = {
     "dzial": "Montaż",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Nowy",
     "etat": "1/1",
     "telefon": "50000003",
     "startRaw": 1682640000000,
     "sapId": "10000003",
-    "startData": "01.04.2023",
+    "startData": "09.06.2026",
     "kluczyk": "103",
     "karta": "1021"
   },
@@ -3768,12 +3768,12 @@ window.googleHandlers = {
     "dzial": "Pakowanie",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Nowy",
     "etat": "1/1",
     "telefon": "50000004",
     "startRaw": 1682553600000,
     "sapId": "10000004",
-    "startData": "01.05.2023",
+    "startData": "12.06.2026",
     "kluczyk": "104",
     "karta": "1028"
   },
@@ -3783,12 +3783,12 @@ window.googleHandlers = {
     "dzial": "Produkcja",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Nowy",
     "etat": "1/1",
     "telefon": "50000005",
     "startRaw": 1682467200000,
     "sapId": "10000005",
-    "startData": "01.06.2023",
+    "startData": "15.06.2026",
     "kluczyk": "105",
     "karta": "1035"
   },
@@ -3798,14 +3798,17 @@ window.googleHandlers = {
     "dzial": "Magazyn",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Rotuje",
     "etat": "1/1",
     "telefon": "50000006",
     "startRaw": 1682380800000,
     "sapId": "10000006",
     "startData": "01.07.2023",
     "kluczyk": "106",
-    "karta": "1042"
+    "karta": "1042",
+    "dataRotacji": "22.06.2026",
+    "powodRotacji": "Koniec umowy",
+    "dataRotacjiRaw": "2026-06-22"
   },
   {
     "id": 7,
@@ -3813,14 +3816,17 @@ window.googleHandlers = {
     "dzial": "Jakość",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Rotuje",
     "etat": "1/1",
     "telefon": "50000007",
     "startRaw": 1682294400000,
     "sapId": "10000007",
     "startData": "01.08.2023",
     "kluczyk": "107",
-    "karta": "1049"
+    "karta": "1049",
+    "dataRotacji": "25.06.2026",
+    "powodRotacji": "Rezygnacja własna",
+    "dataRotacjiRaw": "2026-06-25"
   },
   {
     "id": 8,
@@ -3828,14 +3834,17 @@ window.googleHandlers = {
     "dzial": "Montaż",
     "lokalizacja": "Zakład Produkcyjny A",
     "stanowisko": "PT",
-    "status": "OK",
+    "status": "Rotuje",
     "etat": "1/1",
     "telefon": "50000008",
     "startRaw": 1682208000000,
     "sapId": "10000008",
     "startData": "01.09.2023",
     "kluczyk": "108",
-    "karta": "1056"
+    "karta": "1056",
+    "dataRotacji": "29.06.2026",
+    "powodRotacji": "Przejście do innego projektu",
+    "dataRotacjiRaw": "2026-06-29"
   },
   {
     "id": 9,
@@ -5291,8 +5300,8 @@ window.googleHandlers = {
       szafki: {}
     };
   },
-  pobierzDaneLimitow: () => { return { lista: [{"nazwiskoImie":"Nowak Piotr","sap":"10000001","limitPoczatek":200,"wykorzystano":2,"pozostalo":198,"dodatki":0},{"nazwiskoImie":"Wiśniewski Jan","sap":"10000002","limitPoczatek":200,"wykorzystano":4,"pozostalo":196,"dodatki":0},{"nazwiskoImie":"Wójcik Katarzyna","sap":"10000003","limitPoczatek":200,"wykorzystano":6,"pozostalo":194,"dodatki":0},{"nazwiskoImie":"Kowalczyk Michał","sap":"10000004","limitPoczatek":200,"wykorzystano":8,"pozostalo":192,"dodatki":0},{"nazwiskoImie":"Kaczmarek Agnieszka","sap":"10000005","limitPoczatek":200,"wykorzystano":10,"pozostalo":190,"dodatki":0},{"nazwiskoImie":"Zieliński Tomasz","sap":"10000006","limitPoczatek":200,"wykorzystano":12,"pozostalo":188,"dodatki":0},{"nazwiskoImie":"Szymańska Magdalena","sap":"10000007","limitPoczatek":200,"wykorzystano":14,"pozostalo":186,"dodatki":0},{"nazwiskoImie":"Dąbrowski Krzysztof","sap":"10000008","limitPoczatek":200,"wykorzystano":16,"pozostalo":184,"dodatki":0},{"nazwiskoImie":"Kozłowski Barbara","sap":"10000009","limitPoczatek":200,"wykorzystano":18,"pozostalo":182,"dodatki":0},{"nazwiskoImie":"Jankowski Marek","sap":"10000010","limitPoczatek":200,"wykorzystano":20,"pozostalo":180,"dodatki":0},{"nazwiskoImie":"Mazur Ewa","sap":"10000011","limitPoczatek":200,"wykorzystano":22,"pozostalo":178,"dodatki":0},{"nazwiskoImie":"Kwiatkowski Grzegorz","sap":"10000012","limitPoczatek":200,"wykorzystano":24,"pozostalo":176,"dodatki":0},{"nazwiskoImie":"Krawczyk Krystyna","sap":"10000013","limitPoczatek":200,"wykorzystano":26,"pozostalo":174,"dodatki":0},{"nazwiskoImie":"Kaczmarczyk Wojciech","sap":"10000014","limitPoczatek":200,"wykorzystano":28,"pozostalo":172,"dodatki":0},{"nazwiskoImie":"Kowalska Elżbieta","sap":"10000015","limitPoczatek":200,"wykorzystano":30,"pozostalo":170,"dodatki":0},{"nazwiskoImie":"Nowak Anna","sap":"10000016","limitPoczatek":200,"wykorzystano":32,"pozostalo":168,"dodatki":0},{"nazwiskoImie":"Wiśniewski Piotr","sap":"10000017","limitPoczatek":200,"wykorzystano":34,"pozostalo":166,"dodatki":0},{"nazwiskoImie":"Wójcik Jan","sap":"10000018","limitPoczatek":200,"wykorzystano":36,"pozostalo":164,"dodatki":0},{"nazwiskoImie":"Kowalczyk Katarzyna","sap":"10000019","limitPoczatek":200,"wykorzystano":38,"pozostalo":162,"dodatki":0},{"nazwiskoImie":"Kaczmarek Michał","sap":"10000020","limitPoczatek":200,"wykorzystano":40,"pozostalo":160,"dodatki":0},{"nazwiskoImie":"Zieliński Agnieszka","sap":"10000021","limitPoczatek":200,"wykorzystano":42,"pozostalo":158,"dodatki":0},{"nazwiskoImie":"Szymańska Tomasz","sap":"10000022","limitPoczatek":200,"wykorzystano":44,"pozostalo":156,"dodatki":0},{"nazwiskoImie":"Dąbrowski Magdalena","sap":"10000023","limitPoczatek":200,"wykorzystano":46,"pozostalo":154,"dodatki":0},{"nazwiskoImie":"Kozłowski Krzysztof","sap":"10000024","limitPoczatek":200,"wykorzystano":48,"pozostalo":152,"dodatki":0},{"nazwiskoImie":"Jankowski Barbara","sap":"10000025","limitPoczatek":200,"wykorzystano":0,"pozostalo":200,"dodatki":0},{"nazwiskoImie":"Mazur Marek","sap":"10000026","limitPoczatek":200,"wykorzystano":2,"pozostalo":198,"dodatki":0},{"nazwiskoImie":"Kwiatkowski Ewa","sap":"10000027","limitPoczatek":200,"wykorzystano":4,"pozostalo":196,"dodatki":0},{"nazwiskoImie":"Krawczyk Grzegorz","sap":"10000028","limitPoczatek":200,"wykorzystano":6,"pozostalo":194,"dodatki":0},{"nazwiskoImie":"Kaczmarczyk Krystyna","sap":"10000029","limitPoczatek":200,"wykorzystano":8,"pozostalo":192,"dodatki":0},{"nazwiskoImie":"Kowalska Wojciech","sap":"10000030","limitPoczatek":200,"wykorzystano":10,"pozostalo":190,"dodatki":0},{"nazwiskoImie":"Nowak Elżbieta","sap":"10000031","limitPoczatek":200,"wykorzystano":12,"pozostalo":188,"dodatki":0},{"nazwiskoImie":"Wiśniewski Anna","sap":"10000032","limitPoczatek":200,"wykorzystano":14,"pozostalo":186,"dodatki":0},{"nazwiskoImie":"Wójcik Piotr","sap":"10000033","limitPoczatek":200,"wykorzystano":16,"pozostalo":184,"dodatki":0},{"nazwiskoImie":"Kowalczyk Jan","sap":"10000034","limitPoczatek":200,"wykorzystano":18,"pozostalo":182,"dodatki":0},{"nazwiskoImie":"Kaczmarek Katarzyna","sap":"10000035","limitPoczatek":200,"wykorzystano":20,"pozostalo":180,"dodatki":0},{"nazwiskoImie":"Zieliński Michał","sap":"10000036","limitPoczatek":200,"wykorzystano":22,"pozostalo":178,"dodatki":0},{"nazwiskoImie":"Szymańska Agnieszka","sap":"10000037","limitPoczatek":200,"wykorzystano":24,"pozostalo":176,"dodatki":0},{"nazwiskoImie":"Dąbrowski Tomasz","sap":"10000038","limitPoczatek":200,"wykorzystano":26,"pozostalo":174,"dodatki":0},{"nazwiskoImie":"Kozłowski Magdalena","sap":"10000039","limitPoczatek":200,"wykorzystano":28,"pozostalo":172,"dodatki":0},{"nazwiskoImie":"Jankowski Krzysztof","sap":"10000040","limitPoczatek":200,"wykorzystano":30,"pozostalo":170,"dodatki":0},{"nazwiskoImie":"Mazur Barbara","sap":"10000041","limitPoczatek":200,"wykorzystano":32,"pozostalo":168,"dodatki":0},{"nazwiskoImie":"Kwiatkowski Marek","sap":"10000042","limitPoczatek":200,"wykorzystano":34,"pozostalo":166,"dodatki":0},{"nazwiskoImie":"Krawczyk Ewa","sap":"10000043","limitPoczatek":200,"wykorzystano":36,"pozostalo":164,"dodatki":0},{"nazwiskoImie":"Kaczmarczyk Grzegorz","sap":"10000044","limitPoczatek":200,"wykorzystano":38,"pozostalo":162,"dodatki":0},{"nazwiskoImie":"Kowalska Krystyna","sap":"10000045","limitPoczatek":200,"wykorzystano":40,"pozostalo":160,"dodatki":0},{"nazwiskoImie":"Nowak Wojciech","sap":"10000046","limitPoczatek":200,"wykorzystano":42,"pozostalo":158,"dodatki":0},{"nazwiskoImie":"Wiśniewski Elżbieta","sap":"10000047","limitPoczatek":200,"wykorzystano":44,"pozostalo":156,"dodatki":0},{"nazwiskoImie":"Wójcik Anna","sap":"10000048","limitPoczatek":200,"wykorzystano":46,"pozostalo":154,"dodatki":0},{"nazwiskoImie":"Kowalczyk Piotr","sap":"10000049","limitPoczatek":200,"wykorzystano":48,"pozostalo":152,"dodatki":0},{"nazwiskoImie":"Kaczmarek Jan","sap":"10000050","limitPoczatek":200,"wykorzystano":0,"pozostalo":200,"dodatki":0},{"nazwiskoImie":"Zieliński Katarzyna","sap":"10000051","limitPoczatek":200,"wykorzystano":2,"pozostalo":198,"dodatki":0},{"nazwiskoImie":"Szymańska Michał","sap":"10000052","limitPoczatek":200,"wykorzystano":4,"pozostalo":196,"dodatki":0},{"nazwiskoImie":"Dąbrowski Agnieszka","sap":"10000053","limitPoczatek":200,"wykorzystano":6,"pozostalo":194,"dodatki":0},{"nazwiskoImie":"Kozłowski Tomasz","sap":"10000054","limitPoczatek":200,"wykorzystano":8,"pozostalo":192,"dodatki":0},{"nazwiskoImie":"Jankowski Magdalena","sap":"10000055","limitPoczatek":200,"wykorzystano":10,"pozostalo":190,"dodatki":0},{"nazwiskoImie":"Mazur Krzysztof","sap":"10000056","limitPoczatek":200,"wykorzystano":12,"pozostalo":188,"dodatki":0},{"nazwiskoImie":"Kwiatkowski Barbara","sap":"10000057","limitPoczatek":200,"wykorzystano":14,"pozostalo":186,"dodatki":0},{"nazwiskoImie":"Krawczyk Marek","sap":"10000058","limitPoczatek":200,"wykorzystano":16,"pozostalo":184,"dodatki":0},{"nazwiskoImie":"Kaczmarczyk Ewa","sap":"10000059","limitPoczatek":200,"wykorzystano":18,"pozostalo":182,"dodatki":0},{"nazwiskoImie":"Kowalska Grzegorz","sap":"10000060","limitPoczatek":200,"wykorzystano":20,"pozostalo":180,"dodatki":0}] }; },
-  pobierzDaneSzafek: () => { return { stats: { total: 60, zajete: 48, wolne: 12 }, wolne: ["305","310","315","320","325","330","335","340","345","350","355","360"], zajete: ["101","102","103","104","106","107","108","109","111","112","113","114","116","117","118","119","121","122","123","124","126","127","128","129","131","132","133","134","136","137","138","139","141","142","143","144","146","147","148","149","151","152","153","154","156","157","158","159"], pracownicy: [{"szafka":"101","nazwiskoImie":"Nowak Piotr","sap":"10000001","dzial":"Magazyn","karta":"1007"},{"szafka":"102","nazwiskoImie":"Wiśniewski Jan","sap":"10000002","dzial":"Jakość","karta":"1014"},{"szafka":"103","nazwiskoImie":"Wójcik Katarzyna","sap":"10000003","dzial":"Montaż","karta":"1021"},{"szafka":"104","nazwiskoImie":"Kowalczyk Michał","sap":"10000004","dzial":"Pakowanie","karta":"1028"},{"szafka":"106","nazwiskoImie":"Zieliński Tomasz","sap":"10000006","dzial":"Magazyn","karta":"1042"},{"szafka":"107","nazwiskoImie":"Szymańska Magdalena","sap":"10000007","dzial":"Jakość","karta":"1049"},{"szafka":"108","nazwiskoImie":"Dąbrowski Krzysztof","sap":"10000008","dzial":"Montaż","karta":"1056"},{"szafka":"109","nazwiskoImie":"Kozłowski Barbara","sap":"10000009","dzial":"Pakowanie","karta":"1063"},{"szafka":"111","nazwiskoImie":"Mazur Ewa","sap":"10000011","dzial":"Magazyn","karta":"1077"},{"szafka":"112","nazwiskoImie":"Kwiatkowski Grzegorz","sap":"10000012","dzial":"Jakość","karta":"1084"},{"szafka":"113","nazwiskoImie":"Krawczyk Krystyna","sap":"10000013","dzial":"Montaż","karta":"1091"},{"szafka":"114","nazwiskoImie":"Kaczmarczyk Wojciech","sap":"10000014","dzial":"Pakowanie","karta":"1098"},{"szafka":"116","nazwiskoImie":"Nowak Anna","sap":"10000016","dzial":"Magazyn","karta":"1112"},{"szafka":"117","nazwiskoImie":"Wiśniewski Piotr","sap":"10000017","dzial":"Jakość","karta":"1119"},{"szafka":"118","nazwiskoImie":"Wójcik Jan","sap":"10000018","dzial":"Montaż","karta":"1126"},{"szafka":"119","nazwiskoImie":"Kowalczyk Katarzyna","sap":"10000019","dzial":"Pakowanie","karta":"1133"},{"szafka":"121","nazwiskoImie":"Zieliński Agnieszka","sap":"10000021","dzial":"Magazyn","karta":"1147"},{"szafka":"122","nazwiskoImie":"Szymańska Tomasz","sap":"10000022","dzial":"Jakość","karta":"1154"},{"szafka":"123","nazwiskoImie":"Dąbrowski Magdalena","sap":"10000023","dzial":"Montaż","karta":"1161"},{"szafka":"124","nazwiskoImie":"Kozłowski Krzysztof","sap":"10000024","dzial":"Pakowanie","karta":"1168"},{"szafka":"126","nazwiskoImie":"Mazur Marek","sap":"10000026","dzial":"Magazyn","karta":"1182"},{"szafka":"127","nazwiskoImie":"Kwiatkowski Ewa","sap":"10000027","dzial":"Jakość","karta":"1189"},{"szafka":"128","nazwiskoImie":"Krawczyk Grzegorz","sap":"10000028","dzial":"Montaż","karta":"1196"},{"szafka":"129","nazwiskoImie":"Kaczmarczyk Krystyna","sap":"10000029","dzial":"Pakowanie","karta":"1203"},{"szafka":"131","nazwiskoImie":"Nowak Elżbieta","sap":"10000031","dzial":"Magazyn","karta":"1217"},{"szafka":"132","nazwiskoImie":"Wiśniewski Anna","sap":"10000032","dzial":"Jakość","karta":"1224"},{"szafka":"133","nazwiskoImie":"Wójcik Piotr","sap":"10000033","dzial":"Montaż","karta":"1231"},{"szafka":"134","nazwiskoImie":"Kowalczyk Jan","sap":"10000034","dzial":"Pakowanie","karta":"1238"},{"szafka":"136","nazwiskoImie":"Zieliński Michał","sap":"10000036","dzial":"Magazyn","karta":"1252"},{"szafka":"137","nazwiskoImie":"Szymańska Agnieszka","sap":"10000037","dzial":"Jakość","karta":"1259"},{"szafka":"138","nazwiskoImie":"Dąbrowski Tomasz","sap":"10000038","dzial":"Montaż","karta":"1266"},{"szafka":"139","nazwiskoImie":"Kozłowski Magdalena","sap":"10000039","dzial":"Pakowanie","karta":"1273"},{"szafka":"141","nazwiskoImie":"Mazur Barbara","sap":"10000041","dzial":"Magazyn","karta":"1287"},{"szafka":"142","nazwiskoImie":"Kwiatkowski Marek","sap":"10000042","dzial":"Jakość","karta":"1294"},{"szafka":"143","nazwiskoImie":"Krawczyk Ewa","sap":"10000043","dzial":"Montaż","karta":"1301"},{"szafka":"144","nazwiskoImie":"Kaczmarczyk Grzegorz","sap":"10000044","dzial":"Pakowanie","karta":"1308"},{"szafka":"146","nazwiskoImie":"Nowak Wojciech","sap":"10000046","dzial":"Magazyn","karta":"1322"},{"szafka":"147","nazwiskoImie":"Wiśniewski Elżbieta","sap":"10000047","dzial":"Jakość","karta":"1329"},{"szafka":"148","nazwiskoImie":"Wójcik Anna","sap":"10000048","dzial":"Montaż","karta":"1336"},{"szafka":"149","nazwiskoImie":"Kowalczyk Piotr","sap":"10000049","dzial":"Pakowanie","karta":"1343"},{"szafka":"151","nazwiskoImie":"Zieliński Katarzyna","sap":"10000051","dzial":"Magazyn","karta":"1357"},{"szafka":"152","nazwiskoImie":"Szymańska Michał","sap":"10000052","dzial":"Jakość","karta":"1364"},{"szafka":"153","nazwiskoImie":"Dąbrowski Agnieszka","sap":"10000053","dzial":"Montaż","karta":"1371"},{"szafka":"154","nazwiskoImie":"Kozłowski Tomasz","sap":"10000054","dzial":"Pakowanie","karta":"1378"},{"szafka":"156","nazwiskoImie":"Mazur Krzysztof","sap":"10000056","dzial":"Magazyn","karta":"1392"},{"szafka":"157","nazwiskoImie":"Kwiatkowski Barbara","sap":"10000057","dzial":"Jakość","karta":"1399"},{"szafka":"158","nazwiskoImie":"Krawczyk Marek","sap":"10000058","dzial":"Montaż","karta":"1406"},{"szafka":"159","nazwiskoImie":"Kaczmarczyk Ewa","sap":"10000059","dzial":"Pakowanie","karta":"1413"}], bezSzafki: [{"nazwiskoImie":"Kaczmarek Agnieszka","sap":"10000005","dzial":"Produkcja"},{"nazwiskoImie":"Jankowski Marek","sap":"10000010","dzial":"Produkcja"},{"nazwiskoImie":"Kowalska Elżbieta","sap":"10000015","dzial":"Produkcja"},{"nazwiskoImie":"Kaczmarek Michał","sap":"10000020","dzial":"Produkcja"},{"nazwiskoImie":"Jankowski Barbara","sap":"10000025","dzial":"Produkcja"},{"nazwiskoImie":"Kowalska Wojciech","sap":"10000030","dzial":"Produkcja"},{"nazwiskoImie":"Kaczmarek Katarzyna","sap":"10000035","dzial":"Produkcja"},{"nazwiskoImie":"Jankowski Krzysztof","sap":"10000040","dzial":"Produkcja"},{"nazwiskoImie":"Kowalska Krystyna","sap":"10000045","dzial":"Produkcja"},{"nazwiskoImie":"Kaczmarek Jan","sap":"10000050","dzial":"Produkcja"},{"nazwiskoImie":"Jankowski Magdalena","sap":"10000055","dzial":"Produkcja"},{"nazwiskoImie":"Kowalska Grzegorz","sap":"10000060","dzial":"Produkcja"}] }; }, 
+  pobierzDaneLimitow: () => { return {"lista": [{"nazwisko": "Nowak Piotr", "sap": "10000001", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "01.06.2026", "status": "URGENT", "rawMonth": 5}, {"nazwisko": "Wiśniewski Jan", "sap": "10000002", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "08.06.2026", "status": "URGENT", "rawMonth": 5}, {"nazwisko": "Wójcik Katarzyna", "sap": "10000003", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "15.06.2026", "status": "URGENT", "rawMonth": 5}, {"nazwisko": "Kowalczyk Michał", "sap": "10000004", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "22.06.2026", "status": "URGENT", "rawMonth": 5}, {"nazwisko": "Kaczmarek Agnieszka", "sap": "10000005", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "02.07.2026", "status": "WARNING", "rawMonth": 6}, {"nazwisko": "Zieliński Tomasz", "sap": "10000006", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "09.07.2026", "status": "WARNING", "rawMonth": 6}, {"nazwisko": "Szymańska Magdalena", "sap": "10000007", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "16.07.2026", "status": "WARNING", "rawMonth": 6}, {"nazwisko": "Dąbrowski Krzysztof", "sap": "10000008", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "23.07.2026", "status": "WARNING", "rawMonth": 6}, {"nazwisko": "Kozłowski Barbara", "sap": "10000009", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "03.07.2026", "status": "WARNING", "rawMonth": 6}, {"nazwisko": "Jankowski Marek", "sap": "10000010", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "10.07.2026", "status": "WARNING", "rawMonth": 6}, {"nazwisko": "Mazur Ewa", "sap": "10000011", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "17.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Kwiatkowski Grzegorz", "sap": "10000012", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "24.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Krawczyk Krystyna", "sap": "10000013", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "04.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Kaczmarczyk Wojciech", "sap": "10000014", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "11.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Kowalska Elżbieta", "sap": "10000015", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "18.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Nowak Anna", "sap": "10000016", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "25.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Wiśniewski Piotr", "sap": "10000017", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "05.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Wójcik Jan", "sap": "10000018", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "12.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Kowalczyk Katarzyna", "sap": "10000019", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "19.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Kaczmarek Michał", "sap": "10000020", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "26.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Zieliński Agnieszka", "sap": "10000021", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "06.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Szymańska Tomasz", "sap": "10000022", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "13.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Dąbrowski Magdalena", "sap": "10000023", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "20.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Kozłowski Krzysztof", "sap": "10000024", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "27.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Jankowski Barbara", "sap": "10000025", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "07.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Mazur Marek", "sap": "10000026", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "14.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Kwiatkowski Ewa", "sap": "10000027", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "21.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Krawczyk Grzegorz", "sap": "10000028", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "01.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Kaczmarczyk Krystyna", "sap": "10000029", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "08.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Kowalska Wojciech", "sap": "10000030", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "15.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Nowak Elżbieta", "sap": "10000031", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "22.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Wiśniewski Anna", "sap": "10000032", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "02.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Wójcik Piotr", "sap": "10000033", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "09.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Kowalczyk Jan", "sap": "10000034", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "16.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Kaczmarek Katarzyna", "sap": "10000035", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "23.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Zieliński Michał", "sap": "10000036", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "03.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Szymańska Agnieszka", "sap": "10000037", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "10.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Dąbrowski Tomasz", "sap": "10000038", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "17.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Kozłowski Magdalena", "sap": "10000039", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "24.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Jankowski Krzysztof", "sap": "10000040", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "04.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Mazur Barbara", "sap": "10000041", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "11.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Kwiatkowski Marek", "sap": "10000042", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "18.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Krawczyk Ewa", "sap": "10000043", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "25.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Kaczmarczyk Grzegorz", "sap": "10000044", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "05.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Kowalska Krystyna", "sap": "10000045", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "12.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Nowak Wojciech", "sap": "10000046", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "19.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Wiśniewski Elżbieta", "sap": "10000047", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "26.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Wójcik Anna", "sap": "10000048", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "06.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Kowalczyk Piotr", "sap": "10000049", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "13.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Kaczmarek Jan", "sap": "10000050", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "20.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Zieliński Katarzyna", "sap": "10000051", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "27.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Szymańska Michał", "sap": "10000052", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "07.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Dąbrowski Agnieszka", "sap": "10000053", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "14.08.2026", "status": "OK", "rawMonth": 7}, {"nazwisko": "Kozłowski Tomasz", "sap": "10000054", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "21.09.2026", "status": "OK", "rawMonth": 8}, {"nazwisko": "Jankowski Magdalena", "sap": "10000055", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "01.10.2026", "status": "OK", "rawMonth": 9}, {"nazwisko": "Mazur Krzysztof", "sap": "10000056", "dzial": "Magazyn", "lok": "Zakład Produkcyjny A", "data": "08.11.2026", "status": "OK", "rawMonth": 10}, {"nazwisko": "Kwiatkowski Barbara", "sap": "10000057", "dzial": "Jakość", "lok": "Zakład Produkcyjny A", "data": "15.12.2026", "status": "OK", "rawMonth": 11}, {"nazwisko": "Krawczyk Marek", "sap": "10000058", "dzial": "Montaż", "lok": "Zakład Produkcyjny A", "data": "22.01.2027", "status": "OK", "rawMonth": 0}, {"nazwisko": "Kaczmarczyk Ewa", "sap": "10000059", "dzial": "Pakowanie", "lok": "Zakład Produkcyjny A", "data": "02.02.2027", "status": "OK", "rawMonth": 1}, {"nazwisko": "Kowalska Grzegorz", "sap": "10000060", "dzial": "Produkcja", "lok": "Zakład Produkcyjny A", "data": "09.08.2026", "status": "OK", "rawMonth": 7}]}; },
+  pobierzDaneSzafek: () => { return {"stats": {"total": 65, "zajete": 56, "wolne": 9}, "wolne": ["113", "126", "139", "152", "161", "162", "163", "164", "165"], "bezSzafki": [{"nazwisko": "Krawczyk Krystyna", "sap": "10000013", "dzial": "Montaż"}, {"nazwisko": "Mazur Marek", "sap": "10000026", "dzial": "Magazyn"}, {"nazwisko": "Kozłowski Magdalena", "sap": "10000039", "dzial": "Pakowanie"}, {"nazwisko": "Szymańska Michał", "sap": "10000052", "dzial": "Jakość"}], "zajete": [{"nr": "101", "pracownik": {"nazwisko": "Nowak Piotr", "sap": "10000001", "dzial": "Magazyn", "karta": "1007"}}, {"nr": "102", "pracownik": {"nazwisko": "Wiśniewski Jan", "sap": "10000002", "dzial": "Jakość", "karta": "1014"}}, {"nr": "103", "pracownik": {"nazwisko": "Wójcik Katarzyna", "sap": "10000003", "dzial": "Montaż", "karta": "1021"}}, {"nr": "104", "pracownik": {"nazwisko": "Kowalczyk Michał", "sap": "10000004", "dzial": "Pakowanie", "karta": "1028"}}, {"nr": "105", "pracownik": {"nazwisko": "Kaczmarek Agnieszka", "sap": "10000005", "dzial": "Produkcja", "karta": "1035"}}, {"nr": "106", "pracownik": {"nazwisko": "Zieliński Tomasz", "sap": "10000006", "dzial": "Magazyn", "karta": "1042"}}, {"nr": "107", "pracownik": {"nazwisko": "Szymańska Magdalena", "sap": "10000007", "dzial": "Jakość", "karta": "1049"}}, {"nr": "108", "pracownik": {"nazwisko": "Dąbrowski Krzysztof", "sap": "10000008", "dzial": "Montaż", "karta": "1056"}}, {"nr": "109", "pracownik": {"nazwisko": "Kozłowski Barbara", "sap": "10000009", "dzial": "Pakowanie", "karta": "1063"}}, {"nr": "110", "pracownik": {"nazwisko": "Jankowski Marek", "sap": "10000010", "dzial": "Produkcja", "karta": "1070"}}, {"nr": "111", "pracownik": {"nazwisko": "Mazur Ewa", "sap": "10000011", "dzial": "Magazyn", "karta": "1077"}}, {"nr": "112", "pracownik": {"nazwisko": "Kwiatkowski Grzegorz", "sap": "10000012", "dzial": "Jakość", "karta": "1084"}}, {"nr": "114", "pracownik": {"nazwisko": "Kaczmarczyk Wojciech", "sap": "10000014", "dzial": "Pakowanie", "karta": "1098"}}, {"nr": "115", "pracownik": {"nazwisko": "Kowalska Elżbieta", "sap": "10000015", "dzial": "Produkcja", "karta": "1105"}}, {"nr": "116", "pracownik": {"nazwisko": "Nowak Anna", "sap": "10000016", "dzial": "Magazyn", "karta": "1112"}}, {"nr": "117", "pracownik": {"nazwisko": "Wiśniewski Piotr", "sap": "10000017", "dzial": "Jakość", "karta": "1119"}}, {"nr": "118", "pracownik": {"nazwisko": "Wójcik Jan", "sap": "10000018", "dzial": "Montaż", "karta": "1126"}}, {"nr": "119", "pracownik": {"nazwisko": "Kowalczyk Katarzyna", "sap": "10000019", "dzial": "Pakowanie", "karta": "1133"}}, {"nr": "120", "pracownik": {"nazwisko": "Kaczmarek Michał", "sap": "10000020", "dzial": "Produkcja", "karta": "1140"}}, {"nr": "121", "pracownik": {"nazwisko": "Zieliński Agnieszka", "sap": "10000021", "dzial": "Magazyn", "karta": "1147"}}, {"nr": "122", "pracownik": {"nazwisko": "Szymańska Tomasz", "sap": "10000022", "dzial": "Jakość", "karta": "1154"}}, {"nr": "123", "pracownik": {"nazwisko": "Dąbrowski Magdalena", "sap": "10000023", "dzial": "Montaż", "karta": "1161"}}, {"nr": "124", "pracownik": {"nazwisko": "Kozłowski Krzysztof", "sap": "10000024", "dzial": "Pakowanie", "karta": "1168"}}, {"nr": "125", "pracownik": {"nazwisko": "Jankowski Barbara", "sap": "10000025", "dzial": "Produkcja", "karta": "1175"}}, {"nr": "127", "pracownik": {"nazwisko": "Kwiatkowski Ewa", "sap": "10000027", "dzial": "Jakość", "karta": "1189"}}, {"nr": "128", "pracownik": {"nazwisko": "Krawczyk Grzegorz", "sap": "10000028", "dzial": "Montaż", "karta": "1196"}}, {"nr": "129", "pracownik": {"nazwisko": "Kaczmarczyk Krystyna", "sap": "10000029", "dzial": "Pakowanie", "karta": "1203"}}, {"nr": "130", "pracownik": {"nazwisko": "Kowalska Wojciech", "sap": "10000030", "dzial": "Produkcja", "karta": "1210"}}, {"nr": "131", "pracownik": {"nazwisko": "Nowak Elżbieta", "sap": "10000031", "dzial": "Magazyn", "karta": "1217"}}, {"nr": "132", "pracownik": {"nazwisko": "Wiśniewski Anna", "sap": "10000032", "dzial": "Jakość", "karta": "1224"}}, {"nr": "133", "pracownik": {"nazwisko": "Wójcik Piotr", "sap": "10000033", "dzial": "Montaż", "karta": "1231"}}, {"nr": "134", "pracownik": {"nazwisko": "Kowalczyk Jan", "sap": "10000034", "dzial": "Pakowanie", "karta": "1238"}}, {"nr": "135", "pracownik": {"nazwisko": "Kaczmarek Katarzyna", "sap": "10000035", "dzial": "Produkcja", "karta": "1245"}}, {"nr": "136", "pracownik": {"nazwisko": "Zieliński Michał", "sap": "10000036", "dzial": "Magazyn", "karta": "1252"}}, {"nr": "137", "pracownik": {"nazwisko": "Szymańska Agnieszka", "sap": "10000037", "dzial": "Jakość", "karta": "1259"}}, {"nr": "138", "pracownik": {"nazwisko": "Dąbrowski Tomasz", "sap": "10000038", "dzial": "Montaż", "karta": "1266"}}, {"nr": "140", "pracownik": {"nazwisko": "Jankowski Krzysztof", "sap": "10000040", "dzial": "Produkcja", "karta": "1280"}}, {"nr": "141", "pracownik": {"nazwisko": "Mazur Barbara", "sap": "10000041", "dzial": "Magazyn", "karta": "1287"}}, {"nr": "142", "pracownik": {"nazwisko": "Kwiatkowski Marek", "sap": "10000042", "dzial": "Jakość", "karta": "1294"}}, {"nr": "143", "pracownik": {"nazwisko": "Krawczyk Ewa", "sap": "10000043", "dzial": "Montaż", "karta": "1301"}}, {"nr": "144", "pracownik": {"nazwisko": "Kaczmarczyk Grzegorz", "sap": "10000044", "dzial": "Pakowanie", "karta": "1308"}}, {"nr": "145", "pracownik": {"nazwisko": "Kowalska Krystyna", "sap": "10000045", "dzial": "Produkcja", "karta": "1315"}}, {"nr": "146", "pracownik": {"nazwisko": "Nowak Wojciech", "sap": "10000046", "dzial": "Magazyn", "karta": "1322"}}, {"nr": "147", "pracownik": {"nazwisko": "Wiśniewski Elżbieta", "sap": "10000047", "dzial": "Jakość", "karta": "1329"}}, {"nr": "148", "pracownik": {"nazwisko": "Wójcik Anna", "sap": "10000048", "dzial": "Montaż", "karta": "1336"}}, {"nr": "149", "pracownik": {"nazwisko": "Kowalczyk Piotr", "sap": "10000049", "dzial": "Pakowanie", "karta": "1343"}}, {"nr": "150", "pracownik": {"nazwisko": "Kaczmarek Jan", "sap": "10000050", "dzial": "Produkcja", "karta": "1350"}}, {"nr": "151", "pracownik": {"nazwisko": "Zieliński Katarzyna", "sap": "10000051", "dzial": "Magazyn", "karta": "1357"}}, {"nr": "153", "pracownik": {"nazwisko": "Dąbrowski Agnieszka", "sap": "10000053", "dzial": "Montaż", "karta": "1371"}}, {"nr": "154", "pracownik": {"nazwisko": "Kozłowski Tomasz", "sap": "10000054", "dzial": "Pakowanie", "karta": "1378"}}, {"nr": "155", "pracownik": {"nazwisko": "Jankowski Magdalena", "sap": "10000055", "dzial": "Produkcja", "karta": "1385"}}, {"nr": "156", "pracownik": {"nazwisko": "Mazur Krzysztof", "sap": "10000056", "dzial": "Magazyn", "karta": "1392"}}, {"nr": "157", "pracownik": {"nazwisko": "Kwiatkowski Barbara", "sap": "10000057", "dzial": "Jakość", "karta": "1399"}}, {"nr": "158", "pracownik": {"nazwisko": "Krawczyk Marek", "sap": "10000058", "dzial": "Montaż", "karta": "1406"}}, {"nr": "159", "pracownik": {"nazwisko": "Kaczmarczyk Ewa", "sap": "10000059", "dzial": "Pakowanie", "karta": "1413"}}, {"nr": "160", "pracownik": {"nazwisko": "Kowalska Grzegorz", "sap": "10000060", "dzial": "Produkcja", "karta": "1420"}}], "pracownicy": [{"nazwisko": "Nowak Piotr", "sap": "10000001", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Jan", "sap": "10000002", "dzial": "Jakość"}, {"nazwisko": "Wójcik Katarzyna", "sap": "10000003", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Michał", "sap": "10000004", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Agnieszka", "sap": "10000005", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Tomasz", "sap": "10000006", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Magdalena", "sap": "10000007", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Krzysztof", "sap": "10000008", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Barbara", "sap": "10000009", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Marek", "sap": "10000010", "dzial": "Produkcja"}, {"nazwisko": "Mazur Ewa", "sap": "10000011", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Grzegorz", "sap": "10000012", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Krystyna", "sap": "10000013", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Wojciech", "sap": "10000014", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Elżbieta", "sap": "10000015", "dzial": "Produkcja"}, {"nazwisko": "Nowak Anna", "sap": "10000016", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Piotr", "sap": "10000017", "dzial": "Jakość"}, {"nazwisko": "Wójcik Jan", "sap": "10000018", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Katarzyna", "sap": "10000019", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Michał", "sap": "10000020", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Agnieszka", "sap": "10000021", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Tomasz", "sap": "10000022", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Magdalena", "sap": "10000023", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Krzysztof", "sap": "10000024", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Barbara", "sap": "10000025", "dzial": "Produkcja"}, {"nazwisko": "Mazur Marek", "sap": "10000026", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Ewa", "sap": "10000027", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Grzegorz", "sap": "10000028", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Krystyna", "sap": "10000029", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Wojciech", "sap": "10000030", "dzial": "Produkcja"}, {"nazwisko": "Nowak Elżbieta", "sap": "10000031", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Anna", "sap": "10000032", "dzial": "Jakość"}, {"nazwisko": "Wójcik Piotr", "sap": "10000033", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Jan", "sap": "10000034", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Katarzyna", "sap": "10000035", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Michał", "sap": "10000036", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Agnieszka", "sap": "10000037", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Tomasz", "sap": "10000038", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Magdalena", "sap": "10000039", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Krzysztof", "sap": "10000040", "dzial": "Produkcja"}, {"nazwisko": "Mazur Barbara", "sap": "10000041", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Marek", "sap": "10000042", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Ewa", "sap": "10000043", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Grzegorz", "sap": "10000044", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Krystyna", "sap": "10000045", "dzial": "Produkcja"}, {"nazwisko": "Nowak Wojciech", "sap": "10000046", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Elżbieta", "sap": "10000047", "dzial": "Jakość"}, {"nazwisko": "Wójcik Anna", "sap": "10000048", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Piotr", "sap": "10000049", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Jan", "sap": "10000050", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Katarzyna", "sap": "10000051", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Michał", "sap": "10000052", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Agnieszka", "sap": "10000053", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Tomasz", "sap": "10000054", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Magdalena", "sap": "10000055", "dzial": "Produkcja"}, {"nazwisko": "Mazur Krzysztof", "sap": "10000056", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Barbara", "sap": "10000057", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Marek", "sap": "10000058", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Ewa", "sap": "10000059", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Grzegorz", "sap": "10000060", "dzial": "Produkcja"}] }; },
   pobierzDanePlanowaniaDlaTrybu: () => { return {
   "stats": {
     "dniTotal": 1250,
@@ -5962,7 +5971,7 @@ window.googleHandlers = {
     }
   ]
 }; },
-  pobierzDaneRaportu: () => { return [{"imie":"Nowak Piotr","sumaGodzin":159,"l4":0,"nn":0},{"imie":"Wiśniewski Jan","sumaGodzin":158,"l4":0,"nn":0},{"imie":"Wójcik Katarzyna","sumaGodzin":157,"l4":0,"nn":0},{"imie":"Kowalczyk Michał","sumaGodzin":156,"l4":0,"nn":0},{"imie":"Kaczmarek Agnieszka","sumaGodzin":155,"l4":0,"nn":0},{"imie":"Zieliński Tomasz","sumaGodzin":154,"l4":0,"nn":0},{"imie":"Szymańska Magdalena","sumaGodzin":153,"l4":0,"nn":0},{"imie":"Dąbrowski Krzysztof","sumaGodzin":152,"l4":1,"nn":0},{"imie":"Kozłowski Barbara","sumaGodzin":151,"l4":0,"nn":0},{"imie":"Jankowski Marek","sumaGodzin":150,"l4":0,"nn":0},{"imie":"Mazur Ewa","sumaGodzin":149,"l4":0,"nn":0},{"imie":"Kwiatkowski Grzegorz","sumaGodzin":148,"l4":0,"nn":1},{"imie":"Krawczyk Krystyna","sumaGodzin":147,"l4":0,"nn":0},{"imie":"Kaczmarczyk Wojciech","sumaGodzin":146,"l4":0,"nn":0},{"imie":"Kowalska Elżbieta","sumaGodzin":145,"l4":0,"nn":0},{"imie":"Nowak Anna","sumaGodzin":144,"l4":1,"nn":0},{"imie":"Wiśniewski Piotr","sumaGodzin":143,"l4":0,"nn":0},{"imie":"Wójcik Jan","sumaGodzin":142,"l4":0,"nn":0},{"imie":"Kowalczyk Katarzyna","sumaGodzin":141,"l4":0,"nn":0},{"imie":"Kaczmarek Michał","sumaGodzin":160,"l4":0,"nn":0},{"imie":"Zieliński Agnieszka","sumaGodzin":159,"l4":0,"nn":0},{"imie":"Szymańska Tomasz","sumaGodzin":158,"l4":0,"nn":0},{"imie":"Dąbrowski Magdalena","sumaGodzin":157,"l4":0,"nn":0},{"imie":"Kozłowski Krzysztof","sumaGodzin":156,"l4":1,"nn":1},{"imie":"Jankowski Barbara","sumaGodzin":155,"l4":0,"nn":0},{"imie":"Mazur Marek","sumaGodzin":154,"l4":0,"nn":0},{"imie":"Kwiatkowski Ewa","sumaGodzin":153,"l4":0,"nn":0},{"imie":"Krawczyk Grzegorz","sumaGodzin":152,"l4":0,"nn":0},{"imie":"Kaczmarczyk Krystyna","sumaGodzin":151,"l4":0,"nn":0},{"imie":"Kowalska Wojciech","sumaGodzin":150,"l4":0,"nn":0},{"imie":"Nowak Elżbieta","sumaGodzin":149,"l4":0,"nn":0},{"imie":"Wiśniewski Anna","sumaGodzin":148,"l4":1,"nn":0},{"imie":"Wójcik Piotr","sumaGodzin":147,"l4":0,"nn":0},{"imie":"Kowalczyk Jan","sumaGodzin":146,"l4":0,"nn":0},{"imie":"Kaczmarek Katarzyna","sumaGodzin":145,"l4":0,"nn":0},{"imie":"Zieliński Michał","sumaGodzin":144,"l4":0,"nn":1},{"imie":"Szymańska Agnieszka","sumaGodzin":143,"l4":0,"nn":0},{"imie":"Dąbrowski Tomasz","sumaGodzin":142,"l4":0,"nn":0},{"imie":"Kozłowski Magdalena","sumaGodzin":141,"l4":0,"nn":0},{"imie":"Jankowski Krzysztof","sumaGodzin":160,"l4":1,"nn":0},{"imie":"Mazur Barbara","sumaGodzin":159,"l4":0,"nn":0},{"imie":"Kwiatkowski Marek","sumaGodzin":158,"l4":0,"nn":0},{"imie":"Krawczyk Ewa","sumaGodzin":157,"l4":0,"nn":0},{"imie":"Kaczmarczyk Grzegorz","sumaGodzin":156,"l4":0,"nn":0},{"imie":"Kowalska Krystyna","sumaGodzin":155,"l4":0,"nn":0},{"imie":"Nowak Wojciech","sumaGodzin":154,"l4":0,"nn":0},{"imie":"Wiśniewski Elżbieta","sumaGodzin":153,"l4":0,"nn":0},{"imie":"Wójcik Anna","sumaGodzin":152,"l4":1,"nn":1},{"imie":"Kowalczyk Piotr","sumaGodzin":151,"l4":0,"nn":0},{"imie":"Kaczmarek Jan","sumaGodzin":150,"l4":0,"nn":0},{"imie":"Zieliński Katarzyna","sumaGodzin":149,"l4":0,"nn":0},{"imie":"Szymańska Michał","sumaGodzin":148,"l4":0,"nn":0},{"imie":"Dąbrowski Agnieszka","sumaGodzin":147,"l4":0,"nn":0},{"imie":"Kozłowski Tomasz","sumaGodzin":146,"l4":0,"nn":0},{"imie":"Jankowski Magdalena","sumaGodzin":145,"l4":0,"nn":0},{"imie":"Mazur Krzysztof","sumaGodzin":144,"l4":1,"nn":0},{"imie":"Kwiatkowski Barbara","sumaGodzin":143,"l4":0,"nn":0},{"imie":"Krawczyk Marek","sumaGodzin":142,"l4":0,"nn":0},{"imie":"Kaczmarczyk Ewa","sumaGodzin":141,"l4":0,"nn":0},{"imie":"Kowalska Grzegorz","sumaGodzin":160,"l4":0,"nn":1}]; },
+  pobierzDaneRaportu: () => { return [["10000001", "Nowak Piotr", 1180, 0, 0, 8, 0, 0, 80], ["10000002", "Wiśniewski Jan", 1180, 0, 16, 0, 24, 0, 40], ["10000003", "Wójcik Katarzyna", 1240, 0, 0, 0, 24, 8, 40], ["10000004", "Kowalczyk Michał", 1400, 0, 16, 16, 0, 0, 160], ["10000005", "Kaczmarek Agnieszka", 1320, 40, 0, 0, 8, 0, 104], ["10000006", "Zieliński Tomasz", 1280, 0, 0, 0, 0, 0, 40], ["10000007", "Szymańska Magdalena", 1320, 40, 0, 8, 0, 8, 120], ["10000008", "Dąbrowski Krzysztof", 1400, 0, 0, 0, 24, 0, 0], ["10000009", "Kozłowski Barbara", 1400, 40, 0, 0, 0, 0, 0], ["10000010", "Jankowski Marek", 1280, 40, 0, 0, 0, 0, 120], ["10000011", "Mazur Ewa", 1320, 8, 16, 8, 0, 0, 104], ["10000012", "Kwiatkowski Grzegorz", 1280, 24, 0, 0, 24, 8, 80], ["10000013", "Krawczyk Krystyna", 1400, 24, 0, 0, 8, 0, 104], ["10000014", "Kaczmarczyk Wojciech", 1180, 24, 8, 0, 0, 0, 80], ["10000015", "Kowalska Elżbieta", 1440, 0, 0, 16, 0, 0, 80], ["10000016", "Nowak Anna", 1400, 24, 0, 0, 8, 0, 0], ["10000017", "Wiśniewski Piotr", 1360, 0, 0, 0, 0, 8, 160], ["10000018", "Wójcik Jan", 1400, 0, 16, 16, 24, 0, 104], ["10000019", "Kowalczyk Katarzyna", 1280, 0, 8, 16, 0, 0, 40], ["10000020", "Kaczmarek Michał", 1280, 24, 0, 16, 24, 0, 120], ["10000021", "Zieliński Agnieszka", 1360, 16, 0, 8, 24, 0, 0], ["10000022", "Szymańska Tomasz", 1180, 0, 16, 8, 0, 0, 104], ["10000023", "Dąbrowski Magdalena", 1360, 0, 0, 0, 0, 8, 80], ["10000024", "Kozłowski Krzysztof", 1400, 0, 16, 8, 24, 8, 80], ["10000025", "Jankowski Barbara", 1280, 0, 0, 0, 24, 0, 120], ["10000026", "Mazur Marek", 1240, 0, 0, 8, 0, 0, 80], ["10000027", "Kwiatkowski Ewa", 1400, 0, 0, 16, 0, 8, 80], ["10000028", "Krawczyk Grzegorz", 1280, 24, 0, 0, 0, 8, 160], ["10000029", "Kaczmarczyk Krystyna", 1360, 0, 8, 0, 0, 0, 0], ["10000030", "Kowalska Wojciech", 1180, 0, 0, 16, 0, 0, 80], ["10000031", "Nowak Elżbieta", 1240, 0, 0, 0, 24, 0, 40], ["10000032", "Wiśniewski Anna", 1240, 24, 16, 0, 0, 0, 40], ["10000033", "Wójcik Piotr", 1440, 0, 0, 0, 0, 8, 120], ["10000034", "Kowalczyk Jan", 1280, 16, 0, 16, 0, 0, 120], ["10000035", "Kaczmarek Katarzyna", 1280, 0, 0, 16, 0, 0, 120], ["10000036", "Zieliński Michał", 1360, 40, 16, 0, 0, 0, 120], ["10000037", "Szymańska Agnieszka", 1180, 0, 0, 0, 0, 0, 160], ["10000038", "Dąbrowski Tomasz", 1360, 0, 0, 0, 0, 0, 80], ["10000039", "Kozłowski Magdalena", 1440, 0, 0, 0, 0, 8, 160], ["10000040", "Jankowski Krzysztof", 1440, 0, 0, 0, 0, 0, 120], ["10000041", "Mazur Barbara", 1360, 0, 0, 0, 0, 0, 40], ["10000042", "Kwiatkowski Marek", 1360, 0, 0, 8, 8, 8, 0], ["10000043", "Krawczyk Ewa", 1440, 16, 16, 16, 0, 0, 104], ["10000044", "Kaczmarczyk Grzegorz", 1280, 0, 8, 0, 0, 0, 40], ["10000045", "Kowalska Krystyna", 1400, 8, 8, 0, 0, 8, 40], ["10000046", "Nowak Wojciech", 1440, 0, 0, 0, 0, 0, 40], ["10000047", "Wiśniewski Elżbieta", 1400, 0, 8, 0, 24, 0, 120], ["10000048", "Wójcik Anna", 1180, 16, 8, 8, 0, 0, 0], ["10000049", "Kowalczyk Piotr", 1180, 0, 0, 8, 8, 0, 0], ["10000050", "Kaczmarek Jan", 1180, 0, 0, 8, 0, 0, 120], ["10000051", "Zieliński Katarzyna", 1400, 16, 0, 0, 24, 0, 160], ["10000052", "Szymańska Michał", 1320, 0, 0, 0, 0, 0, 104], ["10000053", "Dąbrowski Agnieszka", 1280, 8, 8, 8, 24, 8, 160], ["10000054", "Kozłowski Tomasz", 1240, 24, 8, 8, 0, 0, 104], ["10000055", "Jankowski Magdalena", 1240, 0, 16, 0, 0, 0, 160], ["10000056", "Mazur Krzysztof", 1280, 24, 0, 0, 0, 8, 120], ["10000057", "Kwiatkowski Barbara", 1320, 40, 0, 0, 8, 0, 40], ["10000058", "Krawczyk Marek", 1240, 0, 0, 8, 0, 8, 120], ["10000059", "Kaczmarczyk Ewa", 1400, 24, 0, 0, 0, 0, 0], ["10000060", "Kowalska Grzegorz", 1280, 16, 0, 8, 24, 8, 80]]; },
   sprawdzSync: () => { return null; },
   zapiszPracownika: () => { return "OK"; },
   usunPracownikaBaza: () => { return "OK"; },
@@ -6052,7 +6061,7 @@ window.googleHandlers = {
         telefon: safeStr(row[4], ""), 
         brygada: safeStr(row[5], ""), 
         dataRotacji: rotacja,
-        dataStartuRaw: "2026-05-01",
+        dataStartuRaw: "2026-06-01",
         dataStartuFormat: "01.05.2026"
       });
     }
@@ -6184,27 +6193,30 @@ window.googleHandlers = {
   przywrocPracownikaServer: (i, d, m, k) => { return "Przywrócono pracownika do systemu"; }
 };
 
+function makeRunner() {
+  // Each access to google.script.run returns a fresh runner so concurrent
+  // call chains keep their own success/failure handlers (no shared-state race).
+  const runner = {
+    _success: null,
+    _failure: null,
+    withSuccessHandler: function(cb) { this._success = cb; return this; },
+    withFailureHandler: function(cb) { this._failure = cb; return this; }
+  };
+  Object.keys(window.googleHandlers).forEach(m => {
+    runner[m] = function(...args) {
+      const ok = this._success, fail = this._failure;
+      setTimeout(() => {
+        const res = runMock(m, args);
+        if (res.error && fail) fail(new Error(res.error));
+        else if (!res.error && ok) ok(res.result);
+      }, 150);
+    };
+  });
+  return runner;
+}
+
 window.google = {
   script: {
-    run: (() => {
-      let runner = {
-        _success: null,
-        _failure: null,
-        withSuccessHandler: function(cb) { this._success = cb; return this; },
-        withFailureHandler: function(cb) { this._failure = cb; return this; }
-      };
-      
-      const methods = Object.keys(window.googleHandlers);
-      methods.forEach(m => {
-        runner[m] = function(...args) {
-          setTimeout(() => {
-            const res = runMock(m, args);
-            if (res.error && this._failure) this._failure(new Error(res.error));
-            else if (!res.error && this._success) this._success(res.result);
-          }, 150);
-        };
-      });
-      return runner;
-    })()
+    get run() { return makeRunner(); }
   }
 };

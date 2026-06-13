@@ -3709,41 +3709,77 @@ function runMock(fnName, args=[]) {
   }
 }
 
+function _fmtData(d) {
+  const p = n => String(n).padStart(2, '0');
+  return `${p(d.getDate())}.${p(d.getMonth() + 1)}.${d.getFullYear()}`;
+}
+
+function generujHistorieUmow(trwajacaOd, idx) {
+  const typy = ["Tygodniowa", "Tygodniowa", "2 Tygodniowa", "Miesięczna"];
+  let base = new Date(trwajacaOd);
+  if (isNaN(base.getTime())) base = new Date("2026-06-01");
+  const hist = [];
+  let cursor = new Date(base);
+  const ile = 2 + (idx % 2); // 2 lub 3 poprzednie umowy
+  for (let k = 0; k < ile; k++) {
+    const typ = typy[(idx + k) % typy.length];
+    const dni = typ.indexOf("Mies") >= 0 ? 30 : (typ.indexOf("2") >= 0 ? 14 : 7);
+    const doD = new Date(cursor); doD.setDate(doD.getDate() - 1);
+    const odD = new Date(doD); odD.setDate(odD.getDate() - dni + 1);
+    hist.push({ typ: typ, od: _fmtData(odD), do: _fmtData(doD) });
+    cursor = new Date(odD);
+  }
+  return hist; // od najnowszej do najstarszej
+}
+
 window.googleHandlers = {
   pobierzKartyServer: () => {
     const data = MOCK_DATA["Karty"];
     let lista = [];
-    let stats = { wydane: 0, oddane: 0, maxKadrowy: 0 };
-    
+    let stats = { wydane: 0, oddane: 0, doRozliczenia: 0, maxKadrowy: 0 };
+    let doRozliczenia = [];
+
     for(let i=1; i<data.length; i++) {
-        const kadrowy = safeStr(data[i][0], ""); 
-        const imie = safeStr(data[i][1], "");   
+        const kadrowy = safeStr(data[i][0], "");
+        const imie = safeStr(data[i][1], "");
         if(!imie || imie === "-") continue;
-        
-        const karta = safeStr(data[i][2], "");   
-        const dzial = safeStr(data[i][3], "");   
-        const zwrot = safeStr(data[i][5], "");     
-        
+
+        const karta = safeStr(data[i][2], "");
+        const dzial = safeStr(data[i][3], "");
+        const zwrot = safeStr(data[i][5], "");
+
         let numKad = parseInt(kadrowy);
         if(!isNaN(numKad) && numKad > stats.maxKadrowy) {
             stats.maxKadrowy = numKad;
         }
 
         const isOddana = (zwrot !== "" && zwrot !== "-");
-        
+
+        // Część aktywnych kart należy do osób z zaplanowaną rotacją -> do rozliczenia.
+        const doRozl = !isOddana && (i % 7 === 3);
+        let dataRotacji = "";
+        if (doRozl) {
+            const dzien = 14 + (i % 14);
+            dataRotacji = `${String(dzien).padStart(2,'0')}.06.2026`;
+            stats.doRozliczenia++;
+            doRozliczenia.push({ imie: imie, kadrowy: kadrowy, nrKarty: karta, dzial: dzial, dataRotacji: dataRotacji });
+        }
+
         if(isOddana) stats.oddane++;
         else stats.wydane++;
-        
-        lista.push({ 
-            id: "karta_" + i, 
+
+        lista.push({
+            id: "karta_" + i,
             kadrowy: kadrowy,
-            imie: imie, 
-            nrKarty: karta, 
+            imie: imie,
+            nrKarty: karta,
             dzial: dzial,
-            status: isOddana ? "Oddana" : "Wydana"
+            status: isOddana ? "Oddana" : "Wydana",
+            doRozliczenia: doRozl,
+            dataRotacji: dataRotacji
         });
     }
-    return { lista: lista, stats: stats };
+    return { lista: lista, stats: stats, doRozliczenia: doRozliczenia };
   },
 
   pobierzKartySzufladaServer: () => {
@@ -3784,6 +3820,14 @@ window.googleHandlers = {
 
       if (!rotacjaPrzeszla) stats.wszyscy++;
 
+      // Zróżnicowane daty startu: część osób rozpoczęła w bieżącym miesiącu (nowi).
+      const nowy = (i % 9 === 1); // co dziewiąta osoba = nowa w tym miesiącu
+      const dzienStartu = 2 + (i % 20);
+      const startRaw = nowy ? `2026-06-${String(dzienStartu).padStart(2,'0')}`
+                            : `2026-0${1 + (i % 4)}-${String(dzienStartu).padStart(2,'0')}`;
+      const startFmt = startRaw.split('-').reverse().join('.');
+      if (nowy && !rotacjaPrzeszla) stats.nowi++;
+
       lista.push({
         id: "miesiac_row_" + i,
         imie: imie,
@@ -3792,8 +3836,8 @@ window.googleHandlers = {
         telefon: safeStr(row[4], ""), 
         brygada: safeStr(row[5], ""), 
         dataRotacji: rotacja,
-        dataStartuRaw: "2026-05-01",
-        dataStartuFormat: "01.05.2026"
+        dataStartuRaw: startRaw,
+        dataStartuFormat: startFmt
       });
     }
     return { miesiac: nazwaMiesiaca, pracownicy: lista, stats: stats };
@@ -3835,7 +3879,7 @@ window.googleHandlers = {
         trwajacaDo: safeStr(row[10]),
         koniecUmowyRaw: new Date(safeStr(row[10])).getTime() || 0,
         statusAkcji: safeStr(row[11]),
-        historia: { tyg: [], dwaTyg: [], mies: [] },
+        historia: generujHistorieUmow(safeStr(row[9]), i),
         notatki: ""
       });
     }
