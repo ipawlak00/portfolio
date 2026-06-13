@@ -32,7 +32,7 @@ export default function HrMockup({ isOpen, onClose }: HrMockupProps) {
       <div className="flex-grow flex flex-col p-4 md:p-8 gap-6 overflow-y-auto w-full max-w-7xl mx-auto pt-16 relative z-10">
         <div className="flex-grow flex rounded-3xl border border-slate-200 shadow-2xl min-h-[640px] xl:min-h-[720px] overflow-hidden relative">
           <iframe 
-              src="hr.html" 
+              src="hr.html?v=3"
               className="w-full h-full border-0 absolute inset-0"
               title="Employee Lifecycle App Preview"
           />
