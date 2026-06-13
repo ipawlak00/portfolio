@@ -4630,9 +4630,9 @@ window.googleHandlers = {
       },
       planowanie: {
   "stats": {
-    "dniTotal": 1250,
-    "dniRem": 450,
-    "godzRem": 3600
+    "dniTotal": 21,
+    "dniRem": 8,
+    "godzRem": 64
   },
   "lista": [
     {
@@ -4644,7 +4644,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000001",
       "dzial": "Magazyn",
-      "pozostaly": 199
+      "pozostaly": 35
     },
     {
       "bilans": "98,50",
@@ -4655,7 +4655,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000002",
       "dzial": "Jakość",
-      "pozostaly": 198
+      "pozostaly": 34
     },
     {
       "bilans": "97,50",
@@ -4666,7 +4666,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000003",
       "dzial": "Montaż",
-      "pozostaly": 197
+      "pozostaly": 33
     },
     {
       "bilans": "96,50",
@@ -4677,7 +4677,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000004",
       "dzial": "Pakowanie",
-      "pozostaly": 196
+      "pozostaly": 32
     },
     {
       "bilans": "95,50",
@@ -4688,7 +4688,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000005",
       "dzial": "Produkcja",
-      "pozostaly": 195
+      "pozostaly": 31
     },
     {
       "bilans": "94,50",
@@ -4699,7 +4699,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000006",
       "dzial": "Magazyn",
-      "pozostaly": 194
+      "pozostaly": 30
     },
     {
       "bilans": "93,50",
@@ -4710,7 +4710,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000007",
       "dzial": "Jakość",
-      "pozostaly": 193
+      "pozostaly": 29
     },
     {
       "bilans": "92,50",
@@ -4721,7 +4721,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000008",
       "dzial": "Montaż",
-      "pozostaly": 192
+      "pozostaly": 28
     },
     {
       "bilans": "91,50",
@@ -4732,7 +4732,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000009",
       "dzial": "Pakowanie",
-      "pozostaly": 191
+      "pozostaly": 27
     },
     {
       "bilans": "90,50",
@@ -4743,7 +4743,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000010",
       "dzial": "Produkcja",
-      "pozostaly": 190
+      "pozostaly": 26
     },
     {
       "bilans": "89,50",
@@ -4754,7 +4754,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000011",
       "dzial": "Magazyn",
-      "pozostaly": 189
+      "pozostaly": 25
     },
     {
       "bilans": "88,50",
@@ -4765,7 +4765,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000012",
       "dzial": "Jakość",
-      "pozostaly": 188
+      "pozostaly": 24
     },
     {
       "bilans": "87,50",
@@ -4776,7 +4776,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000013",
       "dzial": "Montaż",
-      "pozostaly": 187
+      "pozostaly": 23
     },
     {
       "bilans": "86,50",
@@ -4787,7 +4787,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000014",
       "dzial": "Pakowanie",
-      "pozostaly": 186
+      "pozostaly": 22
     },
     {
       "bilans": "85,50",
@@ -4798,7 +4798,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000015",
       "dzial": "Produkcja",
-      "pozostaly": 185
+      "pozostaly": 21
     },
     {
       "bilans": "84,50",
@@ -4809,7 +4809,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000016",
       "dzial": "Magazyn",
-      "pozostaly": 184
+      "pozostaly": 20
     },
     {
       "bilans": "83,50",
@@ -4820,7 +4820,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000017",
       "dzial": "Jakość",
-      "pozostaly": 183
+      "pozostaly": 19
     },
     {
       "bilans": "82,50",
@@ -4831,7 +4831,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000018",
       "dzial": "Montaż",
-      "pozostaly": 182
+      "pozostaly": 18
     },
     {
       "bilans": "81,50",
@@ -4842,7 +4842,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000019",
       "dzial": "Pakowanie",
-      "pozostaly": 181
+      "pozostaly": 17
     },
     {
       "bilans": "80,50",
@@ -4853,7 +4853,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000020",
       "dzial": "Produkcja",
-      "pozostaly": 180
+      "pozostaly": 16
     },
     {
       "bilans": "79,50",
@@ -4864,7 +4864,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000021",
       "dzial": "Magazyn",
-      "pozostaly": 179
+      "pozostaly": 15
     },
     {
       "bilans": "78,50",
@@ -4875,7 +4875,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000022",
       "dzial": "Jakość",
-      "pozostaly": 178
+      "pozostaly": 14
     },
     {
       "bilans": "77,50",
@@ -4886,7 +4886,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000023",
       "dzial": "Montaż",
-      "pozostaly": 177
+      "pozostaly": 13
     },
     {
       "bilans": "76,50",
@@ -4897,7 +4897,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000024",
       "dzial": "Pakowanie",
-      "pozostaly": 176
+      "pozostaly": 12
     },
     {
       "bilans": "75,50",
@@ -4908,7 +4908,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000025",
       "dzial": "Produkcja",
-      "pozostaly": 175
+      "pozostaly": 11
     },
     {
       "bilans": "74,50",
@@ -4919,7 +4919,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000026",
       "dzial": "Magazyn",
-      "pozostaly": 174
+      "pozostaly": 10
     },
     {
       "bilans": "73,50",
@@ -4930,7 +4930,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000027",
       "dzial": "Jakość",
-      "pozostaly": 173
+      "pozostaly": 9
     },
     {
       "bilans": "72,50",
@@ -4941,7 +4941,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000028",
       "dzial": "Montaż",
-      "pozostaly": 172
+      "pozostaly": 8
     },
     {
       "bilans": "71,50",
@@ -4952,7 +4952,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000029",
       "dzial": "Pakowanie",
-      "pozostaly": 171
+      "pozostaly": 7
     },
     {
       "bilans": "70,50",
@@ -4963,7 +4963,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000030",
       "dzial": "Produkcja",
-      "pozostaly": 170
+      "pozostaly": 6
     },
     {
       "bilans": "69,50",
@@ -4974,7 +4974,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000031",
       "dzial": "Magazyn",
-      "pozostaly": 169
+      "pozostaly": 5
     },
     {
       "bilans": "68,50",
@@ -4985,7 +4985,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000032",
       "dzial": "Jakość",
-      "pozostaly": 168
+      "pozostaly": 4
     },
     {
       "bilans": "67,50",
@@ -4996,7 +4996,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000033",
       "dzial": "Montaż",
-      "pozostaly": 167
+      "pozostaly": 3
     },
     {
       "bilans": "66,50",
@@ -5007,7 +5007,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000034",
       "dzial": "Pakowanie",
-      "pozostaly": 166
+      "pozostaly": 2
     },
     {
       "bilans": "65,50",
@@ -5018,7 +5018,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000035",
       "dzial": "Produkcja",
-      "pozostaly": 165
+      "pozostaly": 1
     },
     {
       "bilans": "64,50",
@@ -5029,7 +5029,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000036",
       "dzial": "Magazyn",
-      "pozostaly": 164
+      "pozostaly": 0
     },
     {
       "bilans": "63,50",
@@ -5040,7 +5040,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000037",
       "dzial": "Jakość",
-      "pozostaly": 163
+      "pozostaly": 40
     },
     {
       "bilans": "62,50",
@@ -5051,7 +5051,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000038",
       "dzial": "Montaż",
-      "pozostaly": 162
+      "pozostaly": 39
     },
     {
       "bilans": "61,50",
@@ -5062,7 +5062,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000039",
       "dzial": "Pakowanie",
-      "pozostaly": 161
+      "pozostaly": 38
     },
     {
       "bilans": "60,50",
@@ -5073,7 +5073,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000040",
       "dzial": "Produkcja",
-      "pozostaly": 160
+      "pozostaly": 37
     },
     {
       "bilans": "59,50",
@@ -5084,7 +5084,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000041",
       "dzial": "Magazyn",
-      "pozostaly": 159
+      "pozostaly": 36
     },
     {
       "bilans": "58,50",
@@ -5095,7 +5095,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000042",
       "dzial": "Jakość",
-      "pozostaly": 158
+      "pozostaly": 35
     },
     {
       "bilans": "57,50",
@@ -5106,7 +5106,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000043",
       "dzial": "Montaż",
-      "pozostaly": 157
+      "pozostaly": 34
     },
     {
       "bilans": "56,50",
@@ -5117,7 +5117,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000044",
       "dzial": "Pakowanie",
-      "pozostaly": 156
+      "pozostaly": 33
     },
     {
       "bilans": "55,50",
@@ -5128,7 +5128,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000045",
       "dzial": "Produkcja",
-      "pozostaly": 155
+      "pozostaly": 32
     },
     {
       "bilans": "54,50",
@@ -5139,7 +5139,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000046",
       "dzial": "Magazyn",
-      "pozostaly": 154
+      "pozostaly": 31
     },
     {
       "bilans": "53,50",
@@ -5150,7 +5150,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000047",
       "dzial": "Jakość",
-      "pozostaly": 153
+      "pozostaly": 30
     },
     {
       "bilans": "52,50",
@@ -5161,7 +5161,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000048",
       "dzial": "Montaż",
-      "pozostaly": 152
+      "pozostaly": 29
     },
     {
       "bilans": "51,50",
@@ -5172,7 +5172,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000049",
       "dzial": "Pakowanie",
-      "pozostaly": 151
+      "pozostaly": 28
     },
     {
       "bilans": "50,50",
@@ -5183,7 +5183,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000050",
       "dzial": "Produkcja",
-      "pozostaly": 150
+      "pozostaly": 27
     },
     {
       "bilans": "49,50",
@@ -5194,7 +5194,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000051",
       "dzial": "Magazyn",
-      "pozostaly": 149
+      "pozostaly": 26
     },
     {
       "bilans": "48,50",
@@ -5205,7 +5205,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000052",
       "dzial": "Jakość",
-      "pozostaly": 148
+      "pozostaly": 25
     },
     {
       "bilans": "47,50",
@@ -5216,7 +5216,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000053",
       "dzial": "Montaż",
-      "pozostaly": 147
+      "pozostaly": 24
     },
     {
       "bilans": "46,50",
@@ -5227,7 +5227,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000054",
       "dzial": "Pakowanie",
-      "pozostaly": 146
+      "pozostaly": 23
     },
     {
       "bilans": "45,50",
@@ -5238,7 +5238,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000055",
       "dzial": "Produkcja",
-      "pozostaly": 145
+      "pozostaly": 22
     },
     {
       "bilans": "44,50",
@@ -5249,7 +5249,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000056",
       "dzial": "Magazyn",
-      "pozostaly": 144
+      "pozostaly": 21
     },
     {
       "bilans": "43,50",
@@ -5260,7 +5260,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000057",
       "dzial": "Jakość",
-      "pozostaly": 143
+      "pozostaly": 20
     },
     {
       "bilans": "42,50",
@@ -5271,7 +5271,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000058",
       "dzial": "Montaż",
-      "pozostaly": 142
+      "pozostaly": 19
     },
     {
       "bilans": "41,50",
@@ -5282,7 +5282,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000059",
       "dzial": "Pakowanie",
-      "pozostaly": 141
+      "pozostaly": 18
     },
     {
       "bilans": "40,50",
@@ -5293,7 +5293,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000060",
       "dzial": "Produkcja",
-      "pozostaly": 140
+      "pozostaly": 17
     }
   ]
 },
@@ -5304,9 +5304,9 @@ window.googleHandlers = {
   pobierzDaneSzafek: () => { return {"stats": {"total": 65, "zajete": 56, "wolne": 9}, "wolne": ["113", "126", "139", "152", "161", "162", "163", "164", "165"], "bezSzafki": [{"nazwisko": "Krawczyk Krystyna", "sap": "10000013", "dzial": "Montaż"}, {"nazwisko": "Mazur Marek", "sap": "10000026", "dzial": "Magazyn"}, {"nazwisko": "Kozłowski Magdalena", "sap": "10000039", "dzial": "Pakowanie"}, {"nazwisko": "Szymańska Michał", "sap": "10000052", "dzial": "Jakość"}], "zajete": [{"nr": "101", "pracownik": {"nazwisko": "Nowak Piotr", "sap": "10000001", "dzial": "Magazyn", "karta": "1007"}}, {"nr": "102", "pracownik": {"nazwisko": "Wiśniewski Jan", "sap": "10000002", "dzial": "Jakość", "karta": "1014"}}, {"nr": "103", "pracownik": {"nazwisko": "Wójcik Katarzyna", "sap": "10000003", "dzial": "Montaż", "karta": "1021"}}, {"nr": "104", "pracownik": {"nazwisko": "Kowalczyk Michał", "sap": "10000004", "dzial": "Pakowanie", "karta": "1028"}}, {"nr": "105", "pracownik": {"nazwisko": "Kaczmarek Agnieszka", "sap": "10000005", "dzial": "Produkcja", "karta": "1035"}}, {"nr": "106", "pracownik": {"nazwisko": "Zieliński Tomasz", "sap": "10000006", "dzial": "Magazyn", "karta": "1042"}}, {"nr": "107", "pracownik": {"nazwisko": "Szymańska Magdalena", "sap": "10000007", "dzial": "Jakość", "karta": "1049"}}, {"nr": "108", "pracownik": {"nazwisko": "Dąbrowski Krzysztof", "sap": "10000008", "dzial": "Montaż", "karta": "1056"}}, {"nr": "109", "pracownik": {"nazwisko": "Kozłowski Barbara", "sap": "10000009", "dzial": "Pakowanie", "karta": "1063"}}, {"nr": "110", "pracownik": {"nazwisko": "Jankowski Marek", "sap": "10000010", "dzial": "Produkcja", "karta": "1070"}}, {"nr": "111", "pracownik": {"nazwisko": "Mazur Ewa", "sap": "10000011", "dzial": "Magazyn", "karta": "1077"}}, {"nr": "112", "pracownik": {"nazwisko": "Kwiatkowski Grzegorz", "sap": "10000012", "dzial": "Jakość", "karta": "1084"}}, {"nr": "114", "pracownik": {"nazwisko": "Kaczmarczyk Wojciech", "sap": "10000014", "dzial": "Pakowanie", "karta": "1098"}}, {"nr": "115", "pracownik": {"nazwisko": "Kowalska Elżbieta", "sap": "10000015", "dzial": "Produkcja", "karta": "1105"}}, {"nr": "116", "pracownik": {"nazwisko": "Nowak Anna", "sap": "10000016", "dzial": "Magazyn", "karta": "1112"}}, {"nr": "117", "pracownik": {"nazwisko": "Wiśniewski Piotr", "sap": "10000017", "dzial": "Jakość", "karta": "1119"}}, {"nr": "118", "pracownik": {"nazwisko": "Wójcik Jan", "sap": "10000018", "dzial": "Montaż", "karta": "1126"}}, {"nr": "119", "pracownik": {"nazwisko": "Kowalczyk Katarzyna", "sap": "10000019", "dzial": "Pakowanie", "karta": "1133"}}, {"nr": "120", "pracownik": {"nazwisko": "Kaczmarek Michał", "sap": "10000020", "dzial": "Produkcja", "karta": "1140"}}, {"nr": "121", "pracownik": {"nazwisko": "Zieliński Agnieszka", "sap": "10000021", "dzial": "Magazyn", "karta": "1147"}}, {"nr": "122", "pracownik": {"nazwisko": "Szymańska Tomasz", "sap": "10000022", "dzial": "Jakość", "karta": "1154"}}, {"nr": "123", "pracownik": {"nazwisko": "Dąbrowski Magdalena", "sap": "10000023", "dzial": "Montaż", "karta": "1161"}}, {"nr": "124", "pracownik": {"nazwisko": "Kozłowski Krzysztof", "sap": "10000024", "dzial": "Pakowanie", "karta": "1168"}}, {"nr": "125", "pracownik": {"nazwisko": "Jankowski Barbara", "sap": "10000025", "dzial": "Produkcja", "karta": "1175"}}, {"nr": "127", "pracownik": {"nazwisko": "Kwiatkowski Ewa", "sap": "10000027", "dzial": "Jakość", "karta": "1189"}}, {"nr": "128", "pracownik": {"nazwisko": "Krawczyk Grzegorz", "sap": "10000028", "dzial": "Montaż", "karta": "1196"}}, {"nr": "129", "pracownik": {"nazwisko": "Kaczmarczyk Krystyna", "sap": "10000029", "dzial": "Pakowanie", "karta": "1203"}}, {"nr": "130", "pracownik": {"nazwisko": "Kowalska Wojciech", "sap": "10000030", "dzial": "Produkcja", "karta": "1210"}}, {"nr": "131", "pracownik": {"nazwisko": "Nowak Elżbieta", "sap": "10000031", "dzial": "Magazyn", "karta": "1217"}}, {"nr": "132", "pracownik": {"nazwisko": "Wiśniewski Anna", "sap": "10000032", "dzial": "Jakość", "karta": "1224"}}, {"nr": "133", "pracownik": {"nazwisko": "Wójcik Piotr", "sap": "10000033", "dzial": "Montaż", "karta": "1231"}}, {"nr": "134", "pracownik": {"nazwisko": "Kowalczyk Jan", "sap": "10000034", "dzial": "Pakowanie", "karta": "1238"}}, {"nr": "135", "pracownik": {"nazwisko": "Kaczmarek Katarzyna", "sap": "10000035", "dzial": "Produkcja", "karta": "1245"}}, {"nr": "136", "pracownik": {"nazwisko": "Zieliński Michał", "sap": "10000036", "dzial": "Magazyn", "karta": "1252"}}, {"nr": "137", "pracownik": {"nazwisko": "Szymańska Agnieszka", "sap": "10000037", "dzial": "Jakość", "karta": "1259"}}, {"nr": "138", "pracownik": {"nazwisko": "Dąbrowski Tomasz", "sap": "10000038", "dzial": "Montaż", "karta": "1266"}}, {"nr": "140", "pracownik": {"nazwisko": "Jankowski Krzysztof", "sap": "10000040", "dzial": "Produkcja", "karta": "1280"}}, {"nr": "141", "pracownik": {"nazwisko": "Mazur Barbara", "sap": "10000041", "dzial": "Magazyn", "karta": "1287"}}, {"nr": "142", "pracownik": {"nazwisko": "Kwiatkowski Marek", "sap": "10000042", "dzial": "Jakość", "karta": "1294"}}, {"nr": "143", "pracownik": {"nazwisko": "Krawczyk Ewa", "sap": "10000043", "dzial": "Montaż", "karta": "1301"}}, {"nr": "144", "pracownik": {"nazwisko": "Kaczmarczyk Grzegorz", "sap": "10000044", "dzial": "Pakowanie", "karta": "1308"}}, {"nr": "145", "pracownik": {"nazwisko": "Kowalska Krystyna", "sap": "10000045", "dzial": "Produkcja", "karta": "1315"}}, {"nr": "146", "pracownik": {"nazwisko": "Nowak Wojciech", "sap": "10000046", "dzial": "Magazyn", "karta": "1322"}}, {"nr": "147", "pracownik": {"nazwisko": "Wiśniewski Elżbieta", "sap": "10000047", "dzial": "Jakość", "karta": "1329"}}, {"nr": "148", "pracownik": {"nazwisko": "Wójcik Anna", "sap": "10000048", "dzial": "Montaż", "karta": "1336"}}, {"nr": "149", "pracownik": {"nazwisko": "Kowalczyk Piotr", "sap": "10000049", "dzial": "Pakowanie", "karta": "1343"}}, {"nr": "150", "pracownik": {"nazwisko": "Kaczmarek Jan", "sap": "10000050", "dzial": "Produkcja", "karta": "1350"}}, {"nr": "151", "pracownik": {"nazwisko": "Zieliński Katarzyna", "sap": "10000051", "dzial": "Magazyn", "karta": "1357"}}, {"nr": "153", "pracownik": {"nazwisko": "Dąbrowski Agnieszka", "sap": "10000053", "dzial": "Montaż", "karta": "1371"}}, {"nr": "154", "pracownik": {"nazwisko": "Kozłowski Tomasz", "sap": "10000054", "dzial": "Pakowanie", "karta": "1378"}}, {"nr": "155", "pracownik": {"nazwisko": "Jankowski Magdalena", "sap": "10000055", "dzial": "Produkcja", "karta": "1385"}}, {"nr": "156", "pracownik": {"nazwisko": "Mazur Krzysztof", "sap": "10000056", "dzial": "Magazyn", "karta": "1392"}}, {"nr": "157", "pracownik": {"nazwisko": "Kwiatkowski Barbara", "sap": "10000057", "dzial": "Jakość", "karta": "1399"}}, {"nr": "158", "pracownik": {"nazwisko": "Krawczyk Marek", "sap": "10000058", "dzial": "Montaż", "karta": "1406"}}, {"nr": "159", "pracownik": {"nazwisko": "Kaczmarczyk Ewa", "sap": "10000059", "dzial": "Pakowanie", "karta": "1413"}}, {"nr": "160", "pracownik": {"nazwisko": "Kowalska Grzegorz", "sap": "10000060", "dzial": "Produkcja", "karta": "1420"}}], "pracownicy": [{"nazwisko": "Nowak Piotr", "sap": "10000001", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Jan", "sap": "10000002", "dzial": "Jakość"}, {"nazwisko": "Wójcik Katarzyna", "sap": "10000003", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Michał", "sap": "10000004", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Agnieszka", "sap": "10000005", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Tomasz", "sap": "10000006", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Magdalena", "sap": "10000007", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Krzysztof", "sap": "10000008", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Barbara", "sap": "10000009", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Marek", "sap": "10000010", "dzial": "Produkcja"}, {"nazwisko": "Mazur Ewa", "sap": "10000011", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Grzegorz", "sap": "10000012", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Krystyna", "sap": "10000013", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Wojciech", "sap": "10000014", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Elżbieta", "sap": "10000015", "dzial": "Produkcja"}, {"nazwisko": "Nowak Anna", "sap": "10000016", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Piotr", "sap": "10000017", "dzial": "Jakość"}, {"nazwisko": "Wójcik Jan", "sap": "10000018", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Katarzyna", "sap": "10000019", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Michał", "sap": "10000020", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Agnieszka", "sap": "10000021", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Tomasz", "sap": "10000022", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Magdalena", "sap": "10000023", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Krzysztof", "sap": "10000024", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Barbara", "sap": "10000025", "dzial": "Produkcja"}, {"nazwisko": "Mazur Marek", "sap": "10000026", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Ewa", "sap": "10000027", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Grzegorz", "sap": "10000028", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Krystyna", "sap": "10000029", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Wojciech", "sap": "10000030", "dzial": "Produkcja"}, {"nazwisko": "Nowak Elżbieta", "sap": "10000031", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Anna", "sap": "10000032", "dzial": "Jakość"}, {"nazwisko": "Wójcik Piotr", "sap": "10000033", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Jan", "sap": "10000034", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Katarzyna", "sap": "10000035", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Michał", "sap": "10000036", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Agnieszka", "sap": "10000037", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Tomasz", "sap": "10000038", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Magdalena", "sap": "10000039", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Krzysztof", "sap": "10000040", "dzial": "Produkcja"}, {"nazwisko": "Mazur Barbara", "sap": "10000041", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Marek", "sap": "10000042", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Ewa", "sap": "10000043", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Grzegorz", "sap": "10000044", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Krystyna", "sap": "10000045", "dzial": "Produkcja"}, {"nazwisko": "Nowak Wojciech", "sap": "10000046", "dzial": "Magazyn"}, {"nazwisko": "Wiśniewski Elżbieta", "sap": "10000047", "dzial": "Jakość"}, {"nazwisko": "Wójcik Anna", "sap": "10000048", "dzial": "Montaż"}, {"nazwisko": "Kowalczyk Piotr", "sap": "10000049", "dzial": "Pakowanie"}, {"nazwisko": "Kaczmarek Jan", "sap": "10000050", "dzial": "Produkcja"}, {"nazwisko": "Zieliński Katarzyna", "sap": "10000051", "dzial": "Magazyn"}, {"nazwisko": "Szymańska Michał", "sap": "10000052", "dzial": "Jakość"}, {"nazwisko": "Dąbrowski Agnieszka", "sap": "10000053", "dzial": "Montaż"}, {"nazwisko": "Kozłowski Tomasz", "sap": "10000054", "dzial": "Pakowanie"}, {"nazwisko": "Jankowski Magdalena", "sap": "10000055", "dzial": "Produkcja"}, {"nazwisko": "Mazur Krzysztof", "sap": "10000056", "dzial": "Magazyn"}, {"nazwisko": "Kwiatkowski Barbara", "sap": "10000057", "dzial": "Jakość"}, {"nazwisko": "Krawczyk Marek", "sap": "10000058", "dzial": "Montaż"}, {"nazwisko": "Kaczmarczyk Ewa", "sap": "10000059", "dzial": "Pakowanie"}, {"nazwisko": "Kowalska Grzegorz", "sap": "10000060", "dzial": "Produkcja"}] }; },
   pobierzDanePlanowaniaDlaTrybu: () => { return {
   "stats": {
-    "dniTotal": 1250,
-    "dniRem": 450,
-    "godzRem": 3600
+    "dniTotal": 21,
+    "dniRem": 8,
+    "godzRem": 64
   },
   "lista": [
     {
@@ -5318,7 +5318,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000001",
       "dzial": "Magazyn",
-      "pozostaly": 199
+      "pozostaly": 35
     },
     {
       "bilans": "98,50",
@@ -5329,7 +5329,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000002",
       "dzial": "Jakość",
-      "pozostaly": 198
+      "pozostaly": 34
     },
     {
       "bilans": "97,50",
@@ -5340,7 +5340,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000003",
       "dzial": "Montaż",
-      "pozostaly": 197
+      "pozostaly": 33
     },
     {
       "bilans": "96,50",
@@ -5351,7 +5351,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000004",
       "dzial": "Pakowanie",
-      "pozostaly": 196
+      "pozostaly": 32
     },
     {
       "bilans": "95,50",
@@ -5362,7 +5362,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000005",
       "dzial": "Produkcja",
-      "pozostaly": 195
+      "pozostaly": 31
     },
     {
       "bilans": "94,50",
@@ -5373,7 +5373,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000006",
       "dzial": "Magazyn",
-      "pozostaly": 194
+      "pozostaly": 30
     },
     {
       "bilans": "93,50",
@@ -5384,7 +5384,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000007",
       "dzial": "Jakość",
-      "pozostaly": 193
+      "pozostaly": 29
     },
     {
       "bilans": "92,50",
@@ -5395,7 +5395,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000008",
       "dzial": "Montaż",
-      "pozostaly": 192
+      "pozostaly": 28
     },
     {
       "bilans": "91,50",
@@ -5406,7 +5406,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000009",
       "dzial": "Pakowanie",
-      "pozostaly": 191
+      "pozostaly": 27
     },
     {
       "bilans": "90,50",
@@ -5417,7 +5417,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000010",
       "dzial": "Produkcja",
-      "pozostaly": 190
+      "pozostaly": 26
     },
     {
       "bilans": "89,50",
@@ -5428,7 +5428,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000011",
       "dzial": "Magazyn",
-      "pozostaly": 189
+      "pozostaly": 25
     },
     {
       "bilans": "88,50",
@@ -5439,7 +5439,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000012",
       "dzial": "Jakość",
-      "pozostaly": 188
+      "pozostaly": 24
     },
     {
       "bilans": "87,50",
@@ -5450,7 +5450,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000013",
       "dzial": "Montaż",
-      "pozostaly": 187
+      "pozostaly": 23
     },
     {
       "bilans": "86,50",
@@ -5461,7 +5461,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000014",
       "dzial": "Pakowanie",
-      "pozostaly": 186
+      "pozostaly": 22
     },
     {
       "bilans": "85,50",
@@ -5472,7 +5472,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000015",
       "dzial": "Produkcja",
-      "pozostaly": 185
+      "pozostaly": 21
     },
     {
       "bilans": "84,50",
@@ -5483,7 +5483,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000016",
       "dzial": "Magazyn",
-      "pozostaly": 184
+      "pozostaly": 20
     },
     {
       "bilans": "83,50",
@@ -5494,7 +5494,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000017",
       "dzial": "Jakość",
-      "pozostaly": 183
+      "pozostaly": 19
     },
     {
       "bilans": "82,50",
@@ -5505,7 +5505,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000018",
       "dzial": "Montaż",
-      "pozostaly": 182
+      "pozostaly": 18
     },
     {
       "bilans": "81,50",
@@ -5516,7 +5516,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000019",
       "dzial": "Pakowanie",
-      "pozostaly": 181
+      "pozostaly": 17
     },
     {
       "bilans": "80,50",
@@ -5527,7 +5527,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000020",
       "dzial": "Produkcja",
-      "pozostaly": 180
+      "pozostaly": 16
     },
     {
       "bilans": "79,50",
@@ -5538,7 +5538,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000021",
       "dzial": "Magazyn",
-      "pozostaly": 179
+      "pozostaly": 15
     },
     {
       "bilans": "78,50",
@@ -5549,7 +5549,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000022",
       "dzial": "Jakość",
-      "pozostaly": 178
+      "pozostaly": 14
     },
     {
       "bilans": "77,50",
@@ -5560,7 +5560,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000023",
       "dzial": "Montaż",
-      "pozostaly": 177
+      "pozostaly": 13
     },
     {
       "bilans": "76,50",
@@ -5571,7 +5571,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000024",
       "dzial": "Pakowanie",
-      "pozostaly": 176
+      "pozostaly": 12
     },
     {
       "bilans": "75,50",
@@ -5582,7 +5582,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000025",
       "dzial": "Produkcja",
-      "pozostaly": 175
+      "pozostaly": 11
     },
     {
       "bilans": "74,50",
@@ -5593,7 +5593,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000026",
       "dzial": "Magazyn",
-      "pozostaly": 174
+      "pozostaly": 10
     },
     {
       "bilans": "73,50",
@@ -5604,7 +5604,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000027",
       "dzial": "Jakość",
-      "pozostaly": 173
+      "pozostaly": 9
     },
     {
       "bilans": "72,50",
@@ -5615,7 +5615,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000028",
       "dzial": "Montaż",
-      "pozostaly": 172
+      "pozostaly": 8
     },
     {
       "bilans": "71,50",
@@ -5626,7 +5626,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000029",
       "dzial": "Pakowanie",
-      "pozostaly": 171
+      "pozostaly": 7
     },
     {
       "bilans": "70,50",
@@ -5637,7 +5637,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000030",
       "dzial": "Produkcja",
-      "pozostaly": 170
+      "pozostaly": 6
     },
     {
       "bilans": "69,50",
@@ -5648,7 +5648,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000031",
       "dzial": "Magazyn",
-      "pozostaly": 169
+      "pozostaly": 5
     },
     {
       "bilans": "68,50",
@@ -5659,7 +5659,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000032",
       "dzial": "Jakość",
-      "pozostaly": 168
+      "pozostaly": 4
     },
     {
       "bilans": "67,50",
@@ -5670,7 +5670,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000033",
       "dzial": "Montaż",
-      "pozostaly": 167
+      "pozostaly": 3
     },
     {
       "bilans": "66,50",
@@ -5681,7 +5681,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000034",
       "dzial": "Pakowanie",
-      "pozostaly": 166
+      "pozostaly": 2
     },
     {
       "bilans": "65,50",
@@ -5692,7 +5692,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000035",
       "dzial": "Produkcja",
-      "pozostaly": 165
+      "pozostaly": 1
     },
     {
       "bilans": "64,50",
@@ -5703,7 +5703,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000036",
       "dzial": "Magazyn",
-      "pozostaly": 164
+      "pozostaly": 0
     },
     {
       "bilans": "63,50",
@@ -5714,7 +5714,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000037",
       "dzial": "Jakość",
-      "pozostaly": 163
+      "pozostaly": 40
     },
     {
       "bilans": "62,50",
@@ -5725,7 +5725,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000038",
       "dzial": "Montaż",
-      "pozostaly": 162
+      "pozostaly": 39
     },
     {
       "bilans": "61,50",
@@ -5736,7 +5736,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000039",
       "dzial": "Pakowanie",
-      "pozostaly": 161
+      "pozostaly": 38
     },
     {
       "bilans": "60,50",
@@ -5747,7 +5747,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000040",
       "dzial": "Produkcja",
-      "pozostaly": 160
+      "pozostaly": 37
     },
     {
       "bilans": "59,50",
@@ -5758,7 +5758,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000041",
       "dzial": "Magazyn",
-      "pozostaly": 159
+      "pozostaly": 36
     },
     {
       "bilans": "58,50",
@@ -5769,7 +5769,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000042",
       "dzial": "Jakość",
-      "pozostaly": 158
+      "pozostaly": 35
     },
     {
       "bilans": "57,50",
@@ -5780,7 +5780,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000043",
       "dzial": "Montaż",
-      "pozostaly": 157
+      "pozostaly": 34
     },
     {
       "bilans": "56,50",
@@ -5791,7 +5791,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000044",
       "dzial": "Pakowanie",
-      "pozostaly": 156
+      "pozostaly": 33
     },
     {
       "bilans": "55,50",
@@ -5802,7 +5802,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000045",
       "dzial": "Produkcja",
-      "pozostaly": 155
+      "pozostaly": 32
     },
     {
       "bilans": "54,50",
@@ -5813,7 +5813,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000046",
       "dzial": "Magazyn",
-      "pozostaly": 154
+      "pozostaly": 31
     },
     {
       "bilans": "53,50",
@@ -5824,7 +5824,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000047",
       "dzial": "Jakość",
-      "pozostaly": 153
+      "pozostaly": 30
     },
     {
       "bilans": "52,50",
@@ -5835,7 +5835,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000048",
       "dzial": "Montaż",
-      "pozostaly": 152
+      "pozostaly": 29
     },
     {
       "bilans": "51,50",
@@ -5846,7 +5846,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000049",
       "dzial": "Pakowanie",
-      "pozostaly": 151
+      "pozostaly": 28
     },
     {
       "bilans": "50,50",
@@ -5857,7 +5857,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000050",
       "dzial": "Produkcja",
-      "pozostaly": 150
+      "pozostaly": 27
     },
     {
       "bilans": "49,50",
@@ -5868,7 +5868,7 @@ window.googleHandlers = {
       "imie": "Piotr",
       "sapId": "10000051",
       "dzial": "Magazyn",
-      "pozostaly": 149
+      "pozostaly": 26
     },
     {
       "bilans": "48,50",
@@ -5879,7 +5879,7 @@ window.googleHandlers = {
       "imie": "Jan",
       "sapId": "10000052",
       "dzial": "Jakość",
-      "pozostaly": 148
+      "pozostaly": 25
     },
     {
       "bilans": "47,50",
@@ -5890,7 +5890,7 @@ window.googleHandlers = {
       "imie": "Katarzyna",
       "sapId": "10000053",
       "dzial": "Montaż",
-      "pozostaly": 147
+      "pozostaly": 24
     },
     {
       "bilans": "46,50",
@@ -5901,7 +5901,7 @@ window.googleHandlers = {
       "imie": "Michał",
       "sapId": "10000054",
       "dzial": "Pakowanie",
-      "pozostaly": 146
+      "pozostaly": 23
     },
     {
       "bilans": "45,50",
@@ -5912,7 +5912,7 @@ window.googleHandlers = {
       "imie": "Agnieszka",
       "sapId": "10000055",
       "dzial": "Produkcja",
-      "pozostaly": 145
+      "pozostaly": 22
     },
     {
       "bilans": "44,50",
@@ -5923,7 +5923,7 @@ window.googleHandlers = {
       "imie": "Tomasz",
       "sapId": "10000056",
       "dzial": "Magazyn",
-      "pozostaly": 144
+      "pozostaly": 21
     },
     {
       "bilans": "43,50",
@@ -5934,7 +5934,7 @@ window.googleHandlers = {
       "imie": "Magdalena",
       "sapId": "10000057",
       "dzial": "Jakość",
-      "pozostaly": 143
+      "pozostaly": 20
     },
     {
       "bilans": "42,50",
@@ -5945,7 +5945,7 @@ window.googleHandlers = {
       "imie": "Krzysztof",
       "sapId": "10000058",
       "dzial": "Montaż",
-      "pozostaly": 142
+      "pozostaly": 19
     },
     {
       "bilans": "41,50",
@@ -5956,7 +5956,7 @@ window.googleHandlers = {
       "imie": "Barbara",
       "sapId": "10000059",
       "dzial": "Pakowanie",
-      "pozostaly": 141
+      "pozostaly": 18
     },
     {
       "bilans": "40,50",
@@ -5967,7 +5967,7 @@ window.googleHandlers = {
       "imie": "Anna",
       "sapId": "10000060",
       "dzial": "Produkcja",
-      "pozostaly": 140
+      "pozostaly": 17
     }
   ]
 }; },

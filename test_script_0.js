@@ -285,7 +285,7 @@
               <td><span class="fw-bold text-primary"><i class="fas fa-id-card me-1 opacity-50"></i>${p.nrKarty}</span></td>
               <td><span class="badge-dept">${p.dzial || '-'}</span></td>
               <td>${badge}</td>
-              <td class="text-end pe-4">
+              <td class="text-end pe-4" style="white-space:nowrap;">
                  <button class="btn btn-sm btn-outline-primary me-1" onclick="otworzModalaKarty('${p.id}')" title="Edytuj"><i class="fas fa-edit"></i></button>
                  <button class="btn btn-sm btn-outline-danger" onclick="usunKarte('${p.id}')" title="Usuń"><i class="fas fa-trash"></i></button>
               </td>
@@ -335,11 +335,27 @@
         const lista = BAZA_KARTY.filter(k => k.doRozliczenia && k.status === 'Wydana');
         if (!lista.length) { wrap.innerHTML = '<span class="text-muted small">Brak osób do rozliczenia.</span>'; return; }
         wrap.innerHTML = lista.map(k =>
-            `<div class="bg-white rounded border p-2 d-flex justify-content-between align-items-center">
-               <div><span class="fw-bold text-navy small d-block">${k.imie}</span><small class="text-muted">Karta ${k.nrKarty} · rotacja ${k.dataRotacji}</small></div>
-               <span class="badge badge-subtle-danger">${k.dzial || '-'}</span>
+            `<div class="bg-white rounded border p-2">
+               <div class="d-flex justify-content-between align-items-center mb-2">
+                 <div><span class="fw-bold text-navy small d-block">${k.imie}</span><small class="text-muted">Karta ${k.nrKarty} · rotacja ${k.dataRotacji}</small></div>
+                 <span class="badge badge-subtle-danger">${k.dzial || '-'}</span>
+               </div>
+               <button class="btn btn-sm btn-success w-100 fw-bold" onclick="odbierzKarte('${k.id}')"><i class="fas fa-check me-1"></i>Odbierz kartę</button>
              </div>`
         ).join('');
+    }
+
+    function odbierzKarte(id) {
+        const k = BAZA_KARTY.find(x => x.id === id);
+        if (!k) return;
+        k.status = 'Oddana';
+        k.doRozliczenia = false;
+        if (!KARTY_WOLNE.includes(String(k.nrKarty))) {
+            KARTY_WOLNE.push(String(k.nrKarty));
+            google.script.run.withSuccessHandler(()=>{}).zapiszKartySzufladaServer(KARTY_WOLNE);
+        }
+        pokazPowiadomienie(`Karta ${k.nrKarty} odebrana od ${k.imie}.`);
+        renderKartyWszystko();
     }
 
     function otworzModalaKarty(id) {
@@ -864,6 +880,7 @@
     window.zapiszKarte = zapiszKarte;
     window.usunKarte = usunKarte;
     window.zarzadzajKartamiWBiurze = zarzadzajKartamiWBiurze;
+    window.odbierzKarte = odbierzKarte;
     window.sortUmo = sortUmo;
     window.filtrujBaze = filtrujBaze;
     window.zapiszOnboarding = zapiszOnboarding;
