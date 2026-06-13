@@ -5,10 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise HR System</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/fontawesome.min.css" rel="stylesheet">
+  <script src="vendor/bootstrap.bundle.min.js"></script>
+  <script src="vendor/xlsx.full.min.js"></script>
+  <script src="vendor/chart.umd.min.js"></script>
  
   <style>
     :root {
@@ -558,6 +559,89 @@
              </select>
           </div>
           <button class="btn w-100 py-3 fw-bold text-white shadow-sm" style="background-color: var(--rd-light-blue);" onclick="zapiszKarte()">Zapisz Kartę</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL PRACOWNIK (edycja / dodawanie) -->
+  <div class="modal fade" id="modalPracownik" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header text-white" style="background-color: var(--rd-navy);">
+          <h5 class="modal-title fw-bold" id="modalPracownikTytul"><i class="fas fa-user-edit me-2"></i>Edytuj dane pracownika</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-4 bg-light">
+          <input type="hidden" id="p-stare-imie">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">Imię i nazwisko</label>
+              <input type="text" class="form-control fw-bold text-navy" id="p-imie" placeholder="Wpisz imię i nazwisko...">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">EMP ID (Nr SAP)</label>
+              <input type="text" class="form-control fw-bold text-navy" id="p-sap" placeholder="np. 10000061">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">Dział</label>
+              <input type="text" class="form-control fw-bold text-navy" id="p-dzial" placeholder="np. Produkcja, Magazyn...">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">Brygada</label>
+              <input type="text" class="form-control fw-bold text-navy" id="p-brygada" placeholder="np. Brygada A">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">Telefon</label>
+              <input type="text" class="form-control fw-bold text-navy" id="p-tel" placeholder="np. 500000000">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">Data rozpoczęcia</label>
+              <input type="date" class="form-control fw-bold text-navy" id="p-start" ondblclick="try{this.showPicker()}catch(e){}">
+            </div>
+            <div class="col-md-6">
+              <label class="form-label fw-bold text-muted small text-uppercase">Data rotacji (opcjonalnie)</label>
+              <input type="date" class="form-control fw-bold text-navy" id="p-rotacja" ondblclick="try{this.showPicker()}catch(e){}">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer bg-white p-3 d-flex justify-content-between">
+          <button type="button" class="btn btn-outline-danger fw-bold d-none" id="p-btn-usun" onclick="usunPracownika()"><i class="fas fa-trash-alt me-2"></i>Usuń</button>
+          <div class="ms-auto">
+            <button type="button" class="btn btn-link text-muted text-decoration-none" data-bs-dismiss="modal">Anuluj</button>
+            <button type="button" class="btn px-4 fw-bold text-white shadow-sm" style="background-color: var(--rd-navy);" onclick="zapiszPracownika()">Zapisz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL KOSZYK (tydzień umów) -->
+  <div class="modal fade" id="modalKoszyk" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+        <div class="modal-header text-white" style="background-color: var(--rd-navy);">
+          <h5 class="modal-title fw-bold"><i class="fas fa-shopping-cart me-2"></i>Koszyk umów do wystawienia</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body p-0 bg-light">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead class="bg-white">
+                <tr>
+                  <th class="ps-4 py-3 text-uppercase small text-muted">Pracownik</th>
+                  <th class="py-3 text-uppercase small text-muted">Od</th>
+                  <th class="py-3 text-uppercase small text-muted">Do</th>
+                  <th class="text-end pe-4 py-3 text-uppercase small text-muted">Akcja</th>
+                </tr>
+              </thead>
+              <tbody id="koszyk-cialo"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer bg-white p-3">
+          <button type="button" class="btn btn-link text-muted text-decoration-none" data-bs-dismiss="modal">Zamknij</button>
+          <button type="button" class="btn px-4 fw-bold text-white shadow-sm" style="background-color: var(--rd-blue);" onclick="uruchomWystawianie()"><i class="fas fa-file-signature me-2"></i>Wystaw tydzień</button>
         </div>
       </div>
     </div>
