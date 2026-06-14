@@ -14,11 +14,12 @@ export default function AboutMe({ isVisible }: AboutMeProps) {
         <b>
           Kim jestem?<br />
           <br />
-          Jestem sobą – jestem Izabelą.
         </b>
-        Tworzę procesy, wymyślam nowe rozwiązania i porządkuję chaos. Bywam
-        budowniczym struktur, wizjonerem zmian i analitycznym myślicielem, a
-        kiedy trzeba – skutecznym doradcą i motywatorem.
+        Jestem Izabelą. Analizuję dane, układam procesy i buduję narzędzia, które
+        porządkują chaos operacyjny. Tworzę rozwiązania od pomysłu po wdrożenie:
+        mapuję procesy, projektuję, automatyzuję i upraszczam to, co skomplikowane.
+        Łączę analityczne myślenie z praktycznym budowaniem, a wiedzę
+        psychologiczną wykorzystuję, żeby narzędzia naprawdę służyły ludziom.
       </div>
     </div>
   );

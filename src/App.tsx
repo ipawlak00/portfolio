@@ -66,14 +66,9 @@ export default function App() {
         
         {/* HEADER NAVIGATION ROW */}
         <div className="header-row relative z-30 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-10 lg:gap-20 mb-16 lg:mb-[80px] w-full">
-          <div className="flex flex-col shrink-0">
-            <h1 className="main-title text-left text-4xl sm:text-6xl md:text-[80px] font-sans font-black tracking-tighter m-0 bg-clip-text">
-              IZABELA PAWLAK
-            </h1>
-            <p className="text-left text-[#1e293b]/75 font-sans font-semibold text-sm sm:text-base md:text-lg mt-2 md:mt-3 max-w-[640px]">
-              Analizuję dane, układam procesy i buduję narzędzia, które porządkują chaos operacyjny.
-            </p>
-          </div>
+          <h1 className="main-title text-left text-4xl sm:text-6xl md:text-[80px] font-sans font-black tracking-tighter m-0 bg-clip-text shrink-0">
+            IZABELA PAWLAK
+          </h1>
           
           <div className="contact-icons flex flex-wrap gap-[20px] md:gap-[30px] items-center w-full lg:w-auto mt-4 lg:mt-0 justify-start lg:justify-end">
             {/* LinkedIn Icon with raw SVG */}

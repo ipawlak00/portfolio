@@ -5,14 +5,14 @@ export const projectsData: ProjectItem[] = [
     id: 0,
     shortLabel: "Analityka Sprzedaży (BI)",
     title: "Sales Analytics & BI Workspace",
-    text: "Samodzielnie poprowadziłam budowę dedykowanej aplikacji dla działów sprzedaży — od zebrania potrzeb po wdrożenie — łącząc dane z codzienną pracą zespołów w terenie. Handlowcy dostali proste narzędzie, a menedżerowie pełen, oparty na danych wgląd w wyniki.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Decyzje oparte na danych (Data-Driven):</b> centralizacja danych z wielu systemów (BigQuery) i interaktywne dashboardy KPI w Looker Studio, dostępne dla zarządu w czasie rzeczywistym.</li><li><b>Analiza i optymalizacja procesów:</b> mapowanie oraz digitalizacja procesów (wyceny, onboarding), co ograniczyło błędy i odciążyło zespół operacyjny.</li><li><b>Analiza potrzeb i architektura rozwiązania:</b> zaprojektowanie ekosystemu spinającego sprzedaż, finanse i logistykę w jeden, płynny proces.</li></ul>",
+    text: "Samodzielnie poprowadziłam budowę dedykowanej aplikacji dla działów sprzedaży, od zebrania potrzeb po wdrożenie, łącząc dane z codzienną pracą zespołów w terenie. Handlowcy dostali proste narzędzie, a menedżerowie pełen, oparty na danych wgląd w wyniki.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Decyzje oparte na danych (Data-Driven):</b> centralizacja danych z wielu systemów (BigQuery) i interaktywne dashboardy KPI w Looker Studio, dostępne dla zarządu w czasie rzeczywistym.</li><li><b>Analiza i optymalizacja procesów:</b> mapowanie oraz digitalizacja procesów (wyceny, onboarding), co ograniczyło błędy i odciążyło zespół operacyjny.</li><li><b>Analiza potrzeb i architektura rozwiązania:</b> zaprojektowanie ekosystemu spinającego sprzedaż, finanse i logistykę w jeden, płynny proces.</li></ul>",
     link: "https://lookerstudio.google.com/"
   },
   {
     id: 1,
     shortLabel: "Onboarding & Operacje",
     title: "Onboarding & Fleet Operations",
-    text: "Poprowadziłam budowę środowiska zatrudnienia od A do Z — od koncepcji po wdrożenie — zmieniając chaotyczny onboarding setek osób w zautomatyzowany, powtarzalny proces.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Prowadzenie inicjatywy i priorytetyzacja:</b> rozbicie złożonego procesu zatrudniania na powtarzalne kroki — od podpisania umowy po pierwszy dzień pracy.</li><li><b>Doskonałość operacyjna i automatyzacja:</b> zastąpienie ręcznych tabel automatycznymi powiadomieniami, e-mailami i rezerwacją sprzętu floty (zarządzanie zasobami).</li><li><b>Poprawa SLA i ciągłe doskonalenie (Continuous Improvement):</b> skrócenie przestojów HR oraz eliminacja powracających braków sprzętowych.</li></ul>",
+    text: "Poprowadziłam budowę środowiska zatrudnienia od A do Z, od koncepcji po wdrożenie, zmieniając chaotyczny onboarding setek osób w zautomatyzowany, powtarzalny proces.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Prowadzenie inicjatywy i priorytetyzacja:</b> rozbicie złożonego procesu zatrudniania na powtarzalne kroki: od podpisania umowy po pierwszy dzień pracy.</li><li><b>Doskonałość operacyjna i automatyzacja:</b> zastąpienie ręcznych tabel automatycznymi powiadomieniami, e-mailami i rezerwacją sprzętu floty (zarządzanie zasobami).</li><li><b>Poprawa SLA i ciągłe doskonalenie (Continuous Improvement):</b> skrócenie przestojów HR oraz eliminacja powracających braków sprzętowych.</li></ul>",
     link: "https://script.google.com/"
   },
   {
@@ -26,21 +26,21 @@ export const projectsData: ProjectItem[] = [
     id: 3,
     shortLabel: "Cykl Życia Pracownika",
     title: "Employee Lifecycle Management",
-    text: "Digitalizacja Back-Office: zamiast tysiąca rozproszonych plików — jedno spójne, intuicyjne narzędzie aplikacyjne łączące działy w firmie.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Mapowanie procesów As-Is / To-Be:</b> przeprojektowanie przepływu informacji i ustalenie nowych standardów pracy (SOP).</li><li><b>Zarządzanie ryzykiem i compliance:</b> przełożenie trudnych przepisów na automatyczne alerty (np. limit absencji / 540 dni).</li><li><b>Single Source of Truth:</b> centralna baza danych, z której działy bezpiecznie wymieniają informacje o ludziach i zasobach (szafki, karty).</li></ul>",
+    text: "Digitalizacja Back-Office: zamiast tysiąca rozproszonych plików, jedno spójne, intuicyjne narzędzie aplikacyjne łączące działy w firmie.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Mapowanie procesów As-Is / To-Be:</b> przeprojektowanie przepływu informacji i ustalenie nowych standardów pracy (SOP).</li><li><b>Zarządzanie ryzykiem i compliance:</b> przełożenie trudnych przepisów na automatyczne alerty (np. limit absencji / 540 dni).</li><li><b>Single Source of Truth:</b> centralna baza danych, z której działy bezpiecznie wymieniają informacje o ludziach i zasobach (szafki, karty).</li></ul>",
     link: "https://sheets.google.com/"
   },
   {
     id: 4,
     shortLabel: "Automatyzacja Umów",
     title: "System Zarządzania Umowami",
-    text: "Praca analityczna na danych kadrowych: przełożyłam zawiłe reguły korporacyjne na przejrzysty, zautomatyzowany system przedłużania tysięcy umów, zdejmując z zespołu żmudną decyzyjność.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Przekładanie logiki biznesowej na reguły:</b> mapowanie warunków (staż, absencje) na automatyczną propozycję nowej umowy.</li><li><b>Quality Assurance i standaryzacja:</b> eliminacja ryzykownych \"pomyłek z Excela\" i gwarancja powtarzalności decyzji.</li><li><b>Efektywność operacyjna:</b> odzyskanie dziesiątek godzin pracy zespołu — czas na rekrutacje zamiast przeklikiwania dokumentacji.</li></ul>",
+    text: "Praca analityczna na danych kadrowych: przełożyłam zawiłe reguły korporacyjne na przejrzysty, zautomatyzowany system przedłużania tysięcy umów, zdejmując z zespołu żmudną decyzyjność.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Przekładanie logiki biznesowej na reguły:</b> mapowanie warunków (staż, absencje) na automatyczną propozycję nowej umowy.</li><li><b>Quality Assurance i standaryzacja:</b> eliminacja ryzykownych \"pomyłek z Excela\" i gwarancja powtarzalności decyzji.</li><li><b>Efektywność operacyjna:</b> odzyskanie dziesiątek godzin pracy zespołu: czas na rekrutacje zamiast przeklikiwania dokumentacji.</li></ul>",
     link: "https://docs.google.com/"
   },
   {
     id: 5,
     shortLabel: "Discovery & Prototypowanie",
     title: "Product Discovery & Prototypowanie UX",
-    text: "Rola pomostu między biznesem, użytkownikami i wdrożeniem. Przeprowadziłam całościowy redesign złożonego harmonogramowania widocznego dla setek pracowników.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Product Discovery i User Research:</b> zbieranie feedbacku operacyjnego od użytkowników, by trafnie zdefiniować problem i potrzeby.</li><li><b>Prototypowanie i makiety:</b> buduję klikalne, realnie działające makiety w Google Apps Script (HTML Service) — testowane z użytkownikami, a nie martwe statyczne ekrany.</li><li><b>Stakeholder management:</b> walidacja makiet z interesariuszami z wyprzedzeniem — budowanie dokładnie tego, czego potrzebują.</li></ul>",
+    text: "Rola pomostu między biznesem, użytkownikami i wdrożeniem. Przeprowadziłam całościowy redesign złożonego harmonogramowania widocznego dla setek pracowników.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Product Discovery i User Research:</b> zbieranie feedbacku operacyjnego od użytkowników, by trafnie zdefiniować problem i potrzeby.</li><li><b>Prototypowanie i makiety:</b> buduję klikalne, realnie działające makiety w Google Apps Script (HTML Service), testowane z użytkownikami, a nie martwe statyczne ekrany.</li><li><b>Stakeholder management:</b> walidacja makiet z interesariuszami z wyprzedzeniem, aby budować dokładnie to, czego potrzebują.</li></ul>",
     link: "https://figma.com/"
   }
 ];
@@ -57,8 +57,6 @@ export const skillsList: string[] = [
   "Dashboardy",
   "Analizy",
   "JavaScript",
-  "HTML",
-  "CSS",
   "Tableau",
   "Komunikacja",
   "Kreatywność",
@@ -74,12 +72,12 @@ export const whyMeCards: WhyCardItem[] = [
   {
     number: "02",
     title: "Użytkownik i adopcja zmian",
-    description: "Projektuję narzędzia pod realnego użytkownika (UX) i prowadzę zespół przez zmianę — z naciskiem na intuicyjność i niski opór."
+    description: "Projektuję narzędzia pod realnego użytkownika (UX) i prowadzę zespół przez zmianę, z naciskiem na intuicyjność i niski opór."
   },
   {
     number: "03",
     title: "Decyzje oparte na danych",
-    description: "Szukam powtarzalnych wzorców i opieram decyzje na danych — buduję dashboardy (Looker, Tableau), które stają się źródłem prawdy."
+    description: "Szukam powtarzalnych wzorców i opieram decyzje na danych: buduję dashboardy (Looker, Tableau), które stają się źródłem prawdy."
   }
 ];
 

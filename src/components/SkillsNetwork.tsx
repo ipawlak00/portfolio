@@ -8,11 +8,11 @@ export default function SkillsNetwork() {
   const [showEasterEgg, setShowEasterEgg] = useState(false);
   const revealTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Radial positioning metrics from her original script
-  const aHub = 230; 
-  const bHub = 100; 
-  const aOut = 500; 
-  const bOut = 280;
+  // Radial positioning metrics (rounder + larger ellipse, so labels don't collide)
+  const aHub = 240;
+  const bHub = 150;
+  const aOut = 560;
+  const bOut = 440;
 
   // Track hover (or touch) state to start sequential reveals
   useEffect(() => {
@@ -60,11 +60,11 @@ export default function SkillsNetwork() {
       if (containerRef.current) {
         const width = containerRef.current.getBoundingClientRect().width;
         if (width < 640) {
-          setScale(width / 1250); // Mobile scale
+          setScale(width / 1350); // Mobile scale
         } else if (width < 1024) {
-          setScale(width / 1250 * 0.9); // Tablet scale
+          setScale(width / 1350 * 0.9); // Tablet scale
         } else {
-          setScale(width / 1250 * 0.95); // Desktop standard scale
+          setScale(width / 1350 * 0.95); // Desktop standard scale
         }
       }
     };
@@ -98,7 +98,7 @@ export default function SkillsNetwork() {
               [ ARCHITEKT IT ]
             </h3>
             <p className="font-sans font-medium text-[#0f172a] text-[18px] leading-relaxed mb-6">
-              Gratulacje! Odblokowałeś technologiczny Easter Egg. To portfolio nie ma przed Tobą tajemnic – dokładnie tak samo jak optymalizacja procesów przed Izabelą!
+              Gratulacje! Odblokowałeś technologiczny Easter Egg. To portfolio nie ma przed Tobą tajemnic, dokładnie tak samo jak optymalizacja procesów przed Izabelą!
             </p>
             <button 
               className="bg-[#1e293b] hover:bg-[#0f172a] text-white font-bold px-6 py-2.5 rounded-full select-none focus:outline-none"
@@ -113,14 +113,14 @@ export default function SkillsNetwork() {
       {/* Responsive zone scaling to support all device sizes elegantly */}
       <div 
         className="w-full flex justify-center items-center overflow-visible relative"
-        style={{ height: `${900 * scale}px`, minHeight: "350px" }}
+        style={{ height: `${1000 * scale}px`, minHeight: "360px" }}
       >
         <div 
           className="network-trigger-zone select-none absolute"
           id="network-zone"
-          style={{ 
-            width: "1150px", 
-            height: "900px",
+          style={{
+            width: "1300px",
+            height: "1000px",
             left: "50%",
             top: "50%",
             transform: `translate(-50%, -50%) scale(${scale})`,
