@@ -4,7 +4,6 @@ import AboutMe from "./components/AboutMe";
 import TimelineSection from "./components/TimelineSection";
 import SkillsNetwork from "./components/SkillsNetwork";
 import ProcessFlow from "./components/ProcessFlow";
-import WhyMe from "./components/WhyMe";
 import CtaFooter from "./components/CtaFooter";
 import CrmMockup from "./components/CrmMockup";
 import OnboardingMockup from "./components/OnboardingMockup";
@@ -175,10 +174,7 @@ export default function App() {
         {/* PROCESS FLOW METHODOLOGY SECTION */}
         {isTimelineVisible && <ProcessFlow />}
 
-        {/* WHY ME DETAILED EXPOSITION CARDS */}
-        {isTimelineVisible && <WhyMe />}
-
-        {/* CALL TO ACTION BOTTOM CARD */}
+        {/* CALL TO ACTION BOTTOM CARD (zawiera teraz skrócone "Dlaczego ja?") */}
         {isTimelineVisible && <CtaFooter />}
 
         {/* MOCKUP INTERACTIVE FULLSCREEN MODALS */}

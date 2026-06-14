@@ -68,18 +68,18 @@ export const skillsList: string[] = [
 export const whyMeCards: WhyCardItem[] = [
   {
     number: "01",
-    title: "Od problemu do wdrożenia (end-to-end)",
-    description: "Działam na styku biznesu i technologii (Bridge Role). Nie tylko zbieram i analizuję wymagania, ale samodzielnie projektuję i wdrażam skalowalne rozwiązania. Prowadzę inicjatywy przez pełny cykl – od mapowania procesów \"as-is\", przez priorytetyzację i prototypowanie, aż po automatyzację i eliminację wąskich gardeł, co drastycznie skraca czas procesowania operacji (SLA)."
+    title: "Od problemu do wdrożenia",
+    description: "Sama prowadzę rozwiązanie end-to-end: od analizy i mapowania procesu, przez prototyp, po automatyzację i wdrożenie."
   },
   {
     number: "02",
-    title: "User Enablement & Adopcja Zmian",
-    description: "Nawet najbardziej zaawansowany system jest bezużyteczny, jeśli zespół z niego nie korzysta. Rozumiem perspektywę użytkownika końcowego. Projektuję narzędzia z myślą o intuicyjnym UX, tworzę środowiska wsparcia i pełnię rolę frontline-championa. Z sukcesem prowadzę zespoły przez proces adopcji technologii (change management), redukując opór przed zmianą i zwiększając zaangażowanie."
+    title: "Użytkownik i adopcja zmian",
+    description: "Projektuję narzędzia pod realnego użytkownika (UX) i prowadzę zespół przez zmianę — z naciskiem na intuicyjność i niski opór."
   },
   {
     number: "03",
-    title: "Pattern Recognition & Data-Driven",
-    description: "Rozwiązując problemy operacyjne, nie tylko \"zamykam tickety\" – aktywnie szukam powtarzalnych wzorców (pattern recognition), które wskazują na systemowe braki do optymalizacji. Opieram decyzje na twardych danych: buduję zautomatyzowane raporty i interaktywne dashboardy analityczne (Looker, Tableau), które stają się centralnym źródłem prawdy (Single Source of Truth) dla interesariuszy (C-level)."
+    title: "Decyzje oparte na danych",
+    description: "Szukam powtarzalnych wzorców i opieram decyzje na danych — buduję dashboardy (Looker, Tableau), które stają się źródłem prawdy."
   }
 ];
 

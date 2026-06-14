@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { whyMeCards } from "../data";
 
 export default function CtaFooter() {
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -21,18 +22,38 @@ export default function CtaFooter() {
   };
 
   return (
-    <div 
-      className="cta-footer-card w-full max-w-[900px] mx-auto bg-white/30 border border-white/50 p-12 hover:border-white rounded-[40px] text-center z-10 transition-all duration-400 hover:-translate-y-1 mt-24 flex flex-col items-center box-border"
+    <div
+      className="cta-footer-card w-full max-w-[1100px] mx-auto bg-white/30 border border-white/50 p-10 md:p-12 hover:border-white rounded-[40px] text-center z-10 transition-all duration-400 hover:-translate-y-1 mt-24 flex flex-col items-center box-border"
       style={{
         boxShadow: "0 20px 60px rgba(0, 0, 0, 0.1)",
         backdropFilter: "blur(30px)"
       }}
     >
-      <h2 className="font-sans font-black text-[#1e293b] text-3xl md:text-[42px] m-0 mb-5 tracking-tight leading-none uppercase">
-        To dopiero początek tej historii...
+      <h2 className="font-sans font-black text-[#1e293b] text-3xl md:text-[42px] m-0 mb-8 tracking-tight leading-none uppercase">
+        Dlaczego ja?
       </h2>
-      <p className="font-sans font-medium text-[#0f172a] text-[18px] md:text-[20px] leading-[1.6] max-w-2xl mx-auto mb-10">
-        Zawsze szukam nowych wyzwań i przestrzeni do optymalizacji. Porozmawiajmy o tym, co możemy wspólnie zbudować!
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full mb-9 text-left">
+        {whyMeCards.map((card) => (
+          <div
+            key={card.number}
+            className="bg-white/25 border border-white/40 rounded-2xl p-5 backdrop-blur-sm"
+          >
+            <div className="font-sans font-black text-[#1e293b]/15 text-[34px] leading-none mb-1 select-none">
+              {card.number}
+            </div>
+            <h3 className="font-sans font-black text-[#1e293b] text-[17px] mb-1.5 leading-snug tracking-tight">
+              {card.title}
+            </h3>
+            <p className="font-sans font-medium text-[#0f172a] text-[14px] leading-[1.5]">
+              {card.description}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <p className="font-sans font-medium text-[#0f172a] text-[17px] md:text-[19px] leading-[1.6] max-w-2xl mx-auto mb-9">
+        Porozmawiajmy o tym, co możemy wspólnie zbudować!
       </p>
 
       <div className="cta-buttons flex flex-wrap justify-center items-center gap-5">
