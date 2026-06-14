@@ -33,7 +33,7 @@ export const projectsData: ProjectItem[] = [
     id: 4,
     shortLabel: "Automatyzacja Umów",
     title: "System Zarządzania Umowami",
-    text: "Praca analityczna na danych kadrowych: przełożyłam zawiłe reguły korporacyjne na przejrzysty, zautomatyzowany system przedłużania tysięcy umów, zdejmując z zespołu żmudną decyzyjność.<br><br><b>Kompetencje (Product Owner / Process &amp; Operations):</b><ul class='timeline-list'><li><b>Przekładanie logiki biznesowej na reguły:</b> mapowanie warunków (staż, absencje) na automatyczną propozycję nowej umowy.</li><li><b>Quality Assurance i standaryzacja:</b> eliminacja ryzykownych „pomyłek z Excela" i gwarancja powtarzalności decyzji.</li><li><b>Efektywność operacyjna:</b> odzyskanie dziesiątek godzin pracy zespołu — czas na rekrutacje zamiast przeklikiwania dokumentacji.</li></ul>",
+    text: "Praca analityczna na danych kadrowych: przełożyłam zawiłe reguły korporacyjne na przejrzysty, zautomatyzowany system przedłużania tysięcy umów, zdejmując z zespołu żmudną decyzyjność.<br><br><b>Kompetencje (Product Owner / Process &amp; Operations):</b><ul class='timeline-list'><li><b>Przekładanie logiki biznesowej na reguły:</b> mapowanie warunków (staż, absencje) na automatyczną propozycję nowej umowy.</li><li><b>Quality Assurance i standaryzacja:</b> eliminacja ryzykownych \"pomyłek z Excela\" i gwarancja powtarzalności decyzji.</li><li><b>Efektywność operacyjna:</b> odzyskanie dziesiątek godzin pracy zespołu — czas na rekrutacje zamiast przeklikiwania dokumentacji.</li></ul>",
     link: "https://docs.google.com/"
   },
   {
