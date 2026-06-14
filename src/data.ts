@@ -5,14 +5,14 @@ export const projectsData: ProjectItem[] = [
     id: 0,
     shortLabel: "Analityka Sprzedaży (BI)",
     title: "Sales Analytics & BI Workspace",
-    text: "Samodzielnie poprowadziłam budowę dedykowanej aplikacji dla działów sprzedaży — od zebrania potrzeb po wdrożenie — łącząc dane z codzienną pracą zespołów w terenie. Handlowcy dostali proste narzędzie, a menedżerowie pełen, oparty na danych wgląd w wyniki.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Decyzje oparte na danych (Data-Driven):</b> centralizacja danych z wielu systemów (BigQuery) i interaktywne dashboardy KPI w Looker Studio, dostępne dla zarządu w czasie rzeczywistym.</li><li><b>Analiza i optymalizacja procesów:</b> mapowanie oraz digitalizacja procesów (wyceny, onboarding), co ograniczyło błędy i odciążyło zespół operacyjny.</li><li><b>Product Discovery i architektura rozwiązania:</b> zaprojektowanie ekosystemu spinającego sprzedaż, finanse i logistykę w jeden, płynny proces.</li></ul>",
+    text: "Samodzielnie poprowadziłam budowę dedykowanej aplikacji dla działów sprzedaży — od zebrania potrzeb po wdrożenie — łącząc dane z codzienną pracą zespołów w terenie. Handlowcy dostali proste narzędzie, a menedżerowie pełen, oparty na danych wgląd w wyniki.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Decyzje oparte na danych (Data-Driven):</b> centralizacja danych z wielu systemów (BigQuery) i interaktywne dashboardy KPI w Looker Studio, dostępne dla zarządu w czasie rzeczywistym.</li><li><b>Analiza i optymalizacja procesów:</b> mapowanie oraz digitalizacja procesów (wyceny, onboarding), co ograniczyło błędy i odciążyło zespół operacyjny.</li><li><b>Analiza potrzeb i architektura rozwiązania:</b> zaprojektowanie ekosystemu spinającego sprzedaż, finanse i logistykę w jeden, płynny proces.</li></ul>",
     link: "https://lookerstudio.google.com/"
   },
   {
     id: 1,
     shortLabel: "Onboarding & Operacje",
     title: "Onboarding & Fleet Operations",
-    text: "Poprowadziłam budowę środowiska zatrudnienia od A do Z — od koncepcji po wdrożenie — zmieniając chaotyczny onboarding setek osób w zautomatyzowany, powtarzalny proces.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Product Ownership i priorytetyzacja:</b> rozbicie złożonego procesu zatrudniania na powtarzalne kroki — od podpisania umowy po pierwszy dzień pracy.</li><li><b>Doskonałość operacyjna i automatyzacja:</b> zastąpienie ręcznych tabel automatycznymi powiadomieniami, e-mailami i rezerwacją sprzętu floty (zarządzanie zasobami).</li><li><b>Poprawa SLA i ciągłe doskonalenie (Continuous Improvement):</b> skrócenie przestojów HR oraz eliminacja powracających braków sprzętowych.</li></ul>",
+    text: "Poprowadziłam budowę środowiska zatrudnienia od A do Z — od koncepcji po wdrożenie — zmieniając chaotyczny onboarding setek osób w zautomatyzowany, powtarzalny proces.<br><br><b>Kompetencje w praktyce:</b><ul class='timeline-list'><li><b>Prowadzenie inicjatywy i priorytetyzacja:</b> rozbicie złożonego procesu zatrudniania na powtarzalne kroki — od podpisania umowy po pierwszy dzień pracy.</li><li><b>Doskonałość operacyjna i automatyzacja:</b> zastąpienie ręcznych tabel automatycznymi powiadomieniami, e-mailami i rezerwacją sprzętu floty (zarządzanie zasobami).</li><li><b>Poprawa SLA i ciągłe doskonalenie (Continuous Improvement):</b> skrócenie przestojów HR oraz eliminacja powracających braków sprzętowych.</li></ul>",
     link: "https://script.google.com/"
   },
   {
@@ -68,8 +68,8 @@ export const skillsList: string[] = [
 export const whyMeCards: WhyCardItem[] = [
   {
     number: "01",
-    title: "Product Ownership & Continuous Improvement",
-    description: "Działam na styku biznesu i technologii (Bridge Role). Nie tylko zbieram wymagania, ale samodzielnie projektuję i wdrażam skalowalne rozwiązania. Zarządzam pełnym cyklem życia wewnętrznych produktów cyfrowych – od mapowania procesów \"as-is\", przez priorytetyzację backlogu i prototypowanie, aż po automatyzację i eliminację wąskich gardeł, co drastycznie skraca czas procesowania operacji (SLA)."
+    title: "Od problemu do wdrożenia (end-to-end)",
+    description: "Działam na styku biznesu i technologii (Bridge Role). Nie tylko zbieram i analizuję wymagania, ale samodzielnie projektuję i wdrażam skalowalne rozwiązania. Prowadzę inicjatywy przez pełny cykl – od mapowania procesów \"as-is\", przez priorytetyzację i prototypowanie, aż po automatyzację i eliminację wąskich gardeł, co drastycznie skraca czas procesowania operacji (SLA)."
   },
   {
     number: "02",
