@@ -110,9 +110,18 @@ export default function SkillsNetwork() {
         </div>
       )}
 
-      {/* Responsive zone scaling to support all device sizes elegantly */}
-      <div 
-        className="w-full flex justify-center items-center overflow-visible relative"
+      {/* Mobile / tablet: czytelna chmura "chipów" (siatka radialna potrzebuje szerokości) */}
+      <div className="skills-chips lg:hidden">
+        {skillsList.map((skill) => (
+          <span key={skill} className={`skill-chip ${skill.includes("Humor") ? "label-funny" : ""}`}>
+            {skill}
+          </span>
+        ))}
+      </div>
+
+      {/* Desktop: rozległa siatka radialna ze skalowaniem */}
+      <div
+        className="hidden lg:flex w-full justify-center items-center overflow-visible relative"
         style={{ height: `${1000 * scale}px`, minHeight: "360px" }}
       >
         <div 
