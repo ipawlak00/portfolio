@@ -89,18 +89,24 @@ export default function SkillsNetwork() {
           className="fixed inset-0 z-[999] bg-black/40 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300"
           onClick={() => setShowEasterEgg(false)}
         >
-          <div 
+          <div
             className="bg-white/90 border border-white/60 p-10 rounded-[40px] shadow-2xl max-w-lg w-full text-center relative animate-bounce"
             style={{ backdropFilter: "blur(25px)" }}
             onClick={(e) => e.stopPropagation()}
           >
+            <img
+              src="michael-scott.png"
+              alt="Michael Scott"
+              className="w-40 h-40 mx-auto mb-5 object-contain drop-shadow-xl"
+              onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
+            />
             <h3 className="font-sans font-black text-[#1e293b] text-3xl mb-4 uppercase tracking-tight">
-              [ ARCHITEKT IT ]
+              Akuku! 👀
             </h3>
             <p className="font-sans font-medium text-[#0f172a] text-[18px] leading-relaxed mb-6">
-              Gratulacje! Odblokowałeś technologiczny Easter Egg. To portfolio nie ma przed Tobą tajemnic, dokładnie tak samo jak optymalizacja procesów przed Izabelą!
+              Znalazłeś Michaela Scotta, który przyniesie Ci szczęście!
             </p>
-            <button 
+            <button
               className="bg-[#1e293b] hover:bg-[#0f172a] text-white font-bold px-6 py-2.5 rounded-full select-none focus:outline-none"
               onClick={() => setShowEasterEgg(false)}
             >
@@ -147,7 +153,7 @@ export default function SkillsNetwork() {
             title="Kliknij mnie 3 razy!"
           >
             <h2>
-              {showEasterEgg ? "[ ARCHITEKT IT ]" : "IZABELA"}
+              {showEasterEgg ? "AKUKU!" : "IZABELA"}
             </h2>
           </div>
 
