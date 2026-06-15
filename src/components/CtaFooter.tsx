@@ -53,7 +53,7 @@ export default function CtaFooter() {
       </div>
 
       <p className="font-sans font-medium text-[#0f172a] text-[17px] md:text-[19px] leading-[1.6] max-w-2xl mx-auto mb-9">
-        Porozmawiajmy o tym, co możemy wspólnie zbudować!
+        Porozmawiajmy o tym, co możemy wspólnie zbudować.
       </p>
 
       <div className="cta-buttons flex flex-wrap justify-center items-center gap-5">
@@ -77,7 +77,7 @@ export default function CtaFooter() {
                   backgroundColor: copiedEmail ? "#10b981" : ""
                 }}
               >
-                {copiedEmail ? "Skopiowano!" : "Kopiuj"}
+                {copiedEmail ? "Skopiowano" : "Kopiuj"}
               </button>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function CtaFooter() {
                   backgroundColor: copiedPhone ? "#10b981" : ""
                 }}
               >
-                {copiedPhone ? "Skopiowano!" : "Kopiuj"}
+                {copiedPhone ? "Skopiowano" : "Kopiuj"}
               </button>
             </div>
           </div>

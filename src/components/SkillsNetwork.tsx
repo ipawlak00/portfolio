@@ -101,16 +101,16 @@ export default function SkillsNetwork() {
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
             />
             <h3 className="font-sans font-black text-[#1e293b] text-3xl mb-4 uppercase tracking-tight">
-              Akuku! 👀
+              Akuku
             </h3>
             <p className="font-sans font-medium text-[#0f172a] text-[18px] leading-relaxed mb-6">
-              Znalazłeś Michaela Scotta, który przyniesie Ci szczęście!
+              Znalazłeś Michaela Scotta, który przyniesie Ci szczęście.
             </p>
             <button
               className="bg-[#1e293b] hover:bg-[#0f172a] text-white font-bold px-6 py-2.5 rounded-full select-none focus:outline-none"
               onClick={() => setShowEasterEgg(false)}
             >
-              SUPER!
+              SUPER
             </button>
           </div>
         </div>
@@ -150,10 +150,10 @@ export default function SkillsNetwork() {
           <div 
             className="central-hub"
             onClick={triggerEasterEgg}
-            title="Kliknij mnie 3 razy!"
+            title="Kliknij mnie 3 razy"
           >
             <h2>
-              {showEasterEgg ? "AKUKU!" : "IZABELA"}
+              {showEasterEgg ? "AKUKU" : "IZABELA"}
             </h2>
           </div>
 

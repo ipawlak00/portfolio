@@ -98,7 +98,7 @@ export default function App() {
                     onClick={handleCopyHeaderPhone}
                     style={{ backgroundColor: copiedHeaderPhone ? "#10b981" : "" }}
                   >
-                    {copiedHeaderPhone ? "Skopiowano!" : "Kopiuj"}
+                    {copiedHeaderPhone ? "Skopiowano" : "Kopiuj"}
                   </button>
                 </div>
               </div>
@@ -118,7 +118,7 @@ export default function App() {
                     onClick={handleCopyHeaderEmail}
                     style={{ backgroundColor: copiedHeaderEmail ? "#10b981" : "" }}
                   >
-                    {copiedHeaderEmail ? "Skopiowano!" : "Kopiuj"}
+                    {copiedHeaderEmail ? "Skopiowano" : "Kopiuj"}
                   </button>
                 </div>
               </div>
