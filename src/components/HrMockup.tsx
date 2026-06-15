@@ -30,6 +30,9 @@ export default function HrMockup({ isOpen, onClose }: HrMockupProps) {
 
       {/* WORKSPACE AREA */}
       <div className="flex-grow flex flex-col p-4 md:p-8 gap-6 overflow-y-auto w-full max-w-7xl mx-auto pt-16 relative z-10">
+        <div className="lg:hidden flex items-start gap-2 self-center max-w-[520px] bg-[#1e293b]/90 text-white text-[13px] font-semibold px-4 py-2.5 rounded-2xl shadow-lg border border-white/20 text-center backdrop-blur-sm">
+          <span>💻 Ta aplikacja jest zaprojektowana na komputer, najlepiej otworzyć ją na większym ekranie.</span>
+        </div>
         <div className="flex-grow flex rounded-3xl border border-slate-200 shadow-2xl min-h-[640px] xl:min-h-[720px] overflow-hidden relative">
           <iframe 
               src="hr.html?v=3"
